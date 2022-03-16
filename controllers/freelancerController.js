@@ -50,6 +50,19 @@ exports.newProposals = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.allProposals = catchAsync(async (req, res, next) => {
+  let newProposals = await Proposal.find({
+    sendTo: req.user._id,
+  })
+    .sort("-createdAt")
+    .populate("projectId");
+
+  res.status(200).json({
+    status: "success",
+    data: newProposals,
+  });
+});
+
 exports.assignProjects = catchAsync(async (req, res, next) => {
   let projects = await Project.find({
     isAssigned: true,

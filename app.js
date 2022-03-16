@@ -20,6 +20,7 @@ const customerRouter = require("./routes/customerRoutes");
 const freelancerRouter = require("./routes/freelancerRoutes");
 const chatRouter = require("./routes/chatRoutes");
 const notificationsRouter = require("./routes/notificationRoutes");
+const PdfGeneratingService = require("./services/PdfGeneratingService");
 
 const User = require("./models/userModel");
 const Chat = require("./models/chatModel");
@@ -68,12 +69,64 @@ app.use(mongoSanitize());
 
 app.use(compression());
 
+const invoice = {
+  user: {
+    name: "John Doe",
+    email: "test@email.com",
+    contactNo: "0987337829",
+    city: "San Francisco",
+    state: "CA",
+    country: "US",
+  },
+  from: { name: "usama", email: "musamamajadb@gmail.com" },
+  milestone: {
+    isMilestonePaid: false,
+    makeWidthDrawlRequest: false,
+    makeReleaseRequest: false,
+    status: "pending",
+    _id: "6230af36f325175e385efac3",
+    title: "Onboarding payment",
+    description: "This is onboarding payment of milestone",
+    amount: 40000,
+    createdAt: "2022-03-15T15:22:30.674Z",
+    updatedAt: "2022-03-15T15:22:30.674Z",
+  },
+  project: {
+    pdfs: [],
+    images: [],
+    currency: "eur",
+    amountPayedToAdmin: 0,
+    amountPayedToFreelancer: 0,
+    projectStatus: "pending",
+    reviewdByAdmin: false,
+    porposalsForCustomer: [],
+    porposalsForFreelancer: [],
+    isAssigned: false,
+    _id: "6230aef8f325175e385efaa6",
+    title: "Test project.",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    amount: 100000,
+    postedBy: "620cf517d0993535cce38fff",
+    createdAt: "2022-03-15T15:21:28.977Z",
+    updatedAt: "2022-03-15T15:21:28.977Z",
+    __v: 0,
+  },
+};
+
+let pdfname = `testinvoice.pdf`;
+
+const _path = path.join(__dirname, "public", "pdfs", pdfname);
+
+console.log(_path);
+
+PdfGeneratingService.createInvoice(invoice, _path);
+
 app.get("/", (req, res) => {
   res.status(200).json({
     message: "Welcome to Sean Hoban  APIs",
   });
 });
-
 
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/admin", adminRouter);
@@ -89,7 +142,6 @@ app.all("*", (req, res, next) => {
 app.use(globalErrorHandler);
 
 io.on("connection", (socket) => {
-
   socket.on("join", async (id) => {
     const authId = id;
     const socketId = socket.id;

@@ -11,6 +11,8 @@ const { filterObj } = require("../utils/fn");
 const ProjectService = require("../services/ProjectService");
 const StripeService = require("../services/StripeService");
 const notification = require("../services/NotificationService");
+const path = require("path");
+const { v4: uuidv4 } = require("uuid");
 
 //CUSTOMER CREATE NEW PROJECT
 exports.createProject = catchAsync(async (req, res, next) => {
@@ -612,6 +614,10 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
     return next(new AppError("Milestone already payed. ", 403));
   }
 
+  let pdfname = `${uuidv4()}.pdf`;
+
+  const _path = path.join(__dirname, "public", "pdfs", pdfname);
+
   let UpdatedMilestone = await Proposal.findOneAndUpdate(
     {
       _id: proposalId,
@@ -621,10 +627,31 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
       $set: {
         "milestones.$.makeWidthDrawlRequest": true,
         "milestones.$.widthDrawlRequestedAt": Date.now(),
+        "milestones.$.invoice": pdfname,
       },
     },
     { new: true }
-  );
+  )
+    .populate("projectId")
+    .populate("sendTo");
+
+  let updatedMile = UpdatedMilestone.milestones.map((item) => {
+    if (item._id == milestoneId) {
+      return item;
+    }
+  });
+
+  let invoice = {
+    user: UpdatedMilestone.sendTo,
+    from: {
+      name: req.user.name,
+      email: req.user.email,
+    },
+    project: UpdatedMilestone.projectId,
+    milestone: updatedMile,
+  };
+
+  PdfGeneratingService.createInvoice(invoice, _path);
 
   await notification.dispatchToAdmin(
     {
@@ -679,6 +706,10 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
     return next(new AppError("Milestone already payed. ", 403));
   }
 
+  let pdfname = `${uuidv4()}.pdf`;
+
+  const _path = path.join(__dirname, "public", "pdfs", pdfname);
+
   let UpdatedMilestone = await Proposal.findOneAndUpdate(
     {
       _id: proposalId,
@@ -688,10 +719,31 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
       $set: {
         "milestones.$.makeReleaseRequest": true,
         "milestones.$.releaseRequestedAt": Date.now(),
+        "milestones.$.invoice": pdfname,
       },
     },
     { new: true }
-  );
+  )
+    .populate("projectId")
+    .populate("sendTo");
+
+  let updatedMile = UpdatedMilestone.milestones.map((item) => {
+    if (item._id == milestoneId) {
+      return item;
+    }
+  });
+
+  let invoice = {
+    user: UpdatedMilestone.sendTo,
+    from: {
+      name: req.user.name,
+      email: req.user.email,
+    },
+    project: UpdatedMilestone.projectId,
+    milestone: updatedMile,
+  };
+
+  PdfGeneratingService.createInvoice(invoice, _path);
 
   await notification.dispatch(
     {

@@ -85,7 +85,7 @@ const GetMilestonesRequestedForWidthdrawl = async () => {
     proposal.milestones.forEach(function (milestone) {
       milestones.push({
         status: milestone.isMilestonePaid ? "Paid" : "Pending",
-        amnout: milestone.amount,
+        amount: milestone.amount,
         title: milestone.title,
         _id: milestone._id,
         requestedAt: milestone.widthDrawlRequestedAt,
@@ -154,10 +154,13 @@ const GetWebsiteStats = async () => {
     // },
   ]);
 
+  let payments = "38k";
+
   return {
     Total: await Project.count(),
     Assigned: await Project.find({ isAssigned: true }).count(),
-    Open: await Project.find({ status: "underReview" }).count(),
+    "Open to work": await Project.find({ status: "underReview" }).count(),
+    "Awaiting Payments": payments,
     Completed: await Project.find({ status: "completed" }).count(),
     Earnings,
   };
