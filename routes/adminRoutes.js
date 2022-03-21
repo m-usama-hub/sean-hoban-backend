@@ -12,21 +12,17 @@ const router = express.Router();
 router.use(RouteService.protect);
 router.use(RouteService.restrictTo("admin", "super-admin"));
 
-router
-  .route("/submit-porposal-to-customer")
-  .post(
-    uploadUserImage,
-    uploadUserPDfs,
-    projectController.submitPurposalToCustomer
-  );
+router.route("/submit-porposal-to-customer").post(
+  // uploadUserImage,
+  // uploadUserPDfs,
+  projectController.submitPurposalToCustomer
+);
 
-router
-  .route("/submit-porposal-to-freelancer")
-  .post(
-    uploadUserImage,
-    uploadUserPDfs,
-    projectController.submitPurposalToFreelancer
-  );
+router.route("/submit-porposal-to-freelancer").post(
+  // uploadUserImage,
+  // uploadUserPDfs,
+  projectController.submitPurposalToFreelancer
+);
 
 router
   .route("/update-milestone-payment-status")

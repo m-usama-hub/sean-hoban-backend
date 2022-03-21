@@ -19,9 +19,11 @@ router
   .route("/customer-Pay-to-admin")
   .post(projectController.CustomerPayToAdmin);
 
-router
-  .route("/post-project")
-  .post(uploadUserImage, uploadUserPDfs, projectController.createProject);
+router.route("/post-project").post(
+  // uploadUserImage,
+  // uploadUserPDfs,
+  projectController.createProject
+);
 
 router
   .route("/get-project-proposals")
