@@ -53,6 +53,7 @@ router.patch("/updateMyPassword", authController.updatePassword);
 // router.get('/me', userController.getMe, userController.getUser);
 router.patch(
   "/updateMe",
+  uploadUserImage,
   // uploadUserPhoto,
   // resizeUserPhoto,
   userController.updateMe
