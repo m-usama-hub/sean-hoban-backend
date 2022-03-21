@@ -1,0 +1,391 @@
+[{
+  "_id": {
+    "$oid": "620cd6ec4fcdeb4fa82867b8"
+  },
+  "docs": [],
+  "currency": "gbp",
+  "projectStatus": "pending",
+  "reviewdByAdmin": false,
+  "title": "this is demo project",
+  "description": "this is demo project this is demo project this is demo project this is demo project this is demo project ",
+  "amount": 100000,
+  "postedBy": {
+    "$oid": "620cd683a5cf280de46ad0a2"
+  },
+  "projectPorposalsForCustomer": [],
+  "projectPorposalsForFreelancer": [],
+  "createdAt": {
+    "$date": "2022-02-16T10:50:20.758Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-16T10:50:20.758Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620cf5ced0993535cce39002"
+  },
+  "docs": [],
+  "currency": "eur",
+  "amountPayedToAdmin": 40000,
+  "amountPayedToFreelancer": 0,
+  "projectStatus": "inProgress",
+  "reviewdByAdmin": true,
+  "porposalsForCustomer": [
+    {
+      "$oid": "620e394e0f8397149c7a19ea"
+    }
+  ],
+  "porposalsForFreelancer": [
+    {
+      "$oid": "620e40840d14111d54d72947"
+    },
+    {
+      "$oid": "620e40840d14111d54d72953"
+    },
+    {
+      "$oid": "620e40840d14111d54d7295f"
+    },
+    {
+      "$oid": "620e40c550b4e52d9c5eba41"
+    },
+    {
+      "$oid": "620e47cd80b57b1e74d930d1"
+    },
+    {
+      "$oid": "620e47cd80b57b1e74d930dd"
+    }
+  ],
+  "title": "This is project title",
+  "description": "This is project description",
+  "amount": 140000,
+  "postedBy": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "createdAt": {
+    "$date": "2022-02-16T13:02:06.167Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-21T08:46:24.372Z"
+  },
+  "__v": 0,
+  "accecptedPorposalByFreelancer": {
+    "$oid": "620e47cd80b57b1e74d930dd"
+  },
+  "accecptedPorposalByCustomer": {
+    "$oid": "620e394e0f8397149c7a19ea"
+  },
+  "assignTo": {
+    "$oid": "620d2a82dbbd2d2d38e85c55"
+  }
+},{
+  "_id": {
+    "$oid": "62149934f2f8772990a39278"
+  },
+  "pdfs": [],
+  "images": [],
+  "currency": "eur",
+  "amountPayedToAdmin": 40000,
+  "amountPayedToFreelancer": 0,
+  "projectStatus": "inProgress",
+  "reviewdByAdmin": true,
+  "porposalsForCustomer": [
+    {
+      "$oid": "621499baf2f8772990a39298"
+    }
+  ],
+  "porposalsForFreelancer": [
+    {
+      "$oid": "62149b005abe21594c9ef273"
+    },
+    {
+      "$oid": "62149b005abe21594c9ef27f"
+    }
+  ],
+  "isAssigned": true,
+  "title": "Demo Project",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 140000,
+  "postedBy": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "createdAt": {
+    "$date": "2022-02-22T08:05:08.474Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-22T08:15:32.304Z"
+  },
+  "__v": 0,
+  "accecptedPorposalByCustomer": {
+    "$oid": "621499baf2f8772990a39298"
+  },
+  "accecptedPorposalByFreelancer": {
+    "$oid": "62149b005abe21594c9ef273"
+  },
+  "assignTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  }
+},{
+  "_id": {
+    "$oid": "6214d6efe32bea5fcc6ec021"
+  },
+  "pdfs": [],
+  "images": [],
+  "currency": "eur",
+  "amountPayedToAdmin": 40000,
+  "amountPayedToFreelancer": 0,
+  "projectStatus": "inProgress",
+  "reviewdByAdmin": true,
+  "porposalsForCustomer": [
+    {
+      "$oid": "6214d728e32bea5fcc6ec025"
+    }
+  ],
+  "porposalsForFreelancer": [
+    {
+      "$oid": "6214d7b5e32bea5fcc6ec03e"
+    },
+    {
+      "$oid": "6214d7b5e32bea5fcc6ec04a"
+    }
+  ],
+  "isAssigned": true,
+  "title": "Demo Project seconf",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "postedBy": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "createdAt": {
+    "$date": "2022-02-22T12:28:31.129Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-22T12:32:35.819Z"
+  },
+  "__v": 0,
+  "accecptedPorposalByCustomer": {
+    "$oid": "6214d728e32bea5fcc6ec025"
+  },
+  "accecptedPorposalByFreelancer": {
+    "$oid": "6214d7b5e32bea5fcc6ec03e"
+  },
+  "assignTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  }
+},{
+  "_id": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "pdfs": [],
+  "images": [],
+  "currency": "eur",
+  "amountPayedToAdmin": 190000,
+  "amountPayedToFreelancer": 0,
+  "projectStatus": "underReview",
+  "reviewdByAdmin": true,
+  "porposalsForCustomer": [
+    {
+      "$oid": "621635a0055e0e4338f7ac9b"
+    },
+    {
+      "$oid": "6216361ac15e5c51a05d0a7e"
+    },
+    {
+      "$oid": "62163c71c95a071844bf2501"
+    },
+    {
+      "$oid": "62163c9f5ab180364c5b0f0c"
+    },
+    {
+      "$oid": "622604e1c0de1902f8ad03b7"
+    }
+  ],
+  "porposalsForFreelancer": [
+    {
+      "$oid": "62163cea5ab180364c5b0f21"
+    },
+    {
+      "$oid": "62163cea5ab180364c5b0f2d"
+    },
+    {
+      "$oid": "62163d3b007447457c33fac2"
+    },
+    {
+      "$oid": "62163d3b007447457c33face"
+    },
+    {
+      "$oid": "62163d7a8f1a2468d83936ff"
+    },
+    {
+      "$oid": "62163d7a8f1a2468d839370b"
+    },
+    {
+      "$oid": "62163dabbbaeac63944d837f"
+    },
+    {
+      "$oid": "62163dabbbaeac63944d838b"
+    },
+    {
+      "$oid": "62163e0c3fd09365d8a93a40"
+    },
+    {
+      "$oid": "62163e0c3fd09365d8a93a4c"
+    },
+    {
+      "$oid": "62163e8586a80d5a8427a7fd"
+    },
+    {
+      "$oid": "62163e8586a80d5a8427a809"
+    }
+  ],
+  "isAssigned": true,
+  "title": "Build me a three story house.",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "postedBy": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "createdAt": {
+    "$date": "2022-02-23T13:23:21.006Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T13:13:06.015Z"
+  },
+  "__v": 0,
+  "accecptedPorposalByCustomer": {
+    "$oid": "62163c9f5ab180364c5b0f0c"
+  },
+  "accecptedPorposalByFreelancer": {
+    "$oid": "62163e8586a80d5a8427a7fd"
+  },
+  "assignTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  }
+},{
+  "_id": {
+    "$oid": "6226055ec0de1902f8ad03d8"
+  },
+  "pdfs": [],
+  "images": [],
+  "currency": "eur",
+  "amountPayedToAdmin": 40000,
+  "amountPayedToFreelancer": 0,
+  "projectStatus": "underReview",
+  "reviewdByAdmin": true,
+  "porposalsForCustomer": [
+    {
+      "$oid": "6226057fc0de1902f8ad03df"
+    },
+    {
+      "$oid": "6230af20f325175e385efaad"
+    }
+  ],
+  "porposalsForFreelancer": [],
+  "isAssigned": false,
+  "title": "Build me a three story house again.",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 200000,
+  "postedBy": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "createdAt": {
+    "$date": "2022-03-07T13:15:10.115Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:22:09.170Z"
+  },
+  "__v": 0,
+  "accecptedPorposalByCustomer": {
+    "$oid": "6226057fc0de1902f8ad03df"
+  }
+},{
+  "_id": {
+    "$oid": "622a0b0d91b18331dc13d406"
+  },
+  "pdfs": [],
+  "images": [],
+  "currency": "eur",
+  "amountPayedToAdmin": 0,
+  "amountPayedToFreelancer": 0,
+  "projectStatus": "pending",
+  "reviewdByAdmin": false,
+  "porposalsForCustomer": [],
+  "porposalsForFreelancer": [],
+  "isAssigned": false,
+  "title": "This is first project",
+  "description": "addsgdfgfd dhfgjhgffghgf",
+  "amount": 100,
+  "timeline": "1  month",
+  "postedBy": {
+    "$oid": "620cd683a5cf280de46ad0a2"
+  },
+  "createdAt": {
+    "$date": "2022-03-10T14:28:29.211Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-10T14:28:29.211Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622a0b7391b18331dc13d40c"
+  },
+  "pdfs": [],
+  "images": [],
+  "currency": "eur",
+  "amountPayedToAdmin": 0,
+  "amountPayedToFreelancer": 0,
+  "projectStatus": "pending",
+  "reviewdByAdmin": false,
+  "porposalsForCustomer": [],
+  "porposalsForFreelancer": [],
+  "isAssigned": false,
+  "title": "This is second project",
+  "description": "addsgdfgfd dhfgjhgffghgf",
+  "amount": 100,
+  "timeline": "1  month",
+  "postedBy": {
+    "$oid": "620cd683a5cf280de46ad0a2"
+  },
+  "createdAt": {
+    "$date": "2022-03-10T14:30:11.522Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-10T14:30:11.522Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6230aef8f325175e385efaa6"
+  },
+  "pdfs": [],
+  "images": [],
+  "currency": "eur",
+  "amountPayedToAdmin": 40000,
+  "amountPayedToFreelancer": 0,
+  "projectStatus": "inProgress",
+  "reviewdByAdmin": true,
+  "porposalsForCustomer": [
+    {
+      "$oid": "6230af36f325175e385efac2"
+    }
+  ],
+  "porposalsForFreelancer": [],
+  "isAssigned": false,
+  "title": "Test project.",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 200000,
+  "postedBy": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "createdAt": {
+    "$date": "2022-03-15T15:21:28.977Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:33:00.791Z"
+  },
+  "__v": 0,
+  "accecptedPorposalByCustomer": {
+    "$oid": "6230af36f325175e385efac2"
+  }
+}]

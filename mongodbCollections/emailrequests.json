@@ -1,0 +1,216 @@
+[{
+  "_id": {
+    "$oid": "621cd5d69fc6415f2ca0ee1a"
+  },
+  "requestId": "1-621cd5a5-9c0e17d20cff04a82d733c89",
+  "data": {
+    "username": "Hamza Rehmanullah",
+    "url": "http://localhost:3007/api/v1/users/verify-me/621cd5d39fc6415f2ca0ee15",
+    "appname": "Take Off Bills"
+  },
+  "user": {
+    "$oid": "621cd5d39fc6415f2ca0ee15"
+  },
+  "createdAt": {
+    "$date": "2022-02-28T14:01:58.252Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T14:01:58.252Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621cde0298ab6960909bc1d6"
+  },
+  "requestId": "1-621cddd1-653638678a09e5994724717a",
+  "data": {
+    "username": "Taha Afzal",
+    "url": "http://localhost:3007/api/v1/users/verify-me/621cddff98ab6960909bc1d1",
+    "appname": "Take Off Bills"
+  },
+  "user": {
+    "$oid": "621cddff98ab6960909bc1d1"
+  },
+  "createdAt": {
+    "$date": "2022-02-28T14:36:50.289Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T14:36:50.289Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621cdf0598ab6960909bc1de"
+  },
+  "requestId": "1-621cded3-346530c3d048cfd4f9d2c896",
+  "data": {
+    "username": "Raza Amjad",
+    "url": "http://localhost:3007/api/v1/users/verify-me/621cdf0298ab6960909bc1d9",
+    "appname": "Take Off Bills"
+  },
+  "user": {
+    "$oid": "621cdf0298ab6960909bc1d9"
+  },
+  "createdAt": {
+    "$date": "2022-02-28T14:41:09.048Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T14:41:09.048Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621ce04e98ab6960909bc1e6"
+  },
+  "requestId": "1-621ce01d-53e138788952d0cbffd66498",
+  "data": {
+    "username": "usama amjad",
+    "url": "http://localhost:3007/api/v1/users/verify-me/621ce04c98ab6960909bc1e1",
+    "appname": "Take Off Bills"
+  },
+  "user": {
+    "$oid": "621ce04c98ab6960909bc1e1"
+  },
+  "createdAt": {
+    "$date": "2022-02-28T14:46:38.757Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T14:46:38.757Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621cfc188db1e45ae08f330e"
+  },
+  "requestId": "1-621cfbe7-c499ac267424af364412fee6",
+  "data": {
+    "username": "Iyushman khurana",
+    "url": "http://localhost:3007/api/v1/users/resetPassword/f06791659f08cdc4a0dc89b66ace25f5f1d7f00e8ef346de36bd28779e168939?token=http://localhost:3007/api/v1/users/resetPasswordDone/f06791659f08cdc4a0dc89b66ace25f5f1d7f00e8ef346de36bd28779e168939"
+  },
+  "user": {
+    "$oid": "621cec9f3b52c138643ca06b"
+  },
+  "createdAt": {
+    "$date": "2022-02-28T16:45:12.592Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T16:45:12.592Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621cfc6e8db1e45ae08f3312"
+  },
+  "requestId": "1-621cfc3c-2d3c1e0322333b1bc625be96",
+  "data": {
+    "username": "usama amjad",
+    "url": "http://localhost:3007/api/v1/users/resetPassword/d9d498df9d61159b35e04c00a0b007574dbbe635420d498b56a7fae2bd225cb8?token=http://localhost:3007/api/v1/users/resetPasswordDone/d9d498df9d61159b35e04c00a0b007574dbbe635420d498b56a7fae2bd225cb8"
+  },
+  "user": {
+    "$oid": "621ce04c98ab6960909bc1e1"
+  },
+  "createdAt": {
+    "$date": "2022-02-28T16:46:38.010Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T16:46:38.010Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621cff908db1e45ae08f3316"
+  },
+  "requestId": "1-621cff5f-f77321247837d89e612f62c7",
+  "data": {
+    "username": "usama amjad",
+    "url": "http://localhost:3007/api/v1/users/resetPassword/e337b5008ba858d7840af290ffa438f18f1d9226de58ef035bef10c9aa669c6e?token=http://localhost:3007/api/v1/users/resetPasswordDone/e337b5008ba858d7840af290ffa438f18f1d9226de58ef035bef10c9aa669c6e"
+  },
+  "user": {
+    "$oid": "621ce04c98ab6960909bc1e1"
+  },
+  "createdAt": {
+    "$date": "2022-02-28T17:00:00.461Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T17:00:00.461Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621cffe08db1e45ae08f331a"
+  },
+  "requestId": "1-621cffaf-e76ae2a548e36bb6bb5b26ab",
+  "data": {
+    "username": "usama amjad",
+    "url": "http://localhost:3007/api/v1/users/resetPassword/a04bc02a4c754afbf50e76156021261a8f45b14e8165a01efee65717d1858d54?token=http://localhost:3007/api/v1/users/resetPasswordDone/a04bc02a4c754afbf50e76156021261a8f45b14e8165a01efee65717d1858d54"
+  },
+  "user": {
+    "$oid": "621ce04c98ab6960909bc1e1"
+  },
+  "createdAt": {
+    "$date": "2022-02-28T17:01:20.630Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T17:01:20.630Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621d015d8db1e45ae08f331e"
+  },
+  "requestId": "1-621d012c-72b1f9e656e37ea2eceaf21c",
+  "data": {
+    "username": "usama amjad",
+    "url": "http://localhost:3007/api/v1/users/resetPassword/9737a032bee114b4127f30e5aa88d13e3b08e727b75b8b71c07493d4223a04c1?token=http://localhost:3007/api/v1/users/resetPasswordDone/9737a032bee114b4127f30e5aa88d13e3b08e727b75b8b71c07493d4223a04c1"
+  },
+  "user": {
+    "$oid": "621ce04c98ab6960909bc1e1"
+  },
+  "createdAt": {
+    "$date": "2022-02-28T17:07:41.670Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T17:07:41.670Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6225f9cb0ff0576f54ca30ee"
+  },
+  "requestId": "1-6225f994-d211a31b3e5e56338aba9bed",
+  "data": {
+    "username": "Ramiz",
+    "url": "https://bfeb-103-244-178-85.ngrok.io/api/v1/users/verify-me/6225f9c80ff0576f54ca30e9",
+    "appname": "Take Off Bills"
+  },
+  "user": {
+    "$oid": "6225f9c80ff0576f54ca30e9"
+  },
+  "createdAt": {
+    "$date": "2022-03-07T12:25:47.097Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T12:25:47.097Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6226011ac0de1902f8ad0394"
+  },
+  "requestId": "1-622600e3-bdee62e49125ed0ea9b7a424",
+  "data": {
+    "username": "Abdul Hai",
+    "url": "https://bfeb-103-244-178-85.ngrok.io/api/v1/users/verify-me/62260117c0de1902f8ad038f",
+    "appname": "Take Off Bills"
+  },
+  "user": {
+    "$oid": "62260117c0de1902f8ad038f"
+  },
+  "createdAt": {
+    "$date": "2022-03-07T12:56:58.181Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T12:56:58.181Z"
+  },
+  "__v": 0
+}]

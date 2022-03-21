@@ -16,9 +16,9 @@ module.exports = class Email {
 
   async getTemplateId() {
     let templates = {
-      welcome: "YW7TXVKEY74D44HWZ7XBYR9HVP5K",
-      verify: "3Y0C96MQWMMPSWQM8YGMXFPHAEF5",
-      passwordReset: "E3TNFF4RSAMECCMAA97BRHNYH0PR",
+      welcome: "C1PNPMV1XCMTW1HWWKJ8MZ51XEAE",
+      verify: "HHQTQZAXG5MFW9P8A1J1X49AM824",
+      passwordReset: "530VCQ6CHKM7AHNF1ERA24FJDJ66",
     };
 
     return templates[this.template];

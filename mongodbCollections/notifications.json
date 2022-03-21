@@ -1,0 +1,1286 @@
+[{
+  "_id": {
+    "$oid": "621625e608ed2753f4ee9232"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Usama Amjad Registered as freelancer",
+  "title": "New registration",
+  "link": "621625e508ed2753f4ee922f",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T12:17:42.465Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T12:17:42.465Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163549055e0e4338f7ac97"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "project",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "New project posted by CustomerDemo",
+  "title": "Build me a three story house.",
+  "link": "62163548055e0e4338f7ac94",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T13:23:21.439Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T13:23:21.439Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163ca05ab180364c5b0f1d"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "proposal",
+  "message": "Usama Developer submit new proposal.",
+  "title": "I will build you house on this proposal",
+  "link": "62163c9f5ab180364c5b0f0c",
+  "createdAt": {
+    "$date": "2022-02-23T13:54:40.278Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T13:54:40.278Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62163e8786a80d5a8427a817"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "proposal",
+  "message": "Usama Developer send a new  proposal.",
+  "title": "Make 3 story house for my customer",
+  "link": "62163e8586a80d5a8427a7fd",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:02:47.898Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:47.898Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163e8786a80d5a8427a818"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "proposal",
+  "message": "Usama Developer send a new  proposal.",
+  "title": "Make 3 story house for my customer",
+  "link": "62163e8586a80d5a8427a809",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:02:47.898Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:47.898Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163ed586a80d5a8427a823"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "payment",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "CustomerDemo payed [object Promise]40000 proposal.",
+  "title": "Onboarding payment",
+  "link": "62163ed486a80d5a8427a81d",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:04:05.364Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:04:05.364Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163ed586a80d5a8427a826"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "proposal",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "CustomerDemo accepted proposal.",
+  "title": "I will build you house on this proposal",
+  "link": "62163c9f5ab180364c5b0f0c",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:04:05.776Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:04:05.776Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163f7661cee13074bf523d"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "notificationType": "proposal",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "FreelancerDemo accepted proposal.",
+  "title": "Make 3 story house for my customer",
+  "link": "62163e8586a80d5a8427a7fd",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:06:46.765Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:06:46.765Z"
+  }
+},{
+  "_id": {
+    "$oid": "621640adbe52642f4c147651"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "notificationType": "proposal",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "FreelancerDemo accepted proposal.",
+  "title": "Make 3 story house for my customer",
+  "link": "62163e8586a80d5a8427a7fd",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:11:57.046Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:11:57.046Z"
+  }
+},{
+  "_id": {
+    "$oid": "621640e2316109666c106087"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "notificationType": "milestone",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "FreelancerDemo change milestone status to completed",
+  "title": "Onboarding payment",
+  "link": "62163e8586a80d5a8427a7fe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:12:50.698Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:12:50.698Z"
+  }
+},{
+  "_id": {
+    "$oid": "621641be51550737f8da7085"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "notificationType": "milestone",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "FreelancerDemo created widthdrawl request on milestone.",
+  "title": "Onboarding payment",
+  "link": "62163e8586a80d5a8427a7fe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:16:30.607Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:16:30.607Z"
+  }
+},{
+  "_id": {
+    "$oid": "621646df722dca5758d26a3e"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "milestone",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Usama Developer change milestone status to undefined",
+  "title": "This is second title",
+  "link": "62163c9f5ab180364c5b0f0e",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:38:23.522Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:38:23.522Z"
+  }
+},{
+  "_id": {
+    "$oid": "621646e8722dca5758d26a45"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "milestone",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Usama Developer change milestone status to completed",
+  "title": "This is second title",
+  "link": "62163c9f5ab180364c5b0f0e",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:38:32.960Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:38:32.960Z"
+  }
+},{
+  "_id": {
+    "$oid": "62164783d4ea15422007c80a"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "payment",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "CustomerDemo release milestone payment of €70000",
+  "title": "This is second title",
+  "link": "62164782d4ea15422007c805",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:41:07.244Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:41:07.244Z"
+  }
+},{
+  "_id": {
+    "$oid": "6216481b06b6822fb4ce0d1d"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "payment",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "CustomerDemo release milestone payment of €70000",
+  "title": "This is second title",
+  "link": "6216481a06b6822fb4ce0d18",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:43:39.603Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:43:39.603Z"
+  }
+},{
+  "_id": {
+    "$oid": "62164c15b663b93680d556e9"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "milestone",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Usama Developer change milestone status to completed",
+  "title": "This is second title",
+  "link": "62163c9f5ab180364c5b0f0f",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T15:00:37.924Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T15:00:37.924Z"
+  }
+},{
+  "_id": {
+    "$oid": "62164c1fb663b93680d556ef"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "milestone",
+  "message": "Usama Developer create milestone release request.",
+  "title": "This is second title",
+  "link": "62163c9f5ab180364c5b0f0f",
+  "createdAt": {
+    "$date": "2022-02-23T15:00:47.041Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T15:00:47.041Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62164f20d9385e122c5a8e27"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "payment",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "CustomerDemo release milestone payment of €10000",
+  "title": "This is second title",
+  "link": "62164f1ed9385e122c5a8e22",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T15:13:36.324Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T15:13:36.324Z"
+  }
+},{
+  "_id": {
+    "$oid": "621910669b54886638062e76"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "test freelancer Registered as freelancer",
+  "title": "New registration",
+  "link": "621910669b54886638062e73",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-25T17:22:46.928Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-25T17:22:46.928Z"
+  }
+},{
+  "_id": {
+    "$oid": "6219110f9b54886638062e7c"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "free freelancer Registered as freelancer",
+  "title": "New registration",
+  "link": "6219110e9b54886638062e79",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-25T17:25:35.501Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-25T17:25:35.501Z"
+  }
+},{
+  "_id": {
+    "$oid": "621912835724b343a874a6ff"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "free freelancer Registered as freelancer",
+  "title": "New registration",
+  "link": "621912825724b343a874a6fc",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-25T17:31:47.542Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-25T17:31:47.542Z"
+  }
+},{
+  "_id": {
+    "$oid": "621cca97dfe4d23f8c33a683"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621cca96dfe4d23f8c33a680",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:13:59.306Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:13:59.306Z"
+  }
+},{
+  "_id": {
+    "$oid": "621ccad869ff925f1c53bde6"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621ccad769ff925f1c53bde3",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:15:04.700Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:15:04.700Z"
+  }
+},{
+  "_id": {
+    "$oid": "621ccb3efb64e94a5c8ccb46"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621ccb3dfb64e94a5c8ccb43",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:16:46.109Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:16:46.109Z"
+  }
+},{
+  "_id": {
+    "$oid": "621ccbacfb64e94a5c8ccb4c"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621ccbabfb64e94a5c8ccb49",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:18:36.240Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:18:36.240Z"
+  }
+},{
+  "_id": {
+    "$oid": "621ccbf9f3e98b1724c1bde3"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621ccbf8f3e98b1724c1bde0",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:19:53.489Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:19:53.489Z"
+  }
+},{
+  "_id": {
+    "$oid": "621ccc1ff3e98b1724c1bdec"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621ccc1ef3e98b1724c1bde9",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:20:31.238Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:20:31.238Z"
+  }
+},{
+  "_id": {
+    "$oid": "621ccc5d15514612a076a29c"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621ccc5d15514612a076a299",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:21:33.735Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:21:33.735Z"
+  }
+},{
+  "_id": {
+    "$oid": "621cccbfed9fc06060989f75"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621cccbeed9fc06060989f72",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:23:11.376Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:23:11.376Z"
+  }
+},{
+  "_id": {
+    "$oid": "621ccd454d8b1b4fec989563"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621ccd444d8b1b4fec989560",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:25:25.322Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:25:25.322Z"
+  }
+},{
+  "_id": {
+    "$oid": "621ccd795dc9ac6784042b5d"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621ccd795dc9ac6784042b5a",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:26:17.924Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:26:17.924Z"
+  }
+},{
+  "_id": {
+    "$oid": "621ccf4e58098763506dfc42"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621ccf4d58098763506dfc3f",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:34:06.499Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:34:06.499Z"
+  }
+},{
+  "_id": {
+    "$oid": "621ccfa958098763506dfc48"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621ccfa858098763506dfc45",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:35:37.042Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:35:37.042Z"
+  }
+},{
+  "_id": {
+    "$oid": "621cd415b8436b61a8164f5c"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621cd414b8436b61a8164f59",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:54:29.813Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:54:29.813Z"
+  }
+},{
+  "_id": {
+    "$oid": "621cd4e4b995f65434f69aef"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621cd4e3b995f65434f69aec",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:57:56.778Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:57:56.778Z"
+  }
+},{
+  "_id": {
+    "$oid": "621cd50c81513d46d0b32db8"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621cd50b81513d46d0b32db5",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T13:58:36.758Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:58:36.758Z"
+  }
+},{
+  "_id": {
+    "$oid": "621cd5d49fc6415f2ca0ee18"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Hamza Rehmanullah Registered as freelancer",
+  "title": "New registration",
+  "link": "621cd5d39fc6415f2ca0ee15",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T14:01:56.527Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T14:01:56.527Z"
+  }
+},{
+  "_id": {
+    "$oid": "621cde0098ab6960909bc1d4"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Taha Afzal Registered as freelancer",
+  "title": "New registration",
+  "link": "621cddff98ab6960909bc1d1",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T14:36:48.659Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T14:36:48.659Z"
+  }
+},{
+  "_id": {
+    "$oid": "621cdf0398ab6960909bc1dc"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Raza Amjad Registered as freelancer",
+  "title": "New registration",
+  "link": "621cdf0298ab6960909bc1d9",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T14:41:07.255Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T14:41:07.255Z"
+  }
+},{
+  "_id": {
+    "$oid": "621ce04d98ab6960909bc1e4"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "usama amjad Registered as freelancer",
+  "title": "New registration",
+  "link": "621ce04c98ab6960909bc1e1",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T14:46:37.075Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T14:46:37.075Z"
+  }
+},{
+  "_id": {
+    "$oid": "621cec9f3b52c138643ca06e"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Iyushman khurana Registered as freelancer",
+  "title": "New registration",
+  "link": "621cec9f3b52c138643ca06b",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-28T15:39:11.955Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T15:39:11.955Z"
+  }
+},{
+  "_id": {
+    "$oid": "6225f9c90ff0576f54ca30ec"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Ramiz Registered as freelancer",
+  "title": "New registration",
+  "link": "6225f9c80ff0576f54ca30e9",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-07T12:25:45.363Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T12:25:45.363Z"
+  }
+},{
+  "_id": {
+    "$oid": "62260118c0de1902f8ad0392"
+  },
+  "isReaded": false,
+  "notificationType": "user",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "Abdul Hai Registered as customer",
+  "title": "New registration",
+  "link": "62260117c0de1902f8ad038f",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-07T12:56:56.243Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T12:56:56.243Z"
+  }
+},{
+  "_id": {
+    "$oid": "622604e2c0de1902f8ad03c8"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "proposal",
+  "message": "Usama Developer submit new proposal.",
+  "title": "I will build you house on this proposal",
+  "link": "622604e1c0de1902f8ad03b7",
+  "createdAt": {
+    "$date": "2022-03-07T13:13:06.686Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T13:13:06.686Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6226055ec0de1902f8ad03db"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "project",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "New project posted by CustomerDemo",
+  "title": "Build me a three story house again.",
+  "link": "6226055ec0de1902f8ad03d8",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-07T13:15:10.559Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T13:15:10.559Z"
+  }
+},{
+  "_id": {
+    "$oid": "62260581c0de1902f8ad03f0"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "proposal",
+  "message": "Usama Developer submit new proposal.",
+  "title": "I will build you house again on this proposal",
+  "link": "6226057fc0de1902f8ad03df",
+  "createdAt": {
+    "$date": "2022-03-07T13:15:45.246Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T13:15:45.246Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622605a7c0de1902f8ad0404"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "payment",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "CustomerDemo payed €40000 proposal.",
+  "title": "Onboarding payment",
+  "link": "622605a6c0de1902f8ad03fe",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-07T13:16:23.539Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T13:16:23.539Z"
+  }
+},{
+  "_id": {
+    "$oid": "622605a7c0de1902f8ad0407"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "proposal",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "CustomerDemo accepted proposal.",
+  "title": "I will build you house again on this proposal",
+  "link": "6226057fc0de1902f8ad03df",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-07T13:16:23.968Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T13:16:23.968Z"
+  }
+},{
+  "_id": {
+    "$oid": "62261e112902030ee00680e5"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "notificationType": "milestone",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "FreelancerDemo change milestone status to completed",
+  "title": "Onboarding payment",
+  "link": "62163cea5ab180364c5b0f22",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-07T15:00:33.754Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:00:33.754Z"
+  }
+},{
+  "_id": {
+    "$oid": "62261e2c2902030ee00680fa"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "notificationType": "milestone",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "FreelancerDemo created widthdrawl request on milestone.",
+  "title": "Onboarding payment",
+  "link": "62163cea5ab180364c5b0f22",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-07T15:01:00.637Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:01:00.637Z"
+  }
+},{
+  "_id": {
+    "$oid": "62261fb852ae0e50d8614c95"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "milestone",
+  "message": "paid",
+  "title": "Onboarding payment",
+  "link": "62163e8586a80d5a8427a7fe",
+  "createdAt": {
+    "$date": "2022-03-07T15:07:36.067Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:07:36.067Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622623236643c768b4969bac"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "milestone",
+  "message": "paid",
+  "title": "Onboarding payment",
+  "link": "62163e8586a80d5a8427a7fe",
+  "createdAt": {
+    "$date": "2022-03-07T15:22:11.759Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:22:11.759Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6226239bb63ba750d42d2a29"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "milestone",
+  "message": "paid",
+  "title": "Onboarding payment",
+  "link": "62163e8586a80d5a8427a7fe",
+  "createdAt": {
+    "$date": "2022-03-07T15:24:11.629Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:24:11.629Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622623e5e08c8144ac8bd414"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "milestone",
+  "message": "paid",
+  "title": "Onboarding payment",
+  "link": "62163e8586a80d5a8427a7fe",
+  "createdAt": {
+    "$date": "2022-03-07T15:25:25.232Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:25:25.232Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6226240169dfc5578c953582"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "milestone",
+  "message": "paid",
+  "title": "Onboarding payment",
+  "link": "62163e8586a80d5a8427a7fe",
+  "createdAt": {
+    "$date": "2022-03-07T15:25:53.268Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:25:53.268Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622624253cc2926a9ce5ae6f"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "milestone",
+  "message": "paid",
+  "title": "Onboarding payment",
+  "link": "62163e8586a80d5a8427a7fe",
+  "createdAt": {
+    "$date": "2022-03-07T15:26:29.134Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:26:29.134Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622624628a31455ac8e216f9"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "notificationType": "milestone",
+  "message": "paid",
+  "title": "Onboarding payment",
+  "link": "62163e8586a80d5a8427a7fe",
+  "createdAt": {
+    "$date": "2022-03-07T15:27:30.565Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:27:30.565Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622a0b0d91b18331dc13d409"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cd683a5cf280de46ad0a2"
+  },
+  "notificationType": "project",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "New project posted by Demo Customer",
+  "title": "This is first project",
+  "link": "622a0b0d91b18331dc13d406",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-10T14:28:29.696Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-10T14:28:29.696Z"
+  }
+},{
+  "_id": {
+    "$oid": "622a0b7491b18331dc13d40f"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cd683a5cf280de46ad0a2"
+  },
+  "notificationType": "project",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "New project posted by Demo Customer",
+  "title": "This is second project",
+  "link": "622a0b7391b18331dc13d40c",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-10T14:30:12.016Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-10T14:30:12.016Z"
+  }
+},{
+  "_id": {
+    "$oid": "6230aef9f325175e385efaa9"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "project",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "New project posted by CustomerDemo",
+  "title": "Test project.",
+  "link": "6230aef8f325175e385efaa6",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-15T15:21:29.521Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:21:29.521Z"
+  }
+},{
+  "_id": {
+    "$oid": "6230af21f325175e385efabe"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "notificationType": "proposal",
+  "message": "admin submit new proposal.",
+  "title": "Test Proposal",
+  "link": "6230af20f325175e385efaad",
+  "createdAt": {
+    "$date": "2022-03-15T15:22:09.882Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:22:09.882Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6230af37f325175e385efad3"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "notificationType": "proposal",
+  "message": "admin submit new proposal.",
+  "title": "Test Proposal",
+  "link": "6230af36f325175e385efac2",
+  "createdAt": {
+    "$date": "2022-03-15T15:22:31.617Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:22:31.617Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6230b1adf325175e385efade"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "payment",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "CustomerDemo payed €40000 proposal.",
+  "title": "Onboarding payment",
+  "link": "6230b1acf325175e385efad9",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-15T15:33:01.505Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:33:01.505Z"
+  }
+},{
+  "_id": {
+    "$oid": "6230b1adf325175e385efae1"
+  },
+  "isReaded": false,
+  "sender": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "notificationType": "proposal",
+  "receiver": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "message": "CustomerDemo accepted proposal.",
+  "title": "Test Proposal",
+  "link": "6230af36f325175e385efac2",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-03-15T15:33:01.984Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:33:01.984Z"
+  }
+}]

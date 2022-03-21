@@ -330,7 +330,7 @@ exports.CustomerActionOnProposal = catchAsync(async (req, res, next) => {
 });
 
 //FREELANCER ACCEPT OR REJECT PROPOSAL
-//ON ACCEPT -->> PROJECT AUTOMATICLLY ASSIGNED TO THAT FREELANCER
+//ON ACCEPT -->> PROJECT ASSIGNED TO THAT FREELANCER
 //ON ACCEPT -->> CHAT ROOM WILL BE CREATED FOR ADMIN AND FREELANCER
 exports.FreelancerActionOnProposal = catchAsync(async (req, res, next) => {
   const requiredFromRequest = ["status", "proposalId"];
