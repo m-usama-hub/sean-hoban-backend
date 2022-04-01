@@ -63,9 +63,9 @@ exports.protect = catchAsync(async (req, res, next) => {
     );
 
   // 4) Check if user changed password after the token was issued
-  if (currentUser.changedPasswordAfter(decoded.iat)) {
-    return next(new AppError("Please login on a single device.", 501));
-  }
+  // if (currentUser.changedPasswordAfter(decoded.iat)) {
+  //   return next(new AppError("Please login on a single device.", 501));
+  // }
 
   // GRANT ACCESS TO PROTECTED ROUTE
   req.user = currentUser;

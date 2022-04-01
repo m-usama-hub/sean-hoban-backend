@@ -20,8 +20,8 @@ router
   .post(projectController.CustomerPayToAdmin);
 
 router.route("/post-project").post(
-  // uploadUserImage,
-  // uploadUserPDfs,
+  uploadUserImage,
+  uploadUserPDfs,
   projectController.createProject
 );
 
