@@ -4,7 +4,11 @@ const CustomerController = require("../controllers/CustomerController");
 const projectController = require("../controllers/projectController");
 const RouteService = require("../services/RouteService");
 const catchAsync = require("../utils/catchAsync");
-const { uploadUserImage, uploadUserPDfs } = require("../utils/s3");
+const {
+  uploadUserImage,
+  uploadUserPDfs,
+  uploadUserFiles,
+} = require("../utils/s3");
 
 const router = express.Router();
 
@@ -19,11 +23,9 @@ router
   .route("/customer-Pay-to-admin")
   .post(projectController.CustomerPayToAdmin);
 
-router.route("/post-project").post(
-  uploadUserImage,
-  uploadUserPDfs,
-  projectController.createProject
-);
+router
+  .route("/post-project")
+  .post(uploadUserFiles, projectController.createProject);
 
 router
   .route("/get-project-proposals")

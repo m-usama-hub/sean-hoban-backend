@@ -21,11 +21,13 @@ exports.createProject = catchAsync(async (req, res, next) => {
   postProject.postedBy = req.user._id;
 
   if (files?.pdfs) {
-    postProject.pdfs = ProjectService.uploadPdfs(files?.pdfs);
+    postProject.pdfs = await ProjectService.uploadPdfs(files?.pdfs);
   }
 
   if (files?.projectImages) {
-    postProject.images = ProjectService.uploadImages(files?.projectImages);
+    postProject.images = await ProjectService.uploadImages(
+      files?.projectImages
+    );
   }
 
   let newproject = await Project.create(postProject);

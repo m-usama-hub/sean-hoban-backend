@@ -4,10 +4,11 @@ const multerS3 = require("multer-s3");
 const { v4: uuidv4 } = require("uuid");
 require("dotenv").config();
 const AppError = require("./appError");
+const path = require("path");
 
 const imageBucket = process.env.AWS_PDF_BUCKET_NAME;
+const fileBucket = process.env.AWS_FILE_BUCKET_NAME;
 const pdfBucket = process.env.AWS_PDF_BUCKET_NAME;
-const videoBucket = process.env.AWS_BUCKET_NAME;
 const region = process.env.AWS_BUCKET_REGION;
 const accessKeyId = process.env.AWS_ACCESS_KEY;
 const secretAccessKey = process.env.AWS_SECRET_KEY;
@@ -17,43 +18,6 @@ const s3 = new S3({
   accessKeyId,
   secretAccessKey,
 });
-
-exports.getDownloadingSignedURL = async (key) => {
-  try {
-    const url = await s3.getSignedUrlPromise("getObject", {
-      Bucket: videoBucket,
-      Key: key,
-      // Expires: 30, // in seconds
-      Expires: 15004, // in seconds
-      ResponseContentType: "video/mp4",
-    });
-    return url;
-  } catch (error) {
-    return error;
-  }
-};
-
-exports.getUploadingSignedURL = async (Key, Expires = 15004) => {
-  try {
-    console.log({
-      UUID: `${uuidv4()}-video.mp4`,
-      region,
-      accessKeyId,
-      secretAccessKey,
-      videoBucket,
-      Key,
-    });
-    const url = await s3.getSignedUrlPromise("putObject", {
-      Bucket: videoBucket,
-      Key: Key,
-      // Expires: 60 * 2, // in seconds
-      Expires, // in seconds {25 mints}
-    });
-    return url;
-  } catch (error) {
-    return error;
-  }
-};
 
 const multerPdfFilter = (req, file, cb) => {
   if (
@@ -182,76 +146,46 @@ exports.uploadUserImage = uploadImage.fields([
   },
 ]);
 
-/* 
-// uploads a file to s3
-function uploadFile(file) {
-  const fileStream = fs.createReadStream(file.path);
+const uploadFiles = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: fileBucket,
+    metadata: function (req, file, cb) {
+      cb(null, { fieldName: file.fieldname });
+    },
+    key: function (req, file, cb) {
+      cb(null, `${uuidv4()+path.extname(file.originalname)}`);
+    },
+  }),
+  limits: { fileSize: 20000000 }, // In bytes: 3000000 bytes = 3 MB // 20000000 bytes = 20 MB
+  fileFilter: multerPdfFilter,
+});
 
-  const uploadParams = {
-    Bucket: bucketName,
-    Body: fileStream,
-    Key: file.filename,
-  };
+exports.uploadUserFiles = uploadFiles.fields([
+  {
+    name: "pdfs",
+    maxCount: 10,
+  },
+  {
+    name: "projectImages",
+    maxCount: 10,
+  },
+]);
 
-  return s3.upload(uploadParams).promise();
-}
-exports.uploadFile = uploadFile;
- */
-// downloads a file from s3
-
-function getFileStream(fileKey) {
+exports.getFileStream = (fileKey) => {
   const downloadParams = {
     Key: fileKey,
-    Bucket: imageBucket,
+    Bucket: fileBucket,
   };
 
   return s3.getObject(downloadParams).createReadStream();
-}
-exports.getFileStream = getFileStream;
+};
 
-exports.deleteImage = (fileKey) => {
+exports.deleteFile = (fileKey) => {
   const deleteParams = {
     Key: fileKey,
-    Bucket: imageBucket,
+    Bucket: fileBucket,
   };
 
   return s3.deleteObject(deleteParams).promise();
 };
-
-exports.deleteVideo = (fileKey) => {
-  const deleteParams = {
-    Key: fileKey,
-    Bucket: videoBucket,
-  };
-
-  return s3.deleteObject(deleteParams).promise();
-};
-
-exports.deletePDF = (fileKey) => {
-  const deleteParams = {
-    Key: fileKey,
-    Bucket: pdfBucket,
-  };
-
-  return s3.deleteObject(deleteParams).promise();
-};
-
-function getPDFFileStream(fileKey) {
-  const downloadParams = {
-    Key: fileKey,
-    Bucket: pdfBucket,
-  };
-
-  return s3.getObject(downloadParams).createReadStream();
-}
-
-function getvideoFileStream(fileKey) {
-  const downloadParams = {
-    Key: fileKey,
-    Bucket: videoBucket,
-  };
-
-  return s3.getObject(downloadParams).createReadStream();
-}
-exports.getvideoFileStream = getvideoFileStream;
-exports.getPDFFileStream = getPDFFileStream;
