@@ -39,6 +39,7 @@ router
 router.route("/dashboardData").get(adminController.dashboardData);
 
 router.route("/payments").get(adminController.payments);
+router.route("/widthdrawlRequests").get(adminController.widthdrawlRequests);
 router.route("/assignProject").get(adminController.getAssignProject);
 router.route("/postedProjects").get(adminController.getPostedProjects);
 router.route("/projectDetails").get(adminController.getProjectDetails);

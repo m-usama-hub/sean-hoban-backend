@@ -192,6 +192,13 @@ exports.payments = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.widthdrawlRequests = catchAsync(async (req, res, next) => {
+  res.status(200).json({
+    status: "success",
+    data: GetMilestonesRequestedForWidthdrawl(),
+  });
+});
+
 exports.getAssignProject = catchAsync(async (req, res, next) => {
   let data = await GetAssignedProjects();
 
