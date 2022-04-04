@@ -5,24 +5,24 @@ const projectController = require("../controllers/projectController");
 const adminController = require("../controllers/adminController");
 const RouteService = require("../services/RouteService");
 const catchAsync = require("../utils/catchAsync");
-const { uploadUserImage, uploadUserPDfs } = require("../utils/s3");
+const {
+  uploadUserImage,
+  uploadUserPDfs,
+  uploadUserFiles,
+} = require("../utils/s3");
 
 const router = express.Router();
 
 router.use(RouteService.protect);
 router.use(RouteService.restrictTo("admin", "super-admin"));
 
-router.route("/submit-porposal-to-customer").post(
-  // uploadUserImage,
-  // uploadUserPDfs,
-  projectController.submitPurposalToCustomer
-);
+router
+  .route("/submit-porposal-to-customer")
+  .post(uploadUserFiles, projectController.submitPurposalToCustomer);
 
-router.route("/submit-porposal-to-freelancer").post(
-  // uploadUserImage,
-  // uploadUserPDfs,
-  projectController.submitPurposalToFreelancer
-);
+router
+  .route("/submit-porposal-to-freelancer")
+  .post(uploadUserFiles, projectController.submitPurposalToFreelancer);
 
 router
   .route("/update-milestone-payment-status")

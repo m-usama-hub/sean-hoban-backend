@@ -33,3 +33,11 @@ exports.uploadPdfs = async (pdfs) => {
 
   return uploadedPdfs;
 };
+exports.uploadDocs = async (docs) => {
+  let uploadedDocs = docs.reduce((acc, cur) => {
+    acc.push(cur.key);
+    return acc;
+  }, []);
+
+  return uploadedDocs;
+};

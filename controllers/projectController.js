@@ -73,6 +73,14 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
   proposalDetails.sendTo = userId;
   proposalDetails.milestones = proposalMilestones;
 
+  let docs = [];
+
+  if (files?.docs) {
+    docs = await ProjectService.uploadDocs(files?.docs);
+  }
+
+  proposalDetails.docs = docs;
+
   await Proposal.updateMany(
     { projectId, sendTo: userId },
     { status: "rejected" }
@@ -136,6 +144,7 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
   const { projectId } = req.query;
 
   let { proposalDetails, proposalMilestones, userIds } = req.body;
+  let { files } = req;
 
   proposalDetails.milestones = proposalMilestones;
   proposalDetails.projectId = projectId;
@@ -147,9 +156,14 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
 
   var Proposals = [];
   var notifications = [];
+  let docs = [];
+
+  if (files?.docs) {
+    docs = await ProjectService.uploadDocs(files?.docs);
+  }
 
   userIds.map((id) => {
-    Proposals.push({ ...proposalDetails, sendTo: id });
+    Proposals.push({ ...proposalDetails, sendTo: id, docs });
   });
 
   console.log({ Proposals });

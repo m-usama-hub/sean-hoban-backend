@@ -154,7 +154,7 @@ const uploadFiles = multer({
       cb(null, { fieldName: file.fieldname });
     },
     key: function (req, file, cb) {
-      cb(null, `${uuidv4()+path.extname(file.originalname)}`);
+      cb(null, `${uuidv4() + path.extname(file.originalname)}`);
     },
   }),
   limits: { fileSize: 20000000 }, // In bytes: 3000000 bytes = 3 MB // 20000000 bytes = 20 MB
@@ -169,6 +169,10 @@ exports.uploadUserFiles = uploadFiles.fields([
   {
     name: "projectImages",
     maxCount: 10,
+  },
+  {
+    name: "docs",
+    maxCount: 20,
   },
 ]);
 
