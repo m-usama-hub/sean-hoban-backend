@@ -210,19 +210,6 @@ exports.getPostedProjects = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getProjectDetails = catchAsync(async (req, res, next) => {
-  console.log(req.query.projectId);
-  let data = await Project.findById(req.query.projectId)
-    .populate("porposalsForCustomer")
-    .populate("porposalsForFreelancer")
-    .populate("postedBy");
-
-  res.status(200).json({
-    status: "success",
-    data,
-  });
-});
-
 exports.getAllWorkers = catchAsync(async (req, res, next) => {
   let users = await User.find({ role: "customer" })
     .select({

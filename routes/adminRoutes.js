@@ -41,7 +41,7 @@ router.route("/dashboardData").get(adminController.dashboardData);
 router.route("/payments").get(adminController.payments);
 router.route("/assignProject").get(adminController.getAssignProject);
 router.route("/postedProjects").get(adminController.getPostedProjects);
-router.route("/projectDetails").get(adminController.getProjectDetails);
+// router.route("/projectDetails").get(adminController.getProjectDetails);
 router.route("/workers").get(adminController.getAllWorkers);
 router.route("/contractors").get(adminController.getAllContractor);
 
