@@ -1,5 +1,6 @@
 const multer = require("multer");
 const User = require("../models/userModel");
+const Project = require("../models/projectModel");
 const catchAsync = require("../utils/catchAsync");
 const factory = require("../controllers/handlerFactory");
 const AppError = require("../utils/appError");
@@ -140,6 +141,20 @@ exports.updateSubscription = catchAsync(async (req, res, next) => {
     status: "success",
     data,
   });
+});
+
+
+exports.getProjectDetails = catchAsync(async (req, res, next) => {
+console.log(req.query.projectId);
+let data = await Project.findById(req.query.projectId)
+  .populate("porposalsForCustomer")
+  .populate("porposalsForFreelancer")
+  .populate("postedBy");
+
+res.status(200).json({
+  status: "success",
+  data,
+});
 });
 
 exports.getUser = factory.getOne(User);

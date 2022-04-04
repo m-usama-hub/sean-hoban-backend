@@ -74,6 +74,8 @@ router
   .route("/detach-payment-methods")
   .post(RouteService.restrictTo("customer"), deattachPaymentMethod);
 
+router.route("/projectDetails").get(userController.getProjectDetails);
+
 // router.route('/product/all').get(productList);
 
 // router
