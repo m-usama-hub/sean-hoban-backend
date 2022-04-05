@@ -11,6 +11,7 @@ const { filterObj } = require("../utils/fn");
 const ProjectService = require("../services/ProjectService");
 const StripeService = require("../services/StripeService");
 const notification = require("../services/NotificationService");
+const PdfGeneratingService = require("../services/PdfGeneratingService");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 

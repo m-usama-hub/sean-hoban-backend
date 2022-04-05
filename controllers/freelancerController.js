@@ -69,7 +69,8 @@ exports.assignProjects = catchAsync(async (req, res, next) => {
     assignTo: req.user._id,
   })
     .sort("-createdAt")
-    .populate("porposalsForFreelancer");
+    .populate("porposalsForFreelancer")
+    .populate("accecptedPorposalByFreelancer");
 
   res.status(200).json({
     status: "success",
