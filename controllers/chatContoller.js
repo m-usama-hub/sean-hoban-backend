@@ -114,7 +114,7 @@ exports.getAllMsg = catchAsync(async (req, res, next) => {
   if (!projectId || !userId)
     return next(new AppError("Params are missing", 400));
 
-  let Room = Rooms.findOne({ projectId, user1: userId });
+  let Room = await Rooms.findOne({ projectId, user1: userId });
 
   const msg = await Chat.find({
     room: Room._id,
@@ -135,5 +135,6 @@ exports.getAllMsg = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     data: finalMessages,
+    room: Room
   });
 });

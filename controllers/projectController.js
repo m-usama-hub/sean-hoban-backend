@@ -541,7 +541,7 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
     next
   );
 
-  const { milestoneId, proposalId, ispaid } = req.query;
+  const { milestoneId, proposalId, ispaid } = req.body;
 
   let milestone;
   let proposal = await Proposal.findOne(
