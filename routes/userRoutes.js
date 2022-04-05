@@ -13,7 +13,11 @@ const {
   cancelSubscription,
   createSubscription,
 } = require("../utils/stripe");
-const { uploadUserImage, uploadUserPDfs } = require("../utils/s3");
+const {
+  uploadUserImage,
+  uploadUserPDfs,
+  uploadUserFiles,
+} = require("../utils/s3");
 
 /* const resizeUserPhoto = catchAsync(async (req, res, next) => {
   if (!req.file) return next();
@@ -33,6 +37,11 @@ const router = express.Router();
 router.route("/product/all").get(productList);
 
 router.post("/signup", authController.signup);
+router.post(
+  "/signup-with-project",
+  uploadUserFiles,
+  authController.signupWithProject
+);
 router.post("/forgotPassword", authController.forgotPassword);
 router.post("/login", authController.login);
 router.post("/admin-login", authController.adminLogin);

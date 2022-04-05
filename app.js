@@ -21,6 +21,7 @@ const freelancerRouter = require("./routes/freelancerRoutes");
 const chatRouter = require("./routes/chatRoutes");
 const notificationsRouter = require("./routes/notificationRoutes");
 const PdfGeneratingService = require("./services/PdfGeneratingService");
+const { getFileStream, getPDFFileStream } = require("./utils/s3");
 
 const User = require("./models/userModel");
 const Chat = require("./models/chatModel");
@@ -74,6 +75,52 @@ app.get("/", (req, res) => {
     message: "Welcome to Sean Hoban  APIs",
   });
 });
+
+// read images
+app.get("/api/images/:key", async (req, res) => {
+  try {
+    const key = req.params.key;
+    res.set("Content-type", "image/gif");
+
+    await getFileStream(key)
+      .on("error", (e) => {
+        // return res.status(404).json({
+        //   message: 'Image not Found.',
+        // });
+      })
+      .pipe(res);
+  } catch (e) {
+    return res.status(404).json({
+      message: "Image not found",
+    });
+  }
+});
+
+// fetching PDF from AWS
+app.get(
+  "/api/pdf/:key",
+  // protect,
+  // restrictTo('mechanic', 'super-admin', 'admin'),
+  async (req, res, next) => {
+    try {
+      const key = req.params.key;
+
+      // Content-type: application/pdf
+      res.header("Content-type", "application/pdf");
+      await getPDFFileStream(key)
+        .on("error", (e) => {
+          // return res.status(404).json({
+          //   message: 'Image not Found.',
+          // });
+        })
+        .pipe(res);
+    } catch (e) {
+      return res.status(404).json({
+        message: "Pdf not found",
+      });
+    }
+  }
+);
 
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/admin", adminRouter);

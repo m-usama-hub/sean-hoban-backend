@@ -18,6 +18,11 @@ exports.verifyMe = catchAsync(async (req, res, next) => {
     "isVerified"
   );
 
+  await Project.findOneAndUpdate(
+    { postedBy: id, isActive: false },
+    { isActive: true }
+  );
+
   res.render("emailVerified");
 });
 
@@ -143,18 +148,32 @@ exports.updateSubscription = catchAsync(async (req, res, next) => {
   });
 });
 
-
 exports.getProjectDetails = catchAsync(async (req, res, next) => {
-console.log(req.query.projectId);
-let data = await Project.findById(req.query.projectId)
-  .populate("porposalsForCustomer")
-  .populate("porposalsForFreelancer")
-  .populate("postedBy");
+  console.log(req.query.projectId);
+  let data = await Project.findById(req.query.projectId)
+    .populate({
+      path: "porposalsForCustomer",
+      populate: {
+        path: "sendTo",
+        model: "User",
+      },
+    })
+    .populate("accecptedPorposalByCustomer")
+    .populate({
+      path: "porposalsForFreelancer",
+      populate: {
+        path: "sendTo",
+        model: "User",
+      },
+    })
+    .populate("accecptedPorposalByFreelancer")
+    .populate("postedBy")
+    .populate("assignTo");
 
-res.status(200).json({
-  status: "success",
-  data,
-});
+  res.status(200).json({
+    status: "success",
+    data,
+  });
 });
 
 exports.getUser = factory.getOne(User);
