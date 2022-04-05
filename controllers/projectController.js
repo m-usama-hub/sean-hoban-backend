@@ -32,6 +32,14 @@ exports.createProject = catchAsync(async (req, res, next) => {
 
   let newproject = await Project.create(postProject);
 
+  let admin = await User.findOne({ role: "admin" });
+
+  await Chatroom.create({
+    user1: posted.sendTo,
+    user2: admin._id,
+    projectId: newproject._id,
+  });
+
   await notification.dispatchToAdmin(
     {
       type: "project",
@@ -101,12 +109,16 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
 
   let admin = await User.findOne({ role: "admin" });
 
-  await Chatroom.create({
-    user1: userId,
-    user2: admin._id,
-    projectId,
-    proposalId: postedPorposal._id,
-  });
+  await Chatroom.findOneAndUpdate(
+    { user1: userId, user2: admin._id, projectId },
+    {
+      user1: userId,
+      user2: admin._id,
+      projectId,
+      proposalId: postedPorposal._id,
+    },
+    { new: true, upsert: true }
+  );
 
   await notification.dispatch(
     {
@@ -167,13 +179,13 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
     Proposals.push({ ...proposalDetails, sendTo: id, docs });
   });
 
-  console.log({ Proposals });
-
   let postedPorposal = await Proposal.insertMany(Proposals);
 
   let postedProposalsId = [];
 
-  postedPorposal.forEach(function (posted) {
+  let admin = await User.findOne({ role: "admin" });
+
+  postedPorposal.forEach(async (posted) => {
     postedProposalsId.push(posted._id);
     notifications.push({
       type: "proposal",
@@ -182,7 +194,20 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
       title: posted.title,
       typeId: posted._id,
     });
+
+    await Chatroom.findOneAndUpdate(
+      { user1: posted.sendTo, user2: admin._id, projectId: posted.projectId },
+      {
+        user1: posted.sendTo,
+        user2: admin._id,
+        projectId: posted.projectId,
+        proposalId: posted._id,
+      },
+      { new: true, upsert: true }
+    );
   });
+
+  console.log({ postedPorposal });
 
   await Project.findByIdAndUpdate(
     projectId,
@@ -409,12 +434,16 @@ exports.FreelancerActionOnProposal = catchAsync(async (req, res, next) => {
 
     let admin = await User.findOne({ role: "admin" });
 
-    await Chatroom.create({
-      user1: admin._id,
-      user2: req.user._id,
-      projectId: proposal.projectId,
-      proposalId: proposalId,
-    });
+    await Chatroom.findOneAndUpdate(
+      { user1: req.user._id, user2: admin._id, projectId: proposal.projectId },
+      {
+        user1: req.user._id,
+        user2: admin._id,
+        projectId: proposal.projectId,
+        proposalId: proposalId,
+      },
+      { new: true, upsert: true }
+    );
   }
 
   let UpdatedProposal = await Proposal.findByIdAndUpdate(

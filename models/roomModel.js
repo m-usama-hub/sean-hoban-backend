@@ -8,6 +8,7 @@ const RoomSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    //User2 is admin
     user2: {
       type: mongoose.Schema.ObjectId,
       ref: "User",
@@ -21,7 +22,6 @@ const RoomSchema = new mongoose.Schema(
     proposalId: {
       type: mongoose.Schema.ObjectId,
       ref: "Proposal",
-      required: true,
     },
     user1UnreadCount: {
       type: Number,

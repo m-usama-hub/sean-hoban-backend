@@ -108,15 +108,16 @@ exports.sendNewMsg = catchAsync(async (req, res, next) => {
 exports.getAllMsg = catchAsync(async (req, res, next) => {
   const limit = req.query.limit * 1 || 30;
   const skip = req.query.skip * 1 || 0;
-  const { roomId } = req.query;
+  const { roomId, projectId, userId } = req.query;
   let finalMessages = [];
 
-  console.log({ roomId }); //6177d90a1abbcd3cdc2ec84f
+  if (!projectId || !userId)
+    return next(new AppError("Params are missing", 400));
 
-  if (!roomId) return next(new AppError("Params are missing", 400));
+  let Room = Rooms.findOne({ projectId, user1: userId });
 
   const msg = await Chat.find({
-    room: roomId,
+    room: Room._id,
   })
     .select("message -_id")
     .sort("-createdAt")
