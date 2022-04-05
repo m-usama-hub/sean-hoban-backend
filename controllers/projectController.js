@@ -56,6 +56,7 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
     "proposalDetails",
     "proposalMilestones",
   ];
+  let { files } = req;
 
   let dataInRequest = { ...req.query, ...req.body };
 
@@ -366,7 +367,7 @@ exports.FreelancerActionOnProposal = catchAsync(async (req, res, next) => {
     _id: proposal.projectId,
   });
 
-  if (project?.assignTo.equals(req.user._id))
+  if (project?.assignTo?.equals(req.user._id))
     return next(new AppError("Already assign to you.", 403));
 
   if (project?.assignTo)
