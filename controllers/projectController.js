@@ -36,7 +36,7 @@ exports.createProject = catchAsync(async (req, res, next) => {
   let admin = await User.findOne({ role: "admin" });
 
   await Chatroom.create({
-    user1: posted.sendTo,
+    user1: req.user._id,
     user2: admin._id,
     projectId: newproject._id,
   });
