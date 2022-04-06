@@ -1,6 +1,6 @@
 const express = require("express");
 // const userController = require("../controllers/userController");
-const CustomerController = require("../controllers/CustomerController");
+const CustomerController = require("../controllers/customerController");
 const projectController = require("../controllers/projectController");
 const RouteService = require("../services/RouteService");
 const catchAsync = require("../utils/catchAsync");
