@@ -85,7 +85,7 @@ const GetMilestonesRequestedForWidthdrawl = async () => {
     proposal.milestones.forEach(function (milestone) {
       milestones.push({
         status: milestone.isMilestonePaid ? "Paid" : "Pending",
-        amnout: milestone.amount,
+        amount: milestone.amount,
         title: milestone.title,
         _id: milestone._id,
         requestedAt: milestone.widthDrawlRequestedAt,
@@ -154,10 +154,13 @@ const GetWebsiteStats = async () => {
     // },
   ]);
 
+  let payments = "38k";
+
   return {
     Total: await Project.count(),
     Assigned: await Project.find({ isAssigned: true }).count(),
-    Open: await Project.find({ status: "underReview" }).count(),
+    "Open to work": await Project.find({ status: "underReview" }).count(),
+    "Awaiting Payments": payments,
     Completed: await Project.find({ status: "completed" }).count(),
     Earnings,
   };
@@ -189,6 +192,13 @@ exports.payments = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.widthdrawlRequests = catchAsync(async (req, res, next) => {
+  res.status(200).json({
+    status: "success",
+    data: GetMilestonesRequestedForWidthdrawl(),
+  });
+});
+
 exports.getAssignProject = catchAsync(async (req, res, next) => {
   let data = await GetAssignedProjects();
 
@@ -200,16 +210,6 @@ exports.getAssignProject = catchAsync(async (req, res, next) => {
 
 exports.getPostedProjects = catchAsync(async (req, res, next) => {
   let data = await Project.find().sort("-createdAt");
-
-  res.status(200).json({
-    status: "success",
-    data,
-  });
-});
-
-exports.getProjectDetails = catchAsync(async (req, res, next) => {
-  console.log(req.query.projectId);
-  let data = await Project.findById(req.query.projectId);
 
   res.status(200).json({
     status: "success",

@@ -5,6 +5,11 @@ const projectController = require("../controllers/projectController");
 const adminController = require("../controllers/adminController");
 const RouteService = require("../services/RouteService");
 const catchAsync = require("../utils/catchAsync");
+const {
+  uploadUserImage,
+  uploadUserPDfs,
+  uploadUserFiles,
+} = require("../utils/s3");
 
 const router = express.Router();
 
@@ -13,11 +18,11 @@ router.use(RouteService.restrictTo("admin", "super-admin"));
 
 router
   .route("/submit-porposal-to-customer")
-  .post(projectController.submitPurposalToCustomer);
+  .post(uploadUserFiles, projectController.submitPurposalToCustomer);
 
 router
   .route("/submit-porposal-to-freelancer")
-  .post(projectController.submitPurposalToFreelancer);
+  .post(uploadUserFiles, projectController.submitPurposalToFreelancer);
 
 router
   .route("/update-milestone-payment-status")
@@ -34,9 +39,10 @@ router
 router.route("/dashboardData").get(adminController.dashboardData);
 
 router.route("/payments").get(adminController.payments);
+router.route("/widthdrawlRequests").get(adminController.widthdrawlRequests);
 router.route("/assignProject").get(adminController.getAssignProject);
 router.route("/postedProjects").get(adminController.getPostedProjects);
-router.route("/projectDetails").get(adminController.getProjectDetails);
+// router.route("/projectDetails").get(adminController.getProjectDetails);
 router.route("/workers").get(adminController.getAllWorkers);
 router.route("/contractors").get(adminController.getAllContractor);
 

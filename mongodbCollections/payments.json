@@ -1,0 +1,220 @@
+[{
+  "_id": {
+    "$oid": "62164782d4ea15422007c805"
+  },
+  "currency": "eur",
+  "isPaymentVerified": true,
+  "amount": 70000,
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "proposalId": {
+    "$oid": "62163c9f5ab180364c5b0f0c"
+  },
+  "paymentMilestone": {
+    "isMilestonePaid": true,
+    "makeWidthDrawlRequest": false,
+    "makeReleaseRequest": false,
+    "status": "completed",
+    "_id": {
+      "$oid": "62163c9f5ab180364c5b0f0e"
+    },
+    "title": "This is second title",
+    "description": "This is second description",
+    "amount": 70000,
+    "createdAt": {
+      "$date": "2022-02-23T13:54:39.429Z"
+    },
+    "updatedAt": {
+      "$date": "2022-02-23T14:38:32.525Z"
+    }
+  },
+  "paymentMethod": "stripe",
+  "userId": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "createdAt": {
+    "$date": "2022-02-23T14:41:06.350Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:41:06.350Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6216481a06b6822fb4ce0d18"
+  },
+  "currency": "eur",
+  "isPaymentVerified": true,
+  "amount": 70000,
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "proposalId": {
+    "$oid": "62163c9f5ab180364c5b0f0c"
+  },
+  "paymentMilestone": {
+    "isMilestonePaid": true,
+    "makeWidthDrawlRequest": false,
+    "makeReleaseRequest": false,
+    "status": "completed",
+    "_id": {
+      "$oid": "62163c9f5ab180364c5b0f0e"
+    },
+    "title": "This is second title",
+    "description": "This is second description",
+    "amount": 70000,
+    "createdAt": {
+      "$date": "2022-02-23T13:54:39.429Z"
+    },
+    "updatedAt": {
+      "$date": "2022-02-23T14:41:06.807Z"
+    }
+  },
+  "paymentMethod": "stripe",
+  "userId": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "createdAt": {
+    "$date": "2022-02-23T14:43:38.650Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:43:38.650Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62164f1ed9385e122c5a8e22"
+  },
+  "currency": "eur",
+  "isPaymentVerified": true,
+  "amount": 10000,
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "proposalId": {
+    "$oid": "62163c9f5ab180364c5b0f0c"
+  },
+  "paymentMilestone": {
+    "isMilestonePaid": true,
+    "makeWidthDrawlRequest": false,
+    "makeReleaseRequest": true,
+    "status": "completed",
+    "_id": {
+      "$oid": "62163c9f5ab180364c5b0f0f"
+    },
+    "title": "This is second title",
+    "description": "This is second description",
+    "amount": 10000,
+    "createdAt": {
+      "$date": "2022-02-23T13:54:39.429Z"
+    },
+    "updatedAt": {
+      "$date": "2022-02-23T15:00:46.794Z"
+    },
+    "releaseRequestedAt": {
+      "$date": "2022-02-23T15:00:46.793Z"
+    }
+  },
+  "paymentMethod": "stripe",
+  "userId": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "createdAt": {
+    "$date": "2022-02-23T15:13:34.671Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T15:13:34.671Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622624628a31455ac8e216f7"
+  },
+  "currency": "eur",
+  "isPaymentVerified": true,
+  "amount": 40000,
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "proposalId": {
+    "$oid": "62163e8586a80d5a8427a7fd"
+  },
+  "paymentMilestone": {
+    "isMilestonePaid": true,
+    "makeWidthDrawlRequest": true,
+    "makeReleaseRequest": false,
+    "status": "completed",
+    "_id": {
+      "$oid": "62163e8586a80d5a8427a7fe"
+    },
+    "title": "Onboarding payment",
+    "description": "This is onboarding payment of milestone",
+    "amount": 40000,
+    "updatedAt": {
+      "$date": "2022-03-07T15:27:29.865Z"
+    },
+    "widthDrawlRequestedAt": {
+      "$date": "2022-02-23T14:16:30.170Z"
+    }
+  },
+  "paymentMethod": "cash",
+  "userId": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "reciverId": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "createdAt": {
+    "$date": "2022-03-07T15:27:30.326Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:27:30.326Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6230b1acf325175e385efad9"
+  },
+  "currency": "eur",
+  "isPaymentVerified": true,
+  "amount": 40000,
+  "projectId": {
+    "$oid": "6230aef8f325175e385efaa6"
+  },
+  "proposalId": {
+    "$oid": "6230af36f325175e385efac2"
+  },
+  "paymentMilestone": {
+    "isMilestonePaid": true,
+    "makeWidthDrawlRequest": false,
+    "makeReleaseRequest": true,
+    "status": "completed",
+    "_id": {
+      "$oid": "6230af36f325175e385efac3"
+    },
+    "title": "Onboarding payment",
+    "description": "This is onboarding payment of milestone",
+    "amount": 40000,
+    "createdAt": {
+      "$date": "2022-03-15T15:22:30.674Z"
+    },
+    "updatedAt": {
+      "$date": "2022-03-15T15:32:58.494Z"
+    },
+    "releaseRequestedAt": {
+      "$date": "2022-03-15T15:32:58.493Z"
+    }
+  },
+  "paymentMethod": "stripe",
+  "userId": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "createdAt": {
+    "$date": "2022-03-15T15:33:00.549Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:33:00.549Z"
+  },
+  "__v": 0
+}]

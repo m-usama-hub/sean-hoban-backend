@@ -1,0 +1,580 @@
+[{
+  "_id": {
+    "$oid": "620a7b4f391a6d54608f7633"
+  },
+  "role": "super-admin",
+  "fcmToken": [],
+  "isVerified": true,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-14T15:54:46.808Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "cus": "cus_L9PhX2TrC6wX90",
+  "name": "Usama Developer",
+  "email": "usama@dev.com",
+  "password": "$2a$12$rSCoJkTHfwa2ZxE9Ib2hzu74EWQZ602qPrB49elpRIia1fu/ZkEwi",
+  "createdAt": {
+    "$date": "2022-02-14T15:54:55.496Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-15T13:29:20.234Z"
+  },
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": "2022-02-15T13:29:19.233Z"
+  }
+},{
+  "_id": {
+    "$oid": "620cd683a5cf280de46ad0a2"
+  },
+  "role": "customer",
+  "fcmToken": [],
+  "isVerified": true,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-03-10T14:50:55.359Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "cus": "cus_LA5DcCahVtXLlj",
+  "name": "Demo Customer",
+  "email": "demo@customer.com",
+  "password": "$2a$12$H7IyXp5GRsdGEKEYoRdvHeUF9DnJ9GN8hU6GpsMQMcNHEyk/m6Y2y",
+  "createdAt": {
+    "$date": "2022-02-16T10:48:35.123Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-10T14:50:55.360Z"
+  },
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": "2022-03-10T13:46:33.524Z"
+  }
+},{
+  "_id": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "role": "customer",
+  "fcmToken": [],
+  "isVerified": true,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-03-07T14:51:59.147Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "cus": "cus_LA7KxNtOGMExej",
+  "name": "CustomerDemo",
+  "email": "customer@demo.com",
+  "password": "$2a$12$Otr7jDkjtIg2nwkwwQjhEeo96VJMgfXtgibkhecpFZzd2DLBz/rsi",
+  "createdAt": {
+    "$date": "2022-02-16T12:59:03.920Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:21:16.616Z"
+  },
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": "2022-03-15T15:21:15.615Z"
+  }
+},{
+  "_id": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": true,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-03-10T13:46:03.076Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "cus": "cus_LAAwnWmDqAcvd8",
+  "name": "FreelancerDemo",
+  "email": "freelancer@demo.com",
+  "password": "$2a$12$OukFg8NmWoNlWAXyvxvJcu0nOe9c2HCNh3d8lFO6ptr/vTLo./hy2",
+  "createdAt": {
+    "$date": "2022-02-16T16:43:16.958Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:19:05.165Z"
+  },
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": "2022-03-15T15:19:04.163Z"
+  }
+},{
+  "_id": {
+    "$oid": "620d2a12dbbd2d2d38e85c4e"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-16T16:42:28.985Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "cus": "cus_LAAy8NUHlJ4lvA",
+  "name": "freelancer2Demo",
+  "email": "freelancer2@demo.com",
+  "password": "$2a$12$DQcOnHmDee6y9tkOB81V6uJ7XByR4r3BYZb7YazerCDuGANl8FPTG",
+  "createdAt": {
+    "$date": "2022-02-16T16:45:06.351Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-16T16:45:06.351Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620d2a2fdbbd2d2d38e85c51"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-16T16:42:28.985Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "cus": "cus_LAAyFAK3QA91Iy",
+  "name": "freelancer3Demo",
+  "email": "freelancer3@demo.com",
+  "password": "$2a$12$WgMrtYCjOx/XGGwSAe6cZuyASnEtZ8ULdonPDjLEXeuD0fgW7qPGW",
+  "createdAt": {
+    "$date": "2022-02-16T16:45:35.940Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-16T16:45:35.940Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620d2a82dbbd2d2d38e85c55"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-16T16:42:28.985Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "cus": "cus_LAAznhptSVanUO",
+  "name": "freelancer4Demo",
+  "email": "freelancer4@demo.com",
+  "password": "$2a$12$MKQeXVWwdw0YzXRfCTDDHe7.t57mJ4JkFoJaMB.czmc1iYR6XDLYm",
+  "createdAt": {
+    "$date": "2022-02-16T16:46:58.226Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-16T16:46:58.226Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621394a5c4c9df5c4833935a"
+  },
+  "role": "admin",
+  "fcmToken": [],
+  "isVerified": true,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-21T13:28:56.186Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "cus": "cus_LC00DOiMg9so9A",
+  "name": "admin",
+  "email": "admin@admin.com",
+  "password": "$2a$12$oKjIPpwBMIveYvvDsYyof.9uwjFZUGIoxRNmiHdTUPUpgKGgHQOlG",
+  "createdAt": {
+    "$date": "2022-02-21T13:33:25.911Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-21T13:33:25.911Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6216255c973519699cc2820e"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-23T12:14:36.649Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "cus": "cus_LCjCRSNlNeJQFi",
+  "name": "Usama Amjad",
+  "email": "usama@usama.com",
+  "password": "$2a$12$.Pah0jTxo6iflMjz/CPLHO2iwRN5tNR8vF/v.fNojhEHGuubPIieG",
+  "createdAt": {
+    "$date": "2022-02-23T12:15:24.041Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T12:15:24.041Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621625e508ed2753f4ee922f"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-23T12:17:29.394Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "cus": "cus_LCjEuyy6C4wpe9",
+  "name": "Usama Amjad",
+  "email": "usama@xx.com",
+  "password": "$2a$12$xm2bIqU4WFHfbvBYXKE2N.GvfxZc3/qYJ6lwmuE0hfgdYfzkJ7sMa",
+  "createdAt": {
+    "$date": "2022-02-23T12:17:41.675Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T12:17:41.675Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6219110e9b54886638062e79"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-25T17:19:04.892Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "deviceId": "12wdqdq123123123",
+  "cus": "cus_LDYe7m1EkzucBH",
+  "name": "free freelancer",
+  "email": "free@yopmail.com",
+  "password": "$2a$12$ACZXlVh89.0KNTIjeHHwPOJ3TQ8Cum5Ir3QuXzK9QaLmofWUbZR6.",
+  "createdAt": {
+    "$date": "2022-02-25T17:25:34.583Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-25T17:25:34.583Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621912825724b343a874a6fc"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-25T17:31:23.552Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "deviceId": "12wdqdq123123123",
+  "cus": "cus_LDYk4EvWRgBbqg",
+  "name": "free freelancer",
+  "email": "asdas@yopmail.com",
+  "password": "$2a$12$z9XDEmxiKn0fLqoKJeMmH.tA5a5FMIWXDjTv3Paa8S3XPshyDDmXe",
+  "createdAt": {
+    "$date": "2022-02-25T17:31:46.060Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-25T17:31:46.060Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621ccbf8f3e98b1724c1bde0"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-28T13:19:09.168Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "deviceId": "12wdqdq123123123",
+  "cus": "cus_LEcMBzpZcnsJ5j",
+  "name": "Hamza Rehmanullah",
+  "email": "kjhii@yopmail.com",
+  "password": "$2a$12$M58JgbCroiwEUYfSUaIK3O3qMzY9/zh9bMtMGgQ7kaeUvIrr3IQw6",
+  "createdAt": {
+    "$date": "2022-02-28T13:19:52.895Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:19:52.895Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621ccc5d15514612a076a299"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-28T13:21:11.823Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "deviceId": "12wdqdq123123123",
+  "cus": "cus_LEcOfUFmYd2BCj",
+  "name": "Hamza Rehmanullah",
+  "email": "test@yopmail.com",
+  "password": "$2a$12$A.93ybxE41a9DAAVNdTktes2crooyNw17hQmcJQiEcvnQvcqqs7a2",
+  "createdAt": {
+    "$date": "2022-02-28T13:21:33.175Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T13:21:33.175Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621cd5d39fc6415f2ca0ee15"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-28T13:59:15.450Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "deviceId": "12wdqdq123123123",
+  "cus": "cus_LEd265OqeTtsqT",
+  "name": "Hamza Rehmanullah",
+  "email": "jejeittouffajou-3983@yopmail.com",
+  "password": "$2a$12$v6RbJXopapEYY6Sdoh2gd.XzkFFtIAgIU.0MSFoCCrOLAuZGoCVlm",
+  "createdAt": {
+    "$date": "2022-02-28T14:01:55.687Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T14:01:55.687Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621cddff98ab6960909bc1d1"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-28T14:33:45.162Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "deviceId": "12wdqdq123123123",
+  "cus": "cus_LEdbD94Mib5WRH",
+  "name": "Taha Afzal",
+  "email": "nizefroffeibro-1615@yopmail.com",
+  "password": "$2a$12$gtQ7t5h1Z838VrXjVu/REODtj5tfmHgDfyV4TAUwt8EWN6mWPM.PO",
+  "createdAt": {
+    "$date": "2022-02-28T14:36:47.761Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T14:36:47.761Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621cdf0298ab6960909bc1d9"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-28T14:33:45.162Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "deviceId": "12wdqdq123123123",
+  "cus": "cus_LEdfIB2TiVPbn4",
+  "name": "Raza Amjad",
+  "email": "xummofoyodeu-7256@yopmail.com",
+  "password": "$2a$12$Ks3APymxZ2gzkJ10jsklG.FvYW5XPIkyY0Aiv4/Scawp6OKFRLD2S",
+  "createdAt": {
+    "$date": "2022-02-28T14:41:06.464Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T14:41:06.464Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621ce04c98ab6960909bc1e1"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-28T14:33:45.162Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "deviceId": "12wdqdq123123123",
+  "cus": "cus_LEdlAmouOxyE2B",
+  "name": "usama amjad",
+  "email": "usamaamjad.tafsol@gmail.com",
+  "password": "$2a$12$dxAMXLkKaZRP4.ZAw4D9kOc1RiOvOE6DQGiLrvSpWHTkCLkIz/wqq",
+  "createdAt": {
+    "$date": "2022-02-28T14:46:36.281Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T17:07:39.915Z"
+  },
+  "__v": 0,
+  "passwordResetExpires": {
+    "$date": "2022-02-28T17:17:39.914Z"
+  },
+  "passwordResetToken": "1598394f5fd9d503967a9e25b720fa492583bc5175ca9595d27c327df0a5e903"
+},{
+  "_id": {
+    "$oid": "621cec9f3b52c138643ca06b"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": false,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-02-28T15:27:24.001Z"
+  },
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "deviceId": "12wdqdq123123123",
+  "cus": "cus_LEecdsGkJuLmaP",
+  "name": "Iyushman khurana",
+  "email": "wabocroutayu-2605@yopmail.com",
+  "password": "$2a$12$7e4SOLYRtIXV7xizs5Z4ouN0oFokKOhyiFCFViyXgTzMhHLzcdD0q",
+  "createdAt": {
+    "$date": "2022-02-28T15:39:11.023Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-28T16:45:10.795Z"
+  },
+  "__v": 0,
+  "passwordResetExpires": {
+    "$date": "2022-02-28T16:55:10.793Z"
+  },
+  "passwordResetToken": "f4b5a39b212382368ba9eab1a6d49528fe9495c18d40d6143ec78f7922ba3cad"
+},{
+  "_id": {
+    "$oid": "6225f9c80ff0576f54ca30e9"
+  },
+  "role": "freelancer",
+  "fcmToken": [],
+  "isVerified": true,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-03-07T11:13:34.507Z"
+  },
+  "isEmailActive": true,
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "deviceId": "122323434",
+  "cus": "cus_LHE4PMHIpHreWo",
+  "name": "Ramiz",
+  "email": "ramiz.tafsol@gmail.com",
+  "password": "$2a$12$bxHolzCrG1DDP.1MDgl38OaSblcehaAc3YiCti5aTsAOx0/8nJNSm",
+  "contactNo": 13232342,
+  "createdAt": {
+    "$date": "2022-03-07T12:25:44.487Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T12:53:00.263Z"
+  },
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": "2022-03-07T12:52:59.262Z"
+  }
+},{
+  "_id": {
+    "$oid": "62260117c0de1902f8ad038f"
+  },
+  "role": "customer",
+  "fcmToken": [],
+  "isVerified": true,
+  "active": true,
+  "deactivate": false,
+  "lastLogin": {
+    "$date": "2022-03-07T12:39:20.424Z"
+  },
+  "isEmailActive": true,
+  "violationAttempts": 0,
+  "socketId": null,
+  "isOnline": false,
+  "deviceId": "122323434",
+  "cus": "cus_LHEZTZJb1nJgqT",
+  "name": "Abdul Hai",
+  "email": "abdulhai.tafsol@gmail.com",
+  "password": "$2a$12$96Lt.zy/AgKexp6t3aujW.FD53vCVuakCDg2xuY56j8Ro9jnlXXSS",
+  "contactNo": 1223424324,
+  "createdAt": {
+    "$date": "2022-03-07T12:56:55.439Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T12:58:19.557Z"
+  },
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": "2022-03-07T12:58:18.556Z"
+  }
+}]

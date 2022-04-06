@@ -3,6 +3,7 @@ const crypto = require("crypto");
 const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
+const Project = require("../models/projectModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const Email = require("../utils/email");
@@ -13,6 +14,7 @@ const AuthService = require("../services/AuthService");
 const StripeService = require("../services/StripeService");
 const notification = require("../services/NotificationService");
 const EmailService = require("../services/EmailSendingService");
+const ProjectService = require("../services/ProjectService");
 const { CourierClient } = require("@trycourier/courier");
 
 exports.signup = catchAsync(async (req, res, next) => {
@@ -63,6 +65,88 @@ exports.signup = catchAsync(async (req, res, next) => {
   // await new Email(newUser, url)
   //   .sendEmailVerificationEmail()
   //   .catch((e) => console.log(e));
+
+  AuthService.createSendToken(newUser, 201, req, res);
+});
+
+exports.signupWithProject = catchAsync(async (req, res, next) => {
+  let {
+    email,
+    role,
+    deviceId,
+    name,
+    password,
+    passwordConfirm,
+    contactNo,
+    title,
+    description,
+    amount,
+  } = req.body;
+
+  let postProject = {
+    title,
+    description,
+    amount,
+    isActive: false,
+  };
+  let { files } = req;
+
+  await AuthService.CheckUserExist(email, next);
+
+  // creating Stripe customer
+  const cus = await StripeCustomer(email);
+
+  let newUser = await User.create({
+    role,
+    deviceId,
+    cus: cus.id,
+    name,
+    email,
+    password,
+    contactNo,
+    passwordConfirm,
+  });
+
+  // const url = `${req.protocol}://${req.get('host')}/me`;
+  const url = `${req.protocol}://${req.get("host")}/api/v1/users/verify-me/${
+    newUser.id
+  }`;
+
+  await notification.dispatchToAdmin(
+    {
+      type: "user",
+      message: name + " Registered as " + role,
+      title: "New registration",
+      typeId: newUser._id,
+    },
+    req
+  );
+
+  await new EmailService(
+    newUser,
+    {
+      username: name,
+      url: url,
+      appname: process.env.APP_NAME,
+    },
+    "verify"
+  ).Send();
+
+  postProject.postedBy = newUser._id;
+
+  if (files?.pdfs) {
+    postProject.pdfs = await ProjectService.uploadPdfs(files?.pdfs);
+  }
+
+  if (files?.projectImages) {
+    postProject.images = await ProjectService.uploadImages(
+      files?.projectImages
+    );
+  }
+
+  const newproject = await Project.create(postProject);
+
+  newUser.createdProject = newproject;
 
   AuthService.createSendToken(newUser, 201, req, res);
 });

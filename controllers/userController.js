@@ -1,5 +1,6 @@
 const multer = require("multer");
 const User = require("../models/userModel");
+const Project = require("../models/projectModel");
 const catchAsync = require("../utils/catchAsync");
 const factory = require("../controllers/handlerFactory");
 const AppError = require("../utils/appError");
@@ -15,6 +16,11 @@ exports.verifyMe = catchAsync(async (req, res, next) => {
   console.log("I ran!!");
   await User.findOneAndUpdate({ _id: id }, { isVerified: true }).select(
     "isVerified"
+  );
+
+  await Project.findOneAndUpdate(
+    { postedBy: id, isActive: false },
+    { isActive: true }
   );
 
   res.render("emailVerified");
@@ -135,6 +141,46 @@ exports.updateSubscription = catchAsync(async (req, res, next) => {
     };
 
   const data = await User.findByIdAndUpdate(user, obj);
+
+  res.status(200).json({
+    status: "success",
+    data,
+  });
+});
+
+exports.getProjectDetails = catchAsync(async (req, res, next) => {
+  console.log(req.query.projectId);
+  let data = await Project.findById(req.query.projectId)
+    .populate({
+      path: "porposalsForCustomer",
+      populate: {
+        path: "sendTo",
+        model: "User",
+      },
+    })
+    .populate({
+      path: "accecptedPorposalByCustomer",
+      populate: {
+        path: "sendTo",
+        model: "User",
+      },
+    })
+    .populate({
+      path: "porposalsForFreelancer",
+      populate: {
+        path: "sendTo",
+        model: "User",
+      },
+    })
+    .populate({
+      path: "accecptedPorposalByFreelancer",
+      populate: {
+        path: "sendTo",
+        model: "User",
+      },
+    })
+    .populate("postedBy")
+    .populate("assignTo");
 
   res.status(200).json({
     status: "success",

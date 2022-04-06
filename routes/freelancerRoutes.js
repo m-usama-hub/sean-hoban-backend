@@ -26,5 +26,6 @@ router
 router.route("/assignProjects").get(freelancerController.assignProjects);
 router.route("/dashboardData").get(freelancerController.dashboardData);
 router.route("/newProposals").get(freelancerController.newProposals);
+router.route("/allproposals").get(freelancerController.allProposals);
 
 module.exports = router;

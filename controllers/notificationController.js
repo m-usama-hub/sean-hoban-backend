@@ -57,6 +57,8 @@ exports.getMyNotifications = catchAsync(async (req, res, next) => {
   notfs = await Notification.find({
     receiver: req.user._id,
   })
+    .populate("projectId")
+    .populate("sender")
     .sort({ createdAt: -1 })
     .skip(skip)
     .limit(limit);

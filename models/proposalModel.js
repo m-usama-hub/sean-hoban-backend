@@ -32,6 +32,9 @@ const ProjectMilestonesSchema = new mongoose.Schema(
     releaseRequestedAt: {
       type: Date,
     },
+    invoice: {
+      type: String,
+    },
     status: {
       type: String,
       enum: ["pending", "inProgress", "completed"],

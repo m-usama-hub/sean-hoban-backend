@@ -6,10 +6,11 @@ exports.dispatch = async (payload, req) => {
   await notification.create({
     sender: req.user?._id,
     notificationType: payload.type,
-    receiver: payload.to,
+    receiver: payload.receiver,
     message: payload.message,
     title: payload.title,
     link: payload.typeId,
+    projectId: payload.projectId,
   });
 };
 
@@ -24,6 +25,7 @@ exports.dispatchMany = async (payload, req) => {
       message: data.message,
       title: data.title,
       link: data.typeId,
+      projectId: data.projectId,
     });
   });
 
@@ -43,6 +45,7 @@ exports.dispatchToAdmin = async (payload, req) => {
       message: payload.message,
       title: payload.title,
       link: payload.typeId,
+      projectId: payload.projectId,
     });
   });
 

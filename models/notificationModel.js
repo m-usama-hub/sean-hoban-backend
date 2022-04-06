@@ -34,6 +34,10 @@ const notificationSchema = new mongoose.Schema(
       required: [true, "title is required."],
     },
     link: String,
+    projectId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Project",
+    },
     isReaded: {
       type: Boolean,
       default: false,

@@ -11,6 +11,9 @@ const { filterObj } = require("../utils/fn");
 const ProjectService = require("../services/ProjectService");
 const StripeService = require("../services/StripeService");
 const notification = require("../services/NotificationService");
+const PdfGeneratingService = require("../services/PdfGeneratingService");
+const path = require("path");
+const { v4: uuidv4 } = require("uuid");
 
 //CUSTOMER CREATE NEW PROJECT
 exports.createProject = catchAsync(async (req, res, next) => {
@@ -19,14 +22,24 @@ exports.createProject = catchAsync(async (req, res, next) => {
   postProject.postedBy = req.user._id;
 
   if (files?.pdfs) {
-    postProject.pdfs = ProjectService.uploadPdfs(files?.pdfs);
+    postProject.pdfs = await ProjectService.uploadPdfs(files?.pdfs);
   }
 
   if (files?.projectImages) {
-    postProject.images = ProjectService.uploadImages(files?.projectImages);
+    postProject.images = await ProjectService.uploadImages(
+      files?.projectImages
+    );
   }
 
   let newproject = await Project.create(postProject);
+
+  let admin = await User.findOne({ role: "admin" });
+
+  await Chatroom.create({
+    user1: req.user._id,
+    user2: admin._id,
+    projectId: newproject._id,
+  });
 
   await notification.dispatchToAdmin(
     {
@@ -34,6 +47,7 @@ exports.createProject = catchAsync(async (req, res, next) => {
       message: "New project posted by " + req.user.name,
       title: req.body.title,
       typeId: newproject._id,
+      projectId: newproject._id,
     },
     req
   );
@@ -52,6 +66,7 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
     "proposalDetails",
     "proposalMilestones",
   ];
+  let { files } = req;
 
   let dataInRequest = { ...req.query, ...req.body };
 
@@ -68,6 +83,14 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
   proposalDetails.projectId = projectId;
   proposalDetails.sendTo = userId;
   proposalDetails.milestones = proposalMilestones;
+
+  let docs = [];
+
+  if (files?.docs) {
+    docs = await ProjectService.uploadDocs(files?.docs);
+  }
+
+  proposalDetails.docs = docs;
 
   await Proposal.updateMany(
     { projectId, sendTo: userId },
@@ -88,12 +111,16 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
 
   let admin = await User.findOne({ role: "admin" });
 
-  await Chatroom.create({
-    user1: userId,
-    user2: admin._id,
-    projectId,
-    proposalId: postedPorposal._id,
-  });
+  await Chatroom.findOneAndUpdate(
+    { user1: userId, user2: admin._id, projectId },
+    {
+      user1: userId,
+      user2: admin._id,
+      projectId,
+      proposalId: postedPorposal._id,
+    },
+    { new: true, upsert: true }
+  );
 
   await notification.dispatch(
     {
@@ -102,6 +129,7 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
       receiver: userId,
       title: proposalDetails.title,
       typeId: postedPorposal._id,
+      projectId,
     },
     req
   );
@@ -132,6 +160,18 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
   const { projectId } = req.query;
 
   let { proposalDetails, proposalMilestones, userIds } = req.body;
+  let { files } = req;
+
+  let project = Project.findById(projectId);
+
+  if (project?.accecptedPorposalByCustomer == undefined) {
+    return next(
+      new AppError(
+        "Proposal cannot be sent to Freelancer because Proposal is not accepted by Customer.",
+        403
+      )
+    );
+  }
 
   proposalDetails.milestones = proposalMilestones;
   proposalDetails.projectId = projectId;
@@ -143,18 +183,23 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
 
   var Proposals = [];
   var notifications = [];
+  let docs = [];
+
+  if (files?.docs) {
+    docs = await ProjectService.uploadDocs(files?.docs);
+  }
 
   userIds.map((id) => {
-    Proposals.push({ ...proposalDetails, sendTo: id });
+    Proposals.push({ ...proposalDetails, sendTo: id, docs });
   });
-
-  console.log({ Proposals });
 
   let postedPorposal = await Proposal.insertMany(Proposals);
 
   let postedProposalsId = [];
 
-  postedPorposal.forEach(function (posted) {
+  let admin = await User.findOne({ role: "admin" });
+
+  postedPorposal.forEach(async (posted) => {
     postedProposalsId.push(posted._id);
     notifications.push({
       type: "proposal",
@@ -162,8 +207,22 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
       receiver: posted.sendTo,
       title: posted.title,
       typeId: posted._id,
+      projectId,
     });
+
+    await Chatroom.findOneAndUpdate(
+      { user1: posted.sendTo, user2: admin._id, projectId: posted.projectId },
+      {
+        user1: posted.sendTo,
+        user2: admin._id,
+        projectId: posted.projectId,
+        proposalId: posted._id,
+      },
+      { new: true, upsert: true }
+    );
   });
+
+  console.log({ postedPorposal });
 
   await Project.findByIdAndUpdate(
     projectId,
@@ -241,68 +300,69 @@ exports.CustomerActionOnProposal = catchAsync(async (req, res, next) => {
     return next(new AppError("Already accepted.", 403));
 
   if (status == "accepted") {
-    let paymentIntentId = await StripeService.MakePaymentIntent(
-      proposal.milestones[0].amount,
-      pmId,
-      proposal.projectId.currency,
-      req.user.cus
-    );
+    // let paymentIntentId = await StripeService.MakePaymentIntent(
+    //   proposal.milestones[0].amount,
+    //   pmId,
+    //   proposal.projectId.currency,
+    //   req.user.cus
+    // );
 
-    let newProposal = await Proposal.findOneAndUpdate(
-      {
-        _id: proposalId,
-        "milestones._id": proposal.milestones[0]._id,
-      },
-      {
-        $set: {
-          "milestones.$.isMilestonePaid": true,
-          "milestones.$.makeReleaseRequest": true,
-          "milestones.$.releaseRequestedAt": Date.now(),
-          "milestones.$.status": "completed",
-        },
-      },
-      { new: true }
-    );
+    // let newProposal = await Proposal.findOneAndUpdate(
+    //   {
+    //     _id: proposalId,
+    //     "milestones._id": proposal.milestones[0]._id,
+    //   },
+    //   {
+    //     $set: {
+    //       "milestones.$.isMilestonePaid": true,
+    //       "milestones.$.makeReleaseRequest": true,
+    //       "milestones.$.releaseRequestedAt": Date.now(),
+    //       "milestones.$.status": "completed",
+    //     },
+    //   },
+    //   { new: true }
+    // );
 
-    let payment = await Payment.create({
-      amount: newProposal.milestones[0].amount,
-      projectId: newProposal.projectId,
-      proposalId: newProposal._id,
-      paymentMilestone: newProposal.milestones[0],
-      paymentMethod: "stripe",
-      isPaymentVerified: await StripeService.ConfirmPaymentIntent(
-        paymentIntentId,
-        pmId,
-        next
-      ),
-      userId: req.user._id,
-    });
+    // let payment = await Payment.create({
+    //   amount: newProposal.milestones[0].amount,
+    //   projectId: newProposal.projectId,
+    //   proposalId: newProposal._id,
+    //   paymentMilestone: newProposal.milestones[0],
+    //   paymentMethod: "stripe",
+    //   isPaymentVerified: await StripeService.ConfirmPaymentIntent(
+    //     paymentIntentId,
+    //     pmId,
+    //     next
+    //   ),
+    //   userId: req.user._id,
+    // });
 
     await Project.findByIdAndUpdate(
       proposal.projectId,
       {
-        amount: proposal.amount,
+        // amount: proposal.amount,
         projectStatus: "inProgress",
         accecptedPorposalByCustomer: proposal._id,
-        $inc: { amountPayedToAdmin: proposal.milestones[0].amount },
+        // $inc: { amountPayedToAdmin: proposal.milestones[0].amount },
       },
       { new: true }
     ).populate("accecptedPorposalByCustomer");
 
-    await notification.dispatchToAdmin(
-      {
-        type: "payment",
-        message:
-          req.user.name +
-          " payed " +
-          (await ProjectService.currencySymbol(proposal.projectId.currency)) +
-          proposal.milestones[0].amount +
-          " proposal.",
-        title: proposal.milestones[0].title,
-        typeId: payment._id,
-      },
-      req
-    );
+    // await notification.dispatchToAdmin(
+    //   {
+    //     type: "payment",
+    //     message:
+    //       req.user.name +
+    //       " payed " +
+    //       (await ProjectService.currencySymbol(proposal.projectId.currency)) +
+    //       proposal.milestones[0].amount +
+    //       " proposal.",
+    //     title: proposal.milestones[0].title,
+    //     typeId: payment._id,
+    //     projectId: proposal.projectId,
+    //   },
+    //   req
+    // );
   }
 
   await notification.dispatchToAdmin(
@@ -311,6 +371,7 @@ exports.CustomerActionOnProposal = catchAsync(async (req, res, next) => {
       message: req.user.name + " " + status + " proposal.",
       title: proposal.title,
       typeId: proposal._id,
+      projectId: proposal.projectId,
     },
     req
   );
@@ -328,7 +389,7 @@ exports.CustomerActionOnProposal = catchAsync(async (req, res, next) => {
 });
 
 //FREELANCER ACCEPT OR REJECT PROPOSAL
-//ON ACCEPT -->> PROJECT AUTOMATICLLY ASSIGNED TO THAT FREELANCER
+//ON ACCEPT -->> PROJECT ASSIGNED TO THAT FREELANCER
 //ON ACCEPT -->> CHAT ROOM WILL BE CREATED FOR ADMIN AND FREELANCER
 exports.FreelancerActionOnProposal = catchAsync(async (req, res, next) => {
   const requiredFromRequest = ["status", "proposalId"];
@@ -348,7 +409,7 @@ exports.FreelancerActionOnProposal = catchAsync(async (req, res, next) => {
     _id: proposal.projectId,
   });
 
-  if (project?.assignTo.equals(req.user._id))
+  if (project?.assignTo?.equals(req.user._id))
     return next(new AppError("Already assign to you.", 403));
 
   if (project?.assignTo)
@@ -384,18 +445,23 @@ exports.FreelancerActionOnProposal = catchAsync(async (req, res, next) => {
         message: req.user.name + " " + status + " proposal.",
         title: proposal.title,
         typeId: proposalId,
+        projectId: proposal.projectId,
       },
       req
     );
 
     let admin = await User.findOne({ role: "admin" });
 
-    await Chatroom.create({
-      user1: admin._id,
-      user2: req.user._id,
-      projectId: proposal.projectId,
-      proposalId: proposalId,
-    });
+    await Chatroom.findOneAndUpdate(
+      { user1: req.user._id, user2: admin._id, projectId: proposal.projectId },
+      {
+        user1: req.user._id,
+        user2: admin._id,
+        projectId: proposal.projectId,
+        proposalId: proposalId,
+      },
+      { new: true, upsert: true }
+    );
   }
 
   let UpdatedProposal = await Proposal.findByIdAndUpdate(
@@ -459,6 +525,7 @@ exports.UpdateMilestoneStatus = catchAsync(async (req, res, next) => {
         receiver: proposal.sendTo,
         title: milestone.title,
         typeId: milestoneId,
+        projectId: proposal.projectId,
       },
       req
     );
@@ -469,6 +536,7 @@ exports.UpdateMilestoneStatus = catchAsync(async (req, res, next) => {
         message: req.user.name + " change milestone status to " + status,
         title: milestone.title,
         typeId: milestoneId,
+        projectId: proposal.projectId,
       },
       req
     );
@@ -492,7 +560,7 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
     next
   );
 
-  const { milestoneId, proposalId, ispaid } = req.query;
+  const { milestoneId, proposalId, ispaid } = req.body;
 
   let milestone;
   let proposal = await Proposal.findOne(
@@ -568,6 +636,7 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
       receiver: proposal.sendTo,
       title: milestone.title,
       typeId: milestoneId,
+      projectId: proposal.projectId,
     },
     req
   );
@@ -593,9 +662,12 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
   const { milestoneId, proposalId } = { ...req.query, ...req.body };
 
   let milestone;
-  await Proposal.findOne({ _id: proposalId }, function (err, proposal) {
-    milestone = proposal.milestones.id(milestoneId);
-  });
+  let pro = await Proposal.findOne(
+    { _id: proposalId },
+    function (err, proposal) {
+      milestone = proposal.milestones.id(milestoneId);
+    }
+  );
 
   if (milestone.status != "completed") {
     return next(
@@ -612,6 +684,10 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
     return next(new AppError("Milestone already payed. ", 403));
   }
 
+  let pdfname = `${uuidv4()}.pdf`;
+
+  const _path = path.join(__dirname, "public", "pdfs", pdfname);
+
   let UpdatedMilestone = await Proposal.findOneAndUpdate(
     {
       _id: proposalId,
@@ -621,10 +697,31 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
       $set: {
         "milestones.$.makeWidthDrawlRequest": true,
         "milestones.$.widthDrawlRequestedAt": Date.now(),
+        "milestones.$.invoice": pdfname,
       },
     },
     { new: true }
-  );
+  )
+    .populate("projectId")
+    .populate("sendTo");
+
+  let updatedMile = UpdatedMilestone.milestones.map((item) => {
+    if (item._id == milestoneId) {
+      return item;
+    }
+  });
+
+  let invoice = {
+    user: UpdatedMilestone.sendTo,
+    from: {
+      name: req.user.name,
+      email: req.user.email,
+    },
+    project: UpdatedMilestone.projectId,
+    milestone: updatedMile,
+  };
+
+  PdfGeneratingService.createInvoice(invoice, _path);
 
   await notification.dispatchToAdmin(
     {
@@ -632,6 +729,7 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
       message: req.user.name + " created widthdrawl request on milestone.",
       title: milestone.title,
       typeId: milestoneId,
+      projectId: pro.projectId,
     },
     req
   );
@@ -664,20 +762,26 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
     }
   );
 
-  if (milestone.status != "completed") {
-    return next(
-      new AppError(
-        "Cannot create release request with " +
-          milestone.status +
-          " milestone. ",
-        403
-      )
-    );
-  }
+  // if (milestone.status != "completed") {
+  //   return next(
+  //     new AppError(
+  //       "Cannot create release request with " +
+  //         milestone.status +
+  //         " milestone. ",
+  //       403
+  //     )
+  //   );
+  // }
 
-  if (milestone.isMilestonePaid == true) {
-    return next(new AppError("Milestone already payed. ", 403));
-  }
+  console.log({ milestone });
+
+  // if (milestone?.isMilestonePaid == true) {
+  //   return next(new AppError("Milestone already payed. ", 403));
+  // }
+
+  let pdfname = `${uuidv4()}.pdf`;
+
+  const _path = path.join(__dirname, "..", "public", "pdfs", pdfname);
 
   let UpdatedMilestone = await Proposal.findOneAndUpdate(
     {
@@ -686,12 +790,34 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
     },
     {
       $set: {
+        "milestones.$.status": "completed",
         "milestones.$.makeReleaseRequest": true,
         "milestones.$.releaseRequestedAt": Date.now(),
+        "milestones.$.invoice": pdfname,
       },
     },
     { new: true }
-  );
+  )
+    .populate("projectId")
+    .populate("sendTo");
+
+  let updatedMile = UpdatedMilestone.milestones.map((item) => {
+    if (item._id == milestoneId) {
+      return item;
+    }
+  });
+
+  let invoice = {
+    user: UpdatedMilestone.sendTo,
+    from: {
+      name: req.user.name,
+      email: req.user.email,
+    },
+    project: UpdatedMilestone.projectId,
+    milestone: updatedMile,
+  };
+
+  await PdfGeneratingService.createInvoice(invoice, _path);
 
   await notification.dispatch(
     {
@@ -700,6 +826,7 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
       receiver: proposal.sendTo,
       title: milestone.title,
       typeId: milestoneId,
+      projectId: UpdatedMilestone.projectId,
     },
     req
   );
@@ -804,6 +931,7 @@ exports.CustomerPayToAdmin = catchAsync(async (req, res, next) => {
         milestone.amount,
       title: milestone.title,
       typeId: payment._id,
+      projectId: UpdateMilestone.projectId,
     },
     req
   );

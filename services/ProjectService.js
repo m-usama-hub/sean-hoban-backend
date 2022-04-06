@@ -18,8 +18,26 @@ exports.currencySymbol = async (currency) => {
   return currency == "eur" ? "€" : "£";
 };
 exports.uploadImages = async (images) => {
-  return [];
+  let uploadedImages = images.reduce((acc, cur) => {
+    acc.push(cur.key);
+    return acc;
+  }, []);
+
+  return uploadedImages;
 };
 exports.uploadPdfs = async (pdfs) => {
-  return [];
+  let uploadedPdfs = pdfs.reduce((acc, cur) => {
+    acc.push(cur.key);
+    return acc;
+  }, []);
+
+  return uploadedPdfs;
+};
+exports.uploadDocs = async (docs) => {
+  let uploadedDocs = docs.reduce((acc, cur) => {
+    acc.push(cur.key);
+    return acc;
+  }, []);
+
+  return uploadedDocs;
 };

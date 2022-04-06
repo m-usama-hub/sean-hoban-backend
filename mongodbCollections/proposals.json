@@ -1,0 +1,5707 @@
+[{
+  "_id": {
+    "$oid": "620e394e0f8397149c7a19ea"
+  },
+  "docs": [],
+  "status": "accepted",
+  "title": "This is second proposal title",
+  "description": "This is second proposal description",
+  "amount": 140000,
+  "projectId": {
+    "$oid": "620cf5ced0993535cce39002"
+  },
+  "sendTo": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e394e0f8397149c7a19eb"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "createdAt": {
+        "$date": "2022-02-17T12:02:22.781Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-21T08:46:24.288Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e394e0f8397149c7a19ec"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e394e0f8397149c7a19ed"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e394e0f8397149c7a19ee"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e394e0f8397149c7a19ef"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e394e0f8397149c7a19f0"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e394e0f8397149c7a19f1"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e394e0f8397149c7a19f2"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e394e0f8397149c7a19f3"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-17T12:02:22.782Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e394e0f8397149c7a19f4"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-17T12:02:22.783Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-17T12:02:22.783Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e394e0f8397149c7a19f5"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-17T12:02:22.783Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-17T12:02:22.783Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-02-17T12:02:22.783Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-21T08:46:24.498Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620e40840d14111d54d72953"
+  },
+  "docs": [],
+  "status": "active",
+  "title": "This is second proposal title",
+  "description": "This is second proposal description",
+  "amount": 140000,
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72954"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72955"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72956"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72957"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72958"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72959"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7295a"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7295b"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7295c"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7295d"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7295e"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000
+    }
+  ],
+  "projectId": {
+    "$oid": "620cf5ced0993535cce39002"
+  },
+  "sendTo": {
+    "$oid": "620d2a12dbbd2d2d38e85c4e"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-17T12:33:08.988Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-17T12:33:08.988Z"
+  }
+},{
+  "_id": {
+    "$oid": "620e40840d14111d54d72947"
+  },
+  "docs": [],
+  "status": "rejected",
+  "title": "This is second proposal title",
+  "description": "This is second proposal description",
+  "amount": 140000,
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72948"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72949"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7294a"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7294b"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7294c"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7294d"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7294e"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7294f"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72950"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72951"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72952"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000
+    }
+  ],
+  "projectId": {
+    "$oid": "620cf5ced0993535cce39002"
+  },
+  "sendTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-17T12:33:08.985Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-17T12:34:13.179Z"
+  }
+},{
+  "_id": {
+    "$oid": "620e40840d14111d54d7295f"
+  },
+  "docs": [],
+  "status": "rejected",
+  "title": "This is second proposal title",
+  "description": "This is second proposal description",
+  "amount": 140000,
+  "milestones": [
+    {
+      "isMilestonePaid": true,
+      "status": "completed",
+      "_id": {
+        "$oid": "620e40840d14111d54d72960"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "updatedAt": {
+        "$date": "2022-02-18T12:06:15.923Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "completed",
+      "_id": {
+        "$oid": "620e40840d14111d54d72961"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "updatedAt": {
+        "$date": "2022-02-21T10:16:01.640Z"
+      },
+      "makeWidthDrawlRequest": true,
+      "widthDrawlRequestedAt": {
+        "$date": "2022-02-21T10:16:01.638Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72962"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72963"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72964"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72965"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72966"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72967"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72968"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d72969"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40840d14111d54d7296a"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000
+    }
+  ],
+  "projectId": {
+    "$oid": "620cf5ced0993535cce39002"
+  },
+  "sendTo": {
+    "$oid": "620d2a2fdbbd2d2d38e85c51"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-17T12:33:08.990Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-21T10:16:01.640Z"
+  }
+},{
+  "_id": {
+    "$oid": "620e40c550b4e52d9c5eba41"
+  },
+  "docs": [],
+  "status": "active",
+  "title": "This is second proposal title",
+  "description": "This is second proposal description",
+  "amount": 140000,
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40c550b4e52d9c5eba42"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40c550b4e52d9c5eba43"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40c550b4e52d9c5eba44"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40c550b4e52d9c5eba45"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40c550b4e52d9c5eba46"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40c550b4e52d9c5eba47"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40c550b4e52d9c5eba48"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40c550b4e52d9c5eba49"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40c550b4e52d9c5eba4a"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40c550b4e52d9c5eba4b"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e40c550b4e52d9c5eba4c"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000
+    }
+  ],
+  "projectId": {
+    "$oid": "620cf5ced0993535cce39002"
+  },
+  "sendTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-17T12:34:13.309Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-17T12:34:13.309Z"
+  }
+},{
+  "_id": {
+    "$oid": "620e47cd80b57b1e74d930d1"
+  },
+  "docs": [],
+  "status": "active",
+  "title": "This is second proposal title",
+  "description": "This is second proposal description",
+  "amount": 140000,
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930d2"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930d3"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930d4"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930d5"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930d6"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930d7"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930d8"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930d9"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930da"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930db"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930dc"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000
+    }
+  ],
+  "projectId": {
+    "$oid": "620cf5ced0993535cce39002"
+  },
+  "sendTo": {
+    "$oid": "620d2a2fdbbd2d2d38e85c51"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-17T13:04:13.785Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-17T13:04:13.785Z"
+  }
+},{
+  "_id": {
+    "$oid": "620e47cd80b57b1e74d930dd"
+  },
+  "docs": [],
+  "status": "accept",
+  "title": "This is second proposal title",
+  "description": "This is second proposal description",
+  "amount": 140000,
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930de"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930df"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930e0"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930e1"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930e2"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930e3"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930e4"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930e5"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930e6"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930e7"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "620e47cd80b57b1e74d930e8"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000
+    }
+  ],
+  "projectId": {
+    "$oid": "620cf5ced0993535cce39002"
+  },
+  "sendTo": {
+    "$oid": "620d2a82dbbd2d2d38e85c55"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-17T13:04:13.787Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-17T16:38:21.721Z"
+  }
+},{
+  "_id": {
+    "$oid": "621499baf2f8772990a39298"
+  },
+  "docs": [],
+  "title": "Demo project proposal to customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 140000,
+  "status": "accepted",
+  "projectId": {
+    "$oid": "62149934f2f8772990a39278"
+  },
+  "sendTo": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "milestones": [
+    {
+      "isMilestonePaid": true,
+      "makeWidthDrawlRequest": false,
+      "status": "completed",
+      "_id": {
+        "$oid": "621499baf2f8772990a39299"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "createdAt": {
+        "$date": "2022-02-22T08:07:22.963Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T08:10:06.225Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621499baf2f8772990a3929a"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T08:07:22.963Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T08:07:22.963Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621499baf2f8772990a3929b"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T08:07:22.964Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T08:07:22.964Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621499baf2f8772990a3929c"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T08:07:22.964Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T08:07:22.964Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621499baf2f8772990a3929d"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T08:07:22.964Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T08:07:22.964Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621499baf2f8772990a3929e"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T08:07:22.965Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T08:07:22.965Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621499baf2f8772990a3929f"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T08:07:22.965Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T08:07:22.965Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621499baf2f8772990a392a0"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T08:07:22.965Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T08:07:22.965Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621499baf2f8772990a392a1"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T08:07:22.965Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T08:07:22.965Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621499baf2f8772990a392a2"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T08:07:22.966Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T08:07:22.966Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621499baf2f8772990a392a3"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T08:07:22.966Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T08:07:22.966Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-02-22T08:07:22.968Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-22T08:10:07.273Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62149b005abe21594c9ef273"
+  },
+  "docs": [],
+  "title": "This a proposal for Freelancer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 140000,
+  "status": "accepted",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": true,
+      "status": "completed",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef274"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "updatedAt": {
+        "$date": "2022-02-22T08:34:38.838Z"
+      },
+      "widthDrawlRequestedAt": {
+        "$date": "2022-02-22T08:34:38.834Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": true,
+      "status": "completed",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef275"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "updatedAt": {
+        "$date": "2022-02-22T09:42:32.815Z"
+      },
+      "widthDrawlRequestedAt": {
+        "$date": "2022-02-22T09:42:32.810Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": true,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef276"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "updatedAt": {
+        "$date": "2022-02-22T08:45:19.107Z"
+      },
+      "widthDrawlRequestedAt": {
+        "$date": "2022-02-22T08:45:19.104Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef277"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef278"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef279"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef27a"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef27b"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef27c"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef27d"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef27e"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000
+    }
+  ],
+  "projectId": {
+    "$oid": "62149934f2f8772990a39278"
+  },
+  "sendTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-22T08:12:48.630Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-22T09:42:32.815Z"
+  }
+},{
+  "_id": {
+    "$oid": "62149b005abe21594c9ef27f"
+  },
+  "docs": [],
+  "title": "This a proposal for Freelancer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 140000,
+  "status": "active",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef280"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef281"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef282"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef283"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef284"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef285"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef286"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef287"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef288"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef289"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62149b005abe21594c9ef28a"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000
+    }
+  ],
+  "projectId": {
+    "$oid": "62149934f2f8772990a39278"
+  },
+  "sendTo": {
+    "$oid": "620d2a2fdbbd2d2d38e85c51"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-22T08:12:48.634Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-22T08:12:48.634Z"
+  }
+},{
+  "_id": {
+    "$oid": "6214d728e32bea5fcc6ec025"
+  },
+  "docs": [],
+  "title": "Demo project second proposal to customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 200000,
+  "status": "accepted",
+  "projectId": {
+    "$oid": "6214d6efe32bea5fcc6ec021"
+  },
+  "sendTo": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "milestones": [
+    {
+      "isMilestonePaid": true,
+      "makeWidthDrawlRequest": false,
+      "status": "completed",
+      "_id": {
+        "$oid": "6214d728e32bea5fcc6ec026"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "createdAt": {
+        "$date": "2022-02-22T12:29:28.207Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T12:29:56.713Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d728e32bea5fcc6ec027"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 70000,
+      "createdAt": {
+        "$date": "2022-02-22T12:29:28.208Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T12:29:28.208Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d728e32bea5fcc6ec028"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T12:29:28.208Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T12:29:28.208Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d728e32bea5fcc6ec029"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T12:29:28.208Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T12:29:28.208Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d728e32bea5fcc6ec02a"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T12:29:28.209Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T12:29:28.209Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d728e32bea5fcc6ec02b"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T12:29:28.209Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T12:29:28.209Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d728e32bea5fcc6ec02c"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T12:29:28.209Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T12:29:28.209Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d728e32bea5fcc6ec02d"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T12:29:28.209Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T12:29:28.209Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d728e32bea5fcc6ec02e"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T12:29:28.210Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T12:29:28.210Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d728e32bea5fcc6ec02f"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T12:29:28.210Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T12:29:28.210Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d728e32bea5fcc6ec030"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-22T12:29:28.210Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-22T12:29:28.210Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-02-22T12:29:28.211Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-22T12:29:57.353Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6214d7b5e32bea5fcc6ec04a"
+  },
+  "docs": [],
+  "title": "This a proposal second for Freelancer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "active",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec04b"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec04c"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec04d"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec04e"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec04f"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec050"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec051"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec052"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec053"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec054"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec055"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "6214d6efe32bea5fcc6ec021"
+  },
+  "sendTo": {
+    "$oid": "620d2a2fdbbd2d2d38e85c51"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-22T12:31:49.592Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-22T12:31:49.592Z"
+  }
+},{
+  "_id": {
+    "$oid": "6214d7b5e32bea5fcc6ec03e"
+  },
+  "docs": [],
+  "title": "This a proposal second for Freelancer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "accepted",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": true,
+      "status": "completed",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec03f"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "updatedAt": {
+        "$date": "2022-02-22T12:34:22.918Z"
+      },
+      "widthDrawlRequestedAt": {
+        "$date": "2022-02-22T12:34:22.918Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec040"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec041"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec042"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec043"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec044"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec045"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec046"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec047"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec048"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6214d7b5e32bea5fcc6ec049"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "6214d6efe32bea5fcc6ec021"
+  },
+  "sendTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-22T12:31:49.590Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-22T12:34:22.918Z"
+  }
+},{
+  "_id": {
+    "$oid": "621635a0055e0e4338f7ac9b"
+  },
+  "docs": [],
+  "title": "I will build you house on this proposal",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 200000,
+  "status": "rejected",
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621635a0055e0e4338f7ac9c"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "createdAt": {
+        "$date": "2022-02-23T13:24:48.198Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:24:48.198Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621635a0055e0e4338f7ac9d"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 70000,
+      "createdAt": {
+        "$date": "2022-02-23T13:24:48.199Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:24:48.199Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621635a0055e0e4338f7ac9e"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:24:48.199Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:24:48.199Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621635a0055e0e4338f7ac9f"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:24:48.200Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:24:48.200Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621635a0055e0e4338f7aca0"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:24:48.200Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:24:48.200Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621635a0055e0e4338f7aca1"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621635a0055e0e4338f7aca2"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621635a0055e0e4338f7aca3"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621635a0055e0e4338f7aca4"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621635a0055e0e4338f7aca5"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "621635a0055e0e4338f7aca6"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:24:48.201Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-02-23T13:24:48.202Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T13:13:05.437Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6216361ac15e5c51a05d0a7e"
+  },
+  "docs": [],
+  "title": "I will build you house on this proposal",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 200000,
+  "status": "rejected",
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6216361ac15e5c51a05d0a7f"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "createdAt": {
+        "$date": "2022-02-23T13:26:50.349Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:26:50.349Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6216361ac15e5c51a05d0a80"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 70000,
+      "createdAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6216361ac15e5c51a05d0a81"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6216361ac15e5c51a05d0a82"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6216361ac15e5c51a05d0a83"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6216361ac15e5c51a05d0a84"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6216361ac15e5c51a05d0a85"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6216361ac15e5c51a05d0a86"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6216361ac15e5c51a05d0a87"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6216361ac15e5c51a05d0a88"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6216361ac15e5c51a05d0a89"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:26:50.350Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-02-23T13:26:50.351Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T13:13:05.437Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62163c71c95a071844bf2501"
+  },
+  "docs": [],
+  "title": "I will build you house on this proposal",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 200000,
+  "status": "rejected",
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c71c95a071844bf2502"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "createdAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c71c95a071844bf2503"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 70000,
+      "createdAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c71c95a071844bf2504"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c71c95a071844bf2505"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c71c95a071844bf2506"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c71c95a071844bf2507"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c71c95a071844bf2508"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c71c95a071844bf2509"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c71c95a071844bf250a"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c71c95a071844bf250b"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:53:53.677Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c71c95a071844bf250c"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:53:53.678Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:53:53.678Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-02-23T13:53:53.678Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T13:13:05.437Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62163c9f5ab180364c5b0f0c"
+  },
+  "docs": [],
+  "title": "I will build you house on this proposal",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 200000,
+  "status": "rejected",
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "milestones": [
+    {
+      "isMilestonePaid": true,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "completed",
+      "_id": {
+        "$oid": "62163c9f5ab180364c5b0f0d"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "createdAt": {
+        "$date": "2022-02-23T13:54:39.429Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T14:04:04.516Z"
+      }
+    },
+    {
+      "isMilestonePaid": true,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "completed",
+      "_id": {
+        "$oid": "62163c9f5ab180364c5b0f0e"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 70000,
+      "createdAt": {
+        "$date": "2022-02-23T13:54:39.429Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T14:43:39.164Z"
+      }
+    },
+    {
+      "isMilestonePaid": true,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": true,
+      "status": "completed",
+      "_id": {
+        "$oid": "62163c9f5ab180364c5b0f0f"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:54:39.429Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T15:13:35.502Z"
+      },
+      "releaseRequestedAt": {
+        "$date": "2022-02-23T15:00:46.793Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c9f5ab180364c5b0f10"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:54:39.429Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:54:39.429Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c9f5ab180364c5b0f11"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:54:39.429Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:54:39.429Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c9f5ab180364c5b0f12"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:54:39.429Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:54:39.429Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c9f5ab180364c5b0f13"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:54:39.430Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:54:39.430Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c9f5ab180364c5b0f14"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:54:39.430Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:54:39.430Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c9f5ab180364c5b0f15"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:54:39.430Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:54:39.430Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c9f5ab180364c5b0f16"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:54:39.430Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:54:39.430Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163c9f5ab180364c5b0f17"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-02-23T13:54:39.430Z"
+      },
+      "updatedAt": {
+        "$date": "2022-02-23T13:54:39.430Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-02-23T13:54:39.431Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T13:13:05.437Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62163cea5ab180364c5b0f2d"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "rejected",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f2e"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f2f"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f30"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f31"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f32"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f33"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f34"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f35"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f36"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f37"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f38"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d2a2fdbbd2d2d38e85c51"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T13:55:54.961Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:44.567Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163cea5ab180364c5b0f21"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "rejected",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": true,
+      "makeReleaseRequest": false,
+      "status": "completed",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f22"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "updatedAt": {
+        "$date": "2022-03-07T15:01:00.215Z"
+      },
+      "widthDrawlRequestedAt": {
+        "$date": "2022-03-07T15:01:00.214Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f23"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f24"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f25"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f26"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f27"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f28"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f29"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f2a"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f2b"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163cea5ab180364c5b0f2c"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T13:55:54.958Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:01:00.215Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163d3b007447457c33fac2"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "rejected",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fac3"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fac4"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fac5"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fac6"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fac7"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fac8"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fac9"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33faca"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33facb"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33facc"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33facd"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T13:57:15.132Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:44.567Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163d3b007447457c33face"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "rejected",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33facf"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fad0"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fad1"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fad2"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fad3"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fad4"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fad5"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fad6"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fad7"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fad8"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d3b007447457c33fad9"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d2a2fdbbd2d2d38e85c51"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T13:57:15.136Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:44.567Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163d7a8f1a2468d83936ff"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "rejected",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393700"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393701"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393702"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393703"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393704"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393705"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393706"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393707"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393708"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393709"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d839370a"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T13:58:18.880Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:44.567Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163d7a8f1a2468d839370b"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "rejected",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d839370c"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d839370d"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d839370e"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d839370f"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393710"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393711"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393712"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393713"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393714"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393715"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163d7a8f1a2468d8393716"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d2a2fdbbd2d2d38e85c51"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T13:58:18.883Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:44.567Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163dabbbaeac63944d837f"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "rejected",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8380"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8381"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8382"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8383"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8384"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8385"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8386"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8387"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8388"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8389"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d838a"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T13:59:07.186Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:44.567Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163dabbbaeac63944d838b"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "rejected",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d838c"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d838d"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d838e"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d838f"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8390"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8391"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8392"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8393"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8394"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8395"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163dabbbaeac63944d8396"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d2a2fdbbd2d2d38e85c51"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T13:59:07.191Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:44.567Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163e0c3fd09365d8a93a4c"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "rejected",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a4d"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a4e"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a4f"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a50"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a51"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a52"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a53"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a54"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a55"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a56"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a57"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d2a2fdbbd2d2d38e85c51"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:00:44.795Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:44.567Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163e0c3fd09365d8a93a40"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "rejected",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a41"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a42"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a43"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a44"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a45"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a46"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a47"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a48"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a49"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a4a"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e0c3fd09365d8a93a4b"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:00:44.790Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:44.567Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163e8586a80d5a8427a809"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "active",
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a80a"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a80b"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a80c"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a80d"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a80e"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a80f"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a810"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a811"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a812"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a813"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a814"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d2a2fdbbd2d2d38e85c51"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:02:45.855Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-23T14:02:45.855Z"
+  }
+},{
+  "_id": {
+    "$oid": "62163e8586a80d5a8427a7fd"
+  },
+  "docs": [],
+  "title": "Make 3 story house for my customer",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 250000,
+  "status": "accepted",
+  "milestones": [
+    {
+      "isMilestonePaid": true,
+      "makeWidthDrawlRequest": true,
+      "makeReleaseRequest": false,
+      "status": "completed",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a7fe"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "updatedAt": {
+        "$date": "2022-03-07T15:27:29.865Z"
+      },
+      "widthDrawlRequestedAt": {
+        "$date": "2022-02-23T14:16:30.170Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a7ff"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a800"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 50000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a801"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a802"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a803"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a804"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a805"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a806"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a807"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "62163e8586a80d5a8427a808"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 40000
+    }
+  ],
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620d29a4dbbd2d2d38e85c49"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2022-02-23T14:02:45.852Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T15:27:29.865Z"
+  }
+},{
+  "_id": {
+    "$oid": "622604e1c0de1902f8ad03b7"
+  },
+  "docs": [],
+  "title": "I will build you house on this proposal",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 200000,
+  "status": "active",
+  "projectId": {
+    "$oid": "62163548055e0e4338f7ac94"
+  },
+  "sendTo": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "622604e1c0de1902f8ad03b8"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "createdAt": {
+        "$date": "2022-03-07T13:13:05.749Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:13:05.749Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "622604e1c0de1902f8ad03b9"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 70000,
+      "createdAt": {
+        "$date": "2022-03-07T13:13:05.749Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:13:05.749Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "622604e1c0de1902f8ad03ba"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:13:05.749Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:13:05.749Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "622604e1c0de1902f8ad03bb"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:13:05.749Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:13:05.749Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "622604e1c0de1902f8ad03bc"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "622604e1c0de1902f8ad03bd"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "622604e1c0de1902f8ad03be"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "622604e1c0de1902f8ad03bf"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "622604e1c0de1902f8ad03c0"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "622604e1c0de1902f8ad03c1"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "622604e1c0de1902f8ad03c2"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:13:05.750Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-03-07T13:13:05.750Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-07T13:13:05.750Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6226057fc0de1902f8ad03df"
+  },
+  "docs": [],
+  "title": "I will build you house again on this proposal",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 200000,
+  "status": "rejected",
+  "projectId": {
+    "$oid": "6226055ec0de1902f8ad03d8"
+  },
+  "sendTo": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "milestones": [
+    {
+      "isMilestonePaid": true,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "completed",
+      "_id": {
+        "$oid": "6226057fc0de1902f8ad03e0"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "createdAt": {
+        "$date": "2022-03-07T13:15:43.537Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:16:22.551Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6226057fc0de1902f8ad03e1"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 70000,
+      "createdAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6226057fc0de1902f8ad03e2"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6226057fc0de1902f8ad03e3"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6226057fc0de1902f8ad03e4"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6226057fc0de1902f8ad03e5"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6226057fc0de1902f8ad03e6"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6226057fc0de1902f8ad03e7"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6226057fc0de1902f8ad03e8"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6226057fc0de1902f8ad03e9"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6226057fc0de1902f8ad03ea"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-07T13:15:43.538Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-03-07T13:15:43.538Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:22:08.474Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6230af20f325175e385efaad"
+  },
+  "docs": [],
+  "title": "Test Proposal",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 200000,
+  "status": "active",
+  "projectId": {
+    "$oid": "6226055ec0de1902f8ad03d8"
+  },
+  "sendTo": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "milestones": [
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af20f325175e385efaae"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:08.756Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:08.756Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af20f325175e385efaaf"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 70000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:08.756Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:08.756Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af20f325175e385efab0"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:08.756Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:08.756Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af20f325175e385efab1"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:08.757Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:08.757Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af20f325175e385efab2"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:08.757Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:08.757Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af20f325175e385efab3"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:08.757Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:08.757Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af20f325175e385efab4"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:08.757Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:08.757Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af20f325175e385efab5"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:08.757Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:08.757Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af20f325175e385efab6"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:08.758Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:08.758Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af20f325175e385efab7"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:08.758Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:08.758Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af20f325175e385efab8"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:08.758Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:08.758Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-03-15T15:22:08.759Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:22:08.759Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6230af36f325175e385efac2"
+  },
+  "docs": [],
+  "title": "Test Proposal",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "amount": 200000,
+  "status": "accepted",
+  "projectId": {
+    "$oid": "6230aef8f325175e385efaa6"
+  },
+  "sendTo": {
+    "$oid": "620cf517d0993535cce38fff"
+  },
+  "milestones": [
+    {
+      "isMilestonePaid": true,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": true,
+      "status": "completed",
+      "_id": {
+        "$oid": "6230af36f325175e385efac3"
+      },
+      "title": "Onboarding payment",
+      "description": "This is onboarding payment of milestone",
+      "amount": 40000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:30.674Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:32:58.494Z"
+      },
+      "releaseRequestedAt": {
+        "$date": "2022-03-15T15:32:58.493Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af36f325175e385efac4"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 70000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:30.675Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:30.675Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af36f325175e385efac5"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:30.675Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:30.675Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af36f325175e385efac6"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:30.675Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:30.675Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af36f325175e385efac7"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:30.675Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:30.675Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af36f325175e385efac8"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:30.675Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:30.675Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af36f325175e385efac9"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:30.676Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:30.676Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af36f325175e385efaca"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:30.676Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:30.676Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af36f325175e385efacb"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:30.676Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:30.676Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af36f325175e385efacc"
+      },
+      "title": "This is second title",
+      "description": "This is second description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:30.676Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:30.676Z"
+      }
+    },
+    {
+      "isMilestonePaid": false,
+      "makeWidthDrawlRequest": false,
+      "makeReleaseRequest": false,
+      "status": "pending",
+      "_id": {
+        "$oid": "6230af36f325175e385efacd"
+      },
+      "title": "This is third title",
+      "description": "This is third description",
+      "amount": 10000,
+      "createdAt": {
+        "$date": "2022-03-15T15:22:30.676Z"
+      },
+      "updatedAt": {
+        "$date": "2022-03-15T15:22:30.676Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2022-03-15T15:22:30.677Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-15T15:33:03.159Z"
+  },
+  "__v": 0
+}]

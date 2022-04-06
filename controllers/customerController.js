@@ -15,12 +15,16 @@ const myProjects = async (user) => {
   let projects = await Project.find({
     postedBy: user._id,
   })
-    .select({
-      porposalsForCustomer: 0,
-      porposalsForFreelancer: 0,
-      accecptedPorposalByCustomer: 0,
-      accecptedPorposalByFreelancer: 0,
-    })
+    // .select({
+    //   porposalsForCustomer: 0,
+    //   porposalsForFreelancer: 0,
+    //   accecptedPorposalByCustomer: 0,
+    //   accecptedPorposalByFreelancer: 0,
+    // })
+    .populate("porposalsForCustomer")
+    .populate("accecptedPorposalByCustomer")
+    .populate("postedBy")
+    .populate("assignTo")
     .sort("-createdAt");
 
   return projects;
@@ -64,5 +68,16 @@ exports.myProjects = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     data: await myProjects(req.user),
+  });
+});
+
+exports.payments = catchAsync(async (req, res, next) => {
+  let payments = await Payment.find({ userId: req.user._id })
+    .sort("-createdAt")
+    .populate("projectId");
+
+  res.status(200).json({
+    status: "success",
+    data: payments,
   });
 });
