@@ -106,18 +106,24 @@ exports.sendNewMsg = catchAsync(async (req, res, next) => {
 });
 
 exports.getAllMsg = catchAsync(async (req, res, next) => {
+  const page = req.query.page * 1 || 1;
   const limit = req.query.limit * 1 || 30;
-  const skip = req.query.skip * 1 || 0;
+  const skip = (page - 1) * limit;
   const { roomId, projectId, userId } = req.query;
   let finalMessages = [];
 
   if (!projectId || !userId)
     return next(new AppError("Params are missing", 400));
 
-  let Room = await Rooms.findOne({ projectId, user1: userId });
+  let room = roomId;
+  let Room;
 
+  if (roomId == "undefined") {
+    Room = await Rooms.findOne({ projectId, user1: userId });
+    room = Room._id;
+  }
   const msg = await Chat.find({
-    room: Room._id,
+    room,
   })
     .select("message -_id")
     .sort("-createdAt")
@@ -135,6 +141,6 @@ exports.getAllMsg = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     data: finalMessages,
-    room: Room
+    room: Room,
   });
 });

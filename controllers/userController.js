@@ -158,7 +158,13 @@ exports.getProjectDetails = catchAsync(async (req, res, next) => {
         model: "User",
       },
     })
-    .populate("accecptedPorposalByCustomer")
+    .populate({
+      path: "accecptedPorposalByCustomer",
+      populate: {
+        path: "sendTo",
+        model: "User",
+      },
+    })
     .populate({
       path: "porposalsForFreelancer",
       populate: {
@@ -166,7 +172,13 @@ exports.getProjectDetails = catchAsync(async (req, res, next) => {
         model: "User",
       },
     })
-    .populate("accecptedPorposalByFreelancer")
+    .populate({
+      path: "accecptedPorposalByFreelancer",
+      populate: {
+        path: "sendTo",
+        model: "User",
+      },
+    })
     .populate("postedBy")
     .populate("assignTo");
 

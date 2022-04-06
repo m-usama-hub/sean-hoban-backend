@@ -5,6 +5,7 @@ const { v4: uuidv4 } = require("uuid");
 require("dotenv").config();
 const AppError = require("./appError");
 const path = require("path");
+const fs = require("fs");
 
 const imageBucket = process.env.AWS_PDF_BUCKET_NAME;
 const fileBucket = process.env.AWS_FILE_BUCKET_NAME;
@@ -175,6 +176,18 @@ exports.uploadUserFiles = uploadFiles.fields([
     maxCount: 20,
   },
 ]);
+
+exports.uploadServerFile = (filePath) => {
+  const fileContent = fs.readFileSync(filePath);
+
+  const params = {
+    Bucket: fileBucket,
+    Key: path.basename(filePath),
+    Body: fileContent,
+  };
+
+  return s3.upload(params).promise();
+};
 
 exports.getFileStream = (fileKey) => {
   const downloadParams = {

@@ -1075,9 +1075,11 @@ const currencies = {
     name_plural: "Zimbabwean Dollar",
   },
 };
+const { uploadServerFile } = require("../utils/s3");
 
-exports.createInvoice = (invoice, path) => {
+exports.createInvoice = async (invoice, filePath) => {
   let doc = new PDFDocument({ margin: 50 });
+  let testdoc = new PDFDocument({ margin: 50 });
 
   generateHeader(doc);
   generateProjectDetails(doc, invoice);
@@ -1086,11 +1088,21 @@ exports.createInvoice = (invoice, path) => {
   //   generateInvoiceTable(doc, invoice);
   //   generateFooter(doc);
 
-  doc.pipe(fs.createWriteStream(path));
-  doc.end();
+  console.log({ filePath });
+
+  async function run() {
+    doc.pipe(fs.createWriteStream(filePath));
+    doc.end();
+  }
+
+  // await Promise.all(run(), uploadServerFile(filePath));
+
+  await setTimeout(async () => {
+    await uploadServerFile(filePath);
+  }, 3000);
 };
 
-function generateHeader(doc) {
+async function generateHeader(doc) {
   doc
     .image("./public/Logo-01.png", 50, 45, {
       width: 100,
@@ -1102,7 +1114,7 @@ function generateHeader(doc) {
     .text("New York, NY, 10025", 200, 80, { align: "right" });
 }
 
-function generateFooter(doc) {
+async function generateFooter(doc) {
   doc
     .fontSize(10)
     .text(
@@ -1113,7 +1125,7 @@ function generateFooter(doc) {
     );
 }
 
-function generateProjectDetails(doc, invoice) {
+async function generateProjectDetails(doc, invoice) {
   doc
     .text(`Project Tilte: ${invoice.project.title}`, 50, 120)
     .text(`Project Description: ${invoice.project.description}`, 50)
@@ -1127,7 +1139,7 @@ function generateProjectDetails(doc, invoice) {
     .moveDown();
 }
 
-function generateMilestoneDetails(doc, invoice) {
+async function generateMilestoneDetails(doc, invoice) {
   doc
     .text(`Milestione Tilte: ${invoice.milestone.title}`, 50)
     .text(`Milestone Description: ${invoice.milestone.description}`, 50)
@@ -1141,7 +1153,10 @@ function generateMilestoneDetails(doc, invoice) {
     .moveDown();
 }
 
-function generateCustomerInformation(doc, invoice) {
+async function generateCustomerInformation(doc, invoice) {
+  console.log(
+    "=================================In generateCustomerInformation"
+  );
   doc
     .text(`To: ${invoice.user.name}`, 50)
     .text(`Email: ${invoice.user.email}`, 50)
@@ -1163,7 +1178,7 @@ function generateCustomerInformation(doc, invoice) {
     .moveDown();
 }
 
-function generateTableRow(doc, y, c1, c2, c3, c4, c5) {
+async function generateTableRow(doc, y, c1, c2, c3, c4, c5) {
   doc
     .fontSize(10)
     .text(c1, 50, y)
@@ -1173,7 +1188,7 @@ function generateTableRow(doc, y, c1, c2, c3, c4, c5) {
     .text(c5, 0, y, { align: "right" });
 }
 
-function generateInvoiceTable(doc, invoice) {
+async function generateInvoiceTable(doc, invoice) {
   let i,
     invoiceTableTop = 330;
 

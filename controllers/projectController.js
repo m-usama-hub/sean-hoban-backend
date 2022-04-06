@@ -47,6 +47,7 @@ exports.createProject = catchAsync(async (req, res, next) => {
       message: "New project posted by " + req.user.name,
       title: req.body.title,
       typeId: newproject._id,
+      projectId: newproject._id,
     },
     req
   );
@@ -128,6 +129,7 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
       receiver: userId,
       title: proposalDetails.title,
       typeId: postedPorposal._id,
+      projectId,
     },
     req
   );
@@ -159,6 +161,17 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
 
   let { proposalDetails, proposalMilestones, userIds } = req.body;
   let { files } = req;
+
+  let project = Project.findById(projectId);
+
+  if (project?.accecptedPorposalByCustomer == undefined) {
+    return next(
+      new AppError(
+        "Proposal cannot be sent to Freelancer because Proposal is not accepted by Customer.",
+        403
+      )
+    );
+  }
 
   proposalDetails.milestones = proposalMilestones;
   proposalDetails.projectId = projectId;
@@ -194,6 +207,7 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
       receiver: posted.sendTo,
       title: posted.title,
       typeId: posted._id,
+      projectId,
     });
 
     await Chatroom.findOneAndUpdate(
@@ -286,68 +300,69 @@ exports.CustomerActionOnProposal = catchAsync(async (req, res, next) => {
     return next(new AppError("Already accepted.", 403));
 
   if (status == "accepted") {
-    let paymentIntentId = await StripeService.MakePaymentIntent(
-      proposal.milestones[0].amount,
-      pmId,
-      proposal.projectId.currency,
-      req.user.cus
-    );
+    // let paymentIntentId = await StripeService.MakePaymentIntent(
+    //   proposal.milestones[0].amount,
+    //   pmId,
+    //   proposal.projectId.currency,
+    //   req.user.cus
+    // );
 
-    let newProposal = await Proposal.findOneAndUpdate(
-      {
-        _id: proposalId,
-        "milestones._id": proposal.milestones[0]._id,
-      },
-      {
-        $set: {
-          "milestones.$.isMilestonePaid": true,
-          "milestones.$.makeReleaseRequest": true,
-          "milestones.$.releaseRequestedAt": Date.now(),
-          "milestones.$.status": "completed",
-        },
-      },
-      { new: true }
-    );
+    // let newProposal = await Proposal.findOneAndUpdate(
+    //   {
+    //     _id: proposalId,
+    //     "milestones._id": proposal.milestones[0]._id,
+    //   },
+    //   {
+    //     $set: {
+    //       "milestones.$.isMilestonePaid": true,
+    //       "milestones.$.makeReleaseRequest": true,
+    //       "milestones.$.releaseRequestedAt": Date.now(),
+    //       "milestones.$.status": "completed",
+    //     },
+    //   },
+    //   { new: true }
+    // );
 
-    let payment = await Payment.create({
-      amount: newProposal.milestones[0].amount,
-      projectId: newProposal.projectId,
-      proposalId: newProposal._id,
-      paymentMilestone: newProposal.milestones[0],
-      paymentMethod: "stripe",
-      isPaymentVerified: await StripeService.ConfirmPaymentIntent(
-        paymentIntentId,
-        pmId,
-        next
-      ),
-      userId: req.user._id,
-    });
+    // let payment = await Payment.create({
+    //   amount: newProposal.milestones[0].amount,
+    //   projectId: newProposal.projectId,
+    //   proposalId: newProposal._id,
+    //   paymentMilestone: newProposal.milestones[0],
+    //   paymentMethod: "stripe",
+    //   isPaymentVerified: await StripeService.ConfirmPaymentIntent(
+    //     paymentIntentId,
+    //     pmId,
+    //     next
+    //   ),
+    //   userId: req.user._id,
+    // });
 
     await Project.findByIdAndUpdate(
       proposal.projectId,
       {
-        amount: proposal.amount,
+        // amount: proposal.amount,
         projectStatus: "inProgress",
         accecptedPorposalByCustomer: proposal._id,
-        $inc: { amountPayedToAdmin: proposal.milestones[0].amount },
+        // $inc: { amountPayedToAdmin: proposal.milestones[0].amount },
       },
       { new: true }
     ).populate("accecptedPorposalByCustomer");
 
-    await notification.dispatchToAdmin(
-      {
-        type: "payment",
-        message:
-          req.user.name +
-          " payed " +
-          (await ProjectService.currencySymbol(proposal.projectId.currency)) +
-          proposal.milestones[0].amount +
-          " proposal.",
-        title: proposal.milestones[0].title,
-        typeId: payment._id,
-      },
-      req
-    );
+    // await notification.dispatchToAdmin(
+    //   {
+    //     type: "payment",
+    //     message:
+    //       req.user.name +
+    //       " payed " +
+    //       (await ProjectService.currencySymbol(proposal.projectId.currency)) +
+    //       proposal.milestones[0].amount +
+    //       " proposal.",
+    //     title: proposal.milestones[0].title,
+    //     typeId: payment._id,
+    //     projectId: proposal.projectId,
+    //   },
+    //   req
+    // );
   }
 
   await notification.dispatchToAdmin(
@@ -356,6 +371,7 @@ exports.CustomerActionOnProposal = catchAsync(async (req, res, next) => {
       message: req.user.name + " " + status + " proposal.",
       title: proposal.title,
       typeId: proposal._id,
+      projectId: proposal.projectId,
     },
     req
   );
@@ -429,6 +445,7 @@ exports.FreelancerActionOnProposal = catchAsync(async (req, res, next) => {
         message: req.user.name + " " + status + " proposal.",
         title: proposal.title,
         typeId: proposalId,
+        projectId: proposal.projectId,
       },
       req
     );
@@ -508,6 +525,7 @@ exports.UpdateMilestoneStatus = catchAsync(async (req, res, next) => {
         receiver: proposal.sendTo,
         title: milestone.title,
         typeId: milestoneId,
+        projectId: proposal.projectId,
       },
       req
     );
@@ -518,6 +536,7 @@ exports.UpdateMilestoneStatus = catchAsync(async (req, res, next) => {
         message: req.user.name + " change milestone status to " + status,
         title: milestone.title,
         typeId: milestoneId,
+        projectId: proposal.projectId,
       },
       req
     );
@@ -617,6 +636,7 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
       receiver: proposal.sendTo,
       title: milestone.title,
       typeId: milestoneId,
+      projectId: proposal.projectId,
     },
     req
   );
@@ -642,9 +662,12 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
   const { milestoneId, proposalId } = { ...req.query, ...req.body };
 
   let milestone;
-  await Proposal.findOne({ _id: proposalId }, function (err, proposal) {
-    milestone = proposal.milestones.id(milestoneId);
-  });
+  let pro = await Proposal.findOne(
+    { _id: proposalId },
+    function (err, proposal) {
+      milestone = proposal.milestones.id(milestoneId);
+    }
+  );
 
   if (milestone.status != "completed") {
     return next(
@@ -706,6 +729,7 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
       message: req.user.name + " created widthdrawl request on milestone.",
       title: milestone.title,
       typeId: milestoneId,
+      projectId: pro.projectId,
     },
     req
   );
@@ -738,24 +762,26 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
     }
   );
 
-  if (milestone.status != "completed") {
-    return next(
-      new AppError(
-        "Cannot create release request with " +
-          milestone.status +
-          " milestone. ",
-        403
-      )
-    );
-  }
+  // if (milestone.status != "completed") {
+  //   return next(
+  //     new AppError(
+  //       "Cannot create release request with " +
+  //         milestone.status +
+  //         " milestone. ",
+  //       403
+  //     )
+  //   );
+  // }
 
-  if (milestone.isMilestonePaid == true) {
-    return next(new AppError("Milestone already payed. ", 403));
-  }
+  console.log({ milestone });
+
+  // if (milestone?.isMilestonePaid == true) {
+  //   return next(new AppError("Milestone already payed. ", 403));
+  // }
 
   let pdfname = `${uuidv4()}.pdf`;
 
-  const _path = path.join(__dirname, "public", "pdfs", pdfname);
+  const _path = path.join(__dirname, "..", "public", "pdfs", pdfname);
 
   let UpdatedMilestone = await Proposal.findOneAndUpdate(
     {
@@ -764,6 +790,7 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
     },
     {
       $set: {
+        "milestones.$.status": "completed",
         "milestones.$.makeReleaseRequest": true,
         "milestones.$.releaseRequestedAt": Date.now(),
         "milestones.$.invoice": pdfname,
@@ -790,7 +817,7 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
     milestone: updatedMile,
   };
 
-  PdfGeneratingService.createInvoice(invoice, _path);
+  await PdfGeneratingService.createInvoice(invoice, _path);
 
   await notification.dispatch(
     {
@@ -799,6 +826,7 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
       receiver: proposal.sendTo,
       title: milestone.title,
       typeId: milestoneId,
+      projectId: UpdatedMilestone.projectId,
     },
     req
   );
@@ -903,6 +931,7 @@ exports.CustomerPayToAdmin = catchAsync(async (req, res, next) => {
         milestone.amount,
       title: milestone.title,
       typeId: payment._id,
+      projectId: UpdateMilestone.projectId,
     },
     req
   );

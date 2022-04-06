@@ -180,6 +180,20 @@ io.on("connection", (socket) => {
     }
   });
 
+  // mark-as-read
+  socket.on("mark-as-read", async (roomId, role) => {
+    console.log({ emit: "mark-as-read 📖📖📖" });
+    if (role === "user") {
+      await Rooms.findByIdAndUpdate(roomId, {
+        user1UnreadCount: 0,
+      });
+    } else {
+      await Rooms.findByIdAndUpdate(roomId, {
+        user2UnreadCount: 0,
+      });
+    }
+  });
+
   socket.on("leaveRoom", async (id) => {
     const userId = id;
 
