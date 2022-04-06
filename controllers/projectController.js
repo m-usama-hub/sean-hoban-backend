@@ -11,6 +11,7 @@ const { filterObj } = require("../utils/fn");
 const ProjectService = require("../services/ProjectService");
 const StripeService = require("../services/StripeService");
 const notification = require("../services/NotificationService");
+const PdfGeneratingService = require("../services/PdfGeneratingService");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 
@@ -35,7 +36,7 @@ exports.createProject = catchAsync(async (req, res, next) => {
   let admin = await User.findOne({ role: "admin" });
 
   await Chatroom.create({
-    user1: posted.sendTo,
+    user1: req.user._id,
     user2: admin._id,
     projectId: newproject._id,
   });
@@ -540,7 +541,7 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
     next
   );
 
-  const { milestoneId, proposalId, ispaid } = req.query;
+  const { milestoneId, proposalId, ispaid } = req.body;
 
   let milestone;
   let proposal = await Proposal.findOne(
