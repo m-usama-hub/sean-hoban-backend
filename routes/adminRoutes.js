@@ -3,13 +3,10 @@ const express = require("express");
 // const authController = require("../controllers/authController");
 const projectController = require("../controllers/projectController");
 const adminController = require("../controllers/adminController");
+const cmsController = require("../controllers/cmsController");
 const RouteService = require("../services/RouteService");
 const catchAsync = require("../utils/catchAsync");
-const {
-  uploadUserImage,
-  uploadUserPDfs,
-  uploadUserFiles,
-} = require("../utils/s3");
+const { uploadUserFiles } = require("../utils/s3");
 
 const router = express.Router();
 
@@ -47,5 +44,41 @@ router.route("/workers").get(adminController.getAllWorkers);
 router.route("/contractors").get(adminController.getAllContractor);
 
 router.route("/get-email-status").get(adminController.getMessage);
+
+//==============================================
+
+//CMS
+
+router.route("/get-page/:page").get(adminController.getPage);
+
+router.post("/page/update", uploadUserFiles, adminController.updatePage);
+
+// Web services Routes
+router
+  .route("/web/services")
+  .get(cmsController.getservices)
+  .post(uploadUserFiles, cmsController.postservices);
+
+router
+  .route("/web/services/:id?")
+  // S3 changes applied
+  .post(uploadUserFiles, cmsController.updateservices)
+  .delete(cmsController.deleteservices);
+
+// Web Config Routes
+router
+  .route("/web/configs")
+  .get(cmsController.getconfig)
+  .post(cmsController.postconfigs)
+  .patch(cmsController.updateconfigs)
+  .delete(cmsController.deleteconfigs);
+
+// Web FAQ Routes
+router
+  .route("/web/faq/:id?")
+  .get(cmsController.getfaq)
+  .post(cmsController.postfaq)
+  .patch(cmsController.updatefaq)
+  .delete(cmsController.deletefaq);
 
 module.exports = router;

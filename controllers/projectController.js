@@ -267,14 +267,14 @@ exports.getProjectProposals = catchAsync(async (req, res, next) => {
 });
 
 //CUSTOMER ACCEPT OR REJECT PROPOSAL
-//ON ACCEPT -->> FIRST MILESTONE PAYMENT OF THE PROJECT WILL BE PAYED TO ADMIN USING STRIPE
+//ON ACCEPT -->> ACCEPT PROJECT
 //ON ACCEPT -->> CHAT ROOME WILL BE CREATED FOR ADMIN AND CUSTOMER
 exports.CustomerActionOnProposal = catchAsync(async (req, res, next) => {
   const requiredFromRequest = ["status", "proposalId"];
 
-  if (req.query.status == "accepted") {
-    requiredFromRequest.push("pmId");
-  }
+  // if (req.query.status == "accepted") {
+  //   requiredFromRequest.push("pmId");
+  // }
 
   let dataInRequest = { ...req.query, ...req.body };
 
@@ -649,7 +649,7 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
 
 //FREELANCER REQUEST WIDTHDRAWL FROM ADMIN
 exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
-  const requiredFromRequest = ["milestoneId", "proposalId"];
+  const requiredFromRequest = ["milestoneId", "proposalId", "widthDrawlDetail"];
 
   let dataInRequest = { ...req.query, ...req.body };
 
@@ -695,6 +695,7 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
     },
     {
       $set: {
+        "milestones.$.widthDrawlDetail": widthDrawlDetail,
         "milestones.$.makeWidthDrawlRequest": true,
         "milestones.$.widthDrawlRequestedAt": Date.now(),
         "milestones.$.invoice": pdfname,

@@ -53,6 +53,8 @@ exports.getMyNotifications = catchAsync(async (req, res, next) => {
     isReaded: false,
   });
 
+  let countDocs = await Notification.countDocuments({ receiver: req.user._id });
+
   // getting paginated notifications for mentor
   notfs = await Notification.find({
     receiver: req.user._id,
@@ -68,6 +70,7 @@ exports.getMyNotifications = catchAsync(async (req, res, next) => {
     results: notfs.length,
     newNotifications,
     data: notfs,
+    recordsLimit: countDocs,
   });
 });
 

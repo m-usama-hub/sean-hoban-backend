@@ -11,9 +11,10 @@ const ProjectService = require("../services/ProjectService");
 const StripeService = require("../services/StripeService");
 const moment = require("moment");
 const { CourierClient } = require("@trycourier/courier");
+const CMS = require("../models/cmsModel");
 
-const GetAssignedProjects = async () => {
-  return await Project.find({ isAssigned: true })
+const GetAssignedProjects = async (limit, skip) => {
+  let pros = Project.find({ isAssigned: true })
     .select({
       porposalsForCustomer: 0,
       porposalsForFreelancer: 0,
@@ -22,10 +23,16 @@ const GetAssignedProjects = async () => {
     })
     .sort("-createdAt")
     .populate("assignTo", { name: 1, role: 1 });
+
+  if (limit != "*") {
+    pros.skip(skip).limit(limit);
+  }
+
+  return await pros;
 };
 
-const GetMilestonesRequestedForWidthdrawl = async () => {
-  let proposals = await Proposal.aggregate([
+const GetMilestonesRequestedForWidthdrawl = async (limit, skip) => {
+  let pros = Proposal.aggregate([
     {
       $match: {
         status: "accepted",
@@ -77,6 +84,12 @@ const GetMilestonesRequestedForWidthdrawl = async () => {
     { $sort: { createdAt: -1 } },
   ]);
 
+  if (limit != "*") {
+    pros.skip(skip).limit(limit);
+  }
+
+  let proposals = await pros;
+
   //   return proposals;
 
   let milestones = [];
@@ -88,6 +101,7 @@ const GetMilestonesRequestedForWidthdrawl = async () => {
         amount: milestone.amount,
         title: milestone.title,
         _id: milestone._id,
+        invoice: milestone?.invoice,
         requestedAt: milestone.widthDrawlRequestedAt,
         proposalDetail: {
           proposalId: proposal._id,
@@ -169,8 +183,8 @@ const GetWebsiteStats = async () => {
 exports.dashboardData = catchAsync(async (req, res, next) => {
   let data = {};
 
-  data.assignedProjects = await GetAssignedProjects();
-  data.widthdrawlRequests = await GetMilestonesRequestedForWidthdrawl();
+  data.assignedProjects = await GetAssignedProjects(4, 0);
+  data.widthdrawlRequests = await GetMilestonesRequestedForWidthdrawl(2, 0);
   data.GraphData = await GetEarningsPerWeekDays();
   data.WebsiteStats = await GetWebsiteStats();
 
@@ -181,43 +195,69 @@ exports.dashboardData = catchAsync(async (req, res, next) => {
 });
 
 exports.payments = catchAsync(async (req, res, next) => {
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 400;
+  const skip = (page - 1) * limit;
   let payments = await Payment.find()
     .populate("projectId")
     .sort("-createdAt")
-    .populate("userId");
+    .populate("userId")
+    .populate("reciverId")
+    .skip(skip)
+    .limit(limit);
 
   res.status(200).json({
     status: "success",
     data: payments,
+    recordsLimit: await Payment.countDocuments(),
   });
 });
 
 exports.widthdrawlRequests = catchAsync(async (req, res, next) => {
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 400;
+  const skip = (page - 1) * limit;
+  let data = await GetMilestonesRequestedForWidthdrawl(limit, skip);
+  let all = await GetMilestonesRequestedForWidthdrawl("*", 0);
+
   res.status(200).json({
     status: "success",
-    data: GetMilestonesRequestedForWidthdrawl(),
+    data,
+    recordsLimit: all.length,
   });
 });
 
 exports.getAssignProject = catchAsync(async (req, res, next) => {
-  let data = await GetAssignedProjects();
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 400;
+  const skip = (page - 1) * limit;
+  let data = await GetAssignedProjects(limit, skip);
+  let all = await GetAssignedProjects("*", 0);
 
   res.status(200).json({
     status: "success",
     data,
+    recordsLimit: all.length,
   });
 });
 
 exports.getPostedProjects = catchAsync(async (req, res, next) => {
-  let data = await Project.find().sort("-createdAt");
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 400;
+  const skip = (page - 1) * limit;
+  let data = await Project.find().sort("-createdAt").skip(skip).limit(limit);
 
   res.status(200).json({
     status: "success",
     data,
+    recordsLimit: await Project.countDocuments(),
   });
 });
 
 exports.getAllWorkers = catchAsync(async (req, res, next) => {
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 400;
+  const skip = (page - 1) * limit;
   let users = await User.find({ role: "customer" })
     .select({
       fcmToken: 0,
@@ -228,15 +268,21 @@ exports.getAllWorkers = catchAsync(async (req, res, next) => {
       passwordResetExpires: 0,
       cus: 0,
     })
-    .sort("-createdAt");
+    .sort("-createdAt")
+    .skip(skip)
+    .limit(limit);
 
   res.status(200).json({
     status: "success",
     data: users,
+    recordsLimit: await User.countDocuments({ role: "customer" }),
   });
 });
 
 exports.getAllContractor = catchAsync(async (req, res, next) => {
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 400;
+  const skip = (page - 1) * limit;
   let users = await User.find({ role: "freelancer" })
     .select({
       fcmToken: 0,
@@ -247,10 +293,14 @@ exports.getAllContractor = catchAsync(async (req, res, next) => {
       passwordResetExpires: 0,
       cus: 0,
     })
-    .sort("-createdAt");
+    .sort("-createdAt")
+    .skip(skip)
+    .limit(limit);
+
   res.status(200).json({
     status: "success",
     data: users,
+    recordsLimit: await User.countDocuments({ role: "freelancer" }),
   });
 });
 
@@ -263,5 +313,82 @@ exports.getMessage = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     data: messageStatus,
+  });
+});
+
+exports.getPage = catchAsync(async (req, res, next) => {
+  let { page } = req.params;
+  let doc = await CMS.findOne({ [page]: { $exists: true } });
+
+  res.status(200).json({
+    status: "success",
+    data: doc[page],
+  });
+});
+
+exports.updatePage = catchAsync(async (req, res, next) => {
+  let { _id, pageName } = req.body;
+  const { files } = req;
+
+  if (!_id || !pageName) return next(new AppError("args are missing.", 400));
+
+  let outter = {
+    [pageName]: { ...req.body },
+  };
+
+  req.body[pageName] = outter[pageName];
+
+  if (files?.display_image)
+    req.body[pageName].display_image = files.display_image[0].key;
+
+  if (files?.sec1Image) req.body[pageName].sec1Image = files.sec1Image[0].key;
+
+  if (files?.sec2Image) req.body[pageName].sec2Image = files.sec2Image[0].key;
+
+  if (files?.sec3Image) req.body[pageName].sec3Image = files.sec3Image[0].key;
+
+  if (files?.cover_image_Craftman)
+    req.body[pageName].cover_image_Craftman = files.cover_image_Craftman[0].key;
+
+  if (files?.cover_image_Company)
+    req.body[pageName].cover_image_Company = files.cover_image_Company[0].key;
+
+  if (files?.cover_image)
+    req.body[pageName].cover_image = files.cover_image[0].key;
+
+  if (files?.sec4Video) req.body[pageName].sec4Video = files.sec4Video[0].key;
+
+  if (files?.aboutSection1Video)
+    req.body[pageName].aboutSection1Video = files.aboutSection1Video[0].key;
+
+  if (files?.sec3Video1)
+    req.body[pageName].sec3Video1 = files.sec3Video1[0].key;
+  if (files?.sec3Video2)
+    req.body[pageName].sec3Video2 = files.sec3Video2[0].key;
+
+  if (files?.images_list) {
+    images = [];
+    files?.images_list.forEach((file) => {
+      images.push(file.key);
+    });
+    req.body[pageName].images_list = images;
+  }
+
+  let doc = await CMS.findByIdAndUpdate(_id, req.body, { new: true });
+
+  console.log({ doc });
+
+  res.status(200).json({
+    status: "success",
+    data: doc,
+  });
+});
+
+exports.getAllPages = catchAsync(async (req, res, next) => {
+  let doc = await CMS.find({});
+
+  res.status(200).json({
+    status: "success",
+    data: doc,
   });
 });

@@ -107,7 +107,7 @@ app.get(
 
       // Content-type: application/pdf
       res.header("Content-type", "application/pdf");
-      await getPDFFileStream(key)
+      await getFileStream(key)
         .on("error", (e) => {
           // return res.status(404).json({
           //   message: 'Image not Found.',

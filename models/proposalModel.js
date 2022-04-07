@@ -29,6 +29,9 @@ const ProjectMilestonesSchema = new mongoose.Schema(
     widthDrawlRequestedAt: {
       type: Date,
     },
+    widthDrawlDetail: {
+      type: String,
+    },
     releaseRequestedAt: {
       type: Date,
     },

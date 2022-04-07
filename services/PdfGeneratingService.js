@@ -1088,16 +1088,10 @@ exports.createInvoice = async (invoice, filePath) => {
   //   generateInvoiceTable(doc, invoice);
   //   generateFooter(doc);
 
-  console.log({ filePath });
+  doc.pipe(fs.createWriteStream(filePath));
+  doc.end();
 
-  async function run() {
-    doc.pipe(fs.createWriteStream(filePath));
-    doc.end();
-  }
-
-  // await Promise.all(run(), uploadServerFile(filePath));
-
-  await setTimeout(async () => {
+  setTimeout(async () => {
     await uploadServerFile(filePath);
   }, 3000);
 };

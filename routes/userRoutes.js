@@ -13,11 +13,7 @@ const {
   cancelSubscription,
   createSubscription,
 } = require("../utils/stripe");
-const {
-  uploadUserImage,
-  uploadUserPDfs,
-  uploadUserFiles,
-} = require("../utils/s3");
+const { uploadUserFiles } = require("../utils/s3");
 
 /* const resizeUserPhoto = catchAsync(async (req, res, next) => {
   if (!req.file) return next();
@@ -62,7 +58,7 @@ router.patch("/updateMyPassword", authController.updatePassword);
 // router.get('/me', userController.getMe, userController.getUser);
 router.patch(
   "/updateMe",
-  uploadUserImage,
+  uploadUserFiles,
   // uploadUserPhoto,
   // resizeUserPhoto,
   userController.updateMe

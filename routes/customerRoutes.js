@@ -4,11 +4,7 @@ const CustomerController = require("../controllers/customerController");
 const projectController = require("../controllers/projectController");
 const RouteService = require("../services/RouteService");
 const catchAsync = require("../utils/catchAsync");
-const {
-  uploadUserImage,
-  uploadUserPDfs,
-  uploadUserFiles,
-} = require("../utils/s3");
+const { uploadUserFiles } = require("../utils/s3");
 
 const router = express.Router();
 

@@ -86,13 +86,13 @@ exports.payments = catchAsync(async (req, res, next) => {
   const page = req.query.page * 1 || 1;
   const limit = req.query.limit * 1 || 400;
   const skip = (page - 1) * limit;
-  let payments = await Payment.find({ userId: req.user._id })
+  let payments = await Payment.find({ reciverId: req.user._id })
     .sort("-createdAt")
     .populate("projectId")
     .skip(skip)
     .limit(limit);
 
-  let countDocs = await Payment.countDocuments({ userId: req.user._id });
+  let countDocs = await Payment.countDocuments({ reciverId: req.user._id });
 
   res.status(200).json({
     status: "success",
@@ -105,13 +105,13 @@ exports.invoice = catchAsync(async (req, res, next) => {
   const page = req.query.page * 1 || 1;
   const limit = req.query.limit * 1 || 400;
   const skip = (page - 1) * limit;
-  let payments = await Payment.find({ userId: req.user._id })
+  let payments = await Payment.find({ reciverId: req.user._id })
     .sort("-createdAt")
     .populate("projectId")
     .skip(skip)
     .limit(limit);
 
-  let countDocs = await Payment.countDocuments({ userId: req.user._id });
+  let countDocs = await Payment.countDocuments({ reciverId: req.user._id });
 
   res.status(200).json({
     status: "success",

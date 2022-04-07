@@ -64,16 +64,65 @@ exports.allProposals = catchAsync(async (req, res, next) => {
 });
 
 exports.assignProjects = catchAsync(async (req, res, next) => {
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 400;
+  const skip = (page - 1) * limit;
   let projects = await Project.find({
     isAssigned: true,
     assignTo: req.user._id,
   })
     .sort("-createdAt")
     .populate("porposalsForFreelancer")
-    .populate("accecptedPorposalByFreelancer");
+    .populate("accecptedPorposalByFreelancer")
+    .skip(skip)
+    .limit(limit);
+
+  let countDocs = await Project.countDocuments({
+    isAssigned: true,
+    assignTo: req.user._id,
+  });
 
   res.status(200).json({
     status: "success",
     data: projects,
+    recordsLimit: countDocs,
+  });
+});
+
+exports.payments = catchAsync(async (req, res, next) => {
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 400;
+  const skip = (page - 1) * limit;
+  let payments = await Payment.find({ reciverId: req.user._id })
+    .sort("-createdAt")
+    .populate("projectId")
+    .skip(skip)
+    .limit(limit);
+
+  let countDocs = await Payment.countDocuments({ reciverId: req.user._id });
+
+  res.status(200).json({
+    status: "success",
+    data: payments,
+    recordsLimit: countDocs,
+  });
+});
+
+exports.invoice = catchAsync(async (req, res, next) => {
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 400;
+  const skip = (page - 1) * limit;
+  let payments = await Payment.find({ reciverId: req.user._id })
+    .sort("-createdAt")
+    .populate("projectId")
+    .skip(skip)
+    .limit(limit);
+
+  let countDocs = await Payment.countDocuments({ reciverId: req.user._id });
+
+  res.status(200).json({
+    status: "success",
+    data: payments,
+    recordsLimit: countDocs,
   });
 });

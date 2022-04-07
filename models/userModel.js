@@ -75,6 +75,10 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    photo: {
+      type: String,
+      default: undefined,
+    },
     contactNo: {
       type: Number,
       unique: true,
