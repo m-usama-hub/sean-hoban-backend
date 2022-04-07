@@ -11,7 +11,10 @@ const { filterObj } = require("../utils/fn");
 const ProjectService = require("../services/ProjectService");
 const StripeService = require("../services/StripeService");
 
-const myProjects = async (user) => {
+const myProjects = async (user, pageNum, pageLimit) => {
+  const page = pageNum * 1 || 1;
+  const limit = pageLimit * 1 || 400;
+  const skip = (page - 1) * limit;
   let projects = await Project.find({
     postedBy: user._id,
   })
@@ -25,7 +28,9 @@ const myProjects = async (user) => {
     .populate("accecptedPorposalByCustomer")
     .populate("postedBy")
     .populate("assignTo")
-    .sort("-createdAt");
+    .sort("-createdAt")
+    .skip(skip)
+    .limit(limit);
 
   return projects;
 };
@@ -65,19 +70,52 @@ exports.newProposals = catchAsync(async (req, res, next) => {
 });
 
 exports.myProjects = catchAsync(async (req, res, next) => {
+  const page = req.query.page;
+  const limit = req.query.limit;
+  let countDocs = await Project.countDocuments({
+    postedBy: req.user._id,
+  });
   res.status(200).json({
     status: "success",
-    data: await myProjects(req.user),
+    data: await myProjects(req.user, page, limit),
+    recordsLimit: countDocs,
   });
 });
 
 exports.payments = catchAsync(async (req, res, next) => {
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 400;
+  const skip = (page - 1) * limit;
   let payments = await Payment.find({ userId: req.user._id })
     .sort("-createdAt")
-    .populate("projectId");
+    .populate("projectId")
+    .skip(skip)
+    .limit(limit);
+
+  let countDocs = await Payment.countDocuments({ userId: req.user._id });
 
   res.status(200).json({
     status: "success",
     data: payments,
+    recordsLimit: countDocs,
+  });
+});
+
+exports.invoice = catchAsync(async (req, res, next) => {
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 400;
+  const skip = (page - 1) * limit;
+  let payments = await Payment.find({ userId: req.user._id })
+    .sort("-createdAt")
+    .populate("projectId")
+    .skip(skip)
+    .limit(limit);
+
+  let countDocs = await Payment.countDocuments({ userId: req.user._id });
+
+  res.status(200).json({
+    status: "success",
+    data: payments,
+    recordsLimit: countDocs,
   });
 });

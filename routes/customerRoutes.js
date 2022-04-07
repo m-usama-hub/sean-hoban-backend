@@ -35,5 +35,6 @@ router.route("/myProjects").get(CustomerController.myProjects);
 router.route("/dashboardData").get(CustomerController.dashboardData);
 router.route("/newProposals").get(CustomerController.newProposals);
 router.route("/payments").get(CustomerController.payments);
+router.route("/invoice").get(CustomerController.invoice);
 
 module.exports = router;
