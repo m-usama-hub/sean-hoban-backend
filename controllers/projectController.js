@@ -162,7 +162,7 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
   let { proposalDetails, proposalMilestones, userIds } = req.body;
   let { files } = req;
 
-  let project = Project.findById(projectId);
+  let project = await Project.findById(projectId);
 
   if (project?.accecptedPorposalByCustomer == undefined) {
     return next(
