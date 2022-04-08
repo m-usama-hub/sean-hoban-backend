@@ -26,7 +26,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   // creating Stripe customer
   const cus = await StripeCustomer(email);
 
-  const newUser = await User.create({
+  let Userdata = {
     role,
     deviceId,
     cus: cus.id,
@@ -35,7 +35,15 @@ exports.signup = catchAsync(async (req, res, next) => {
     password,
     contactNo,
     passwordConfirm,
-  });
+  };
+
+  if (role == "freelancer") {
+    Userdata.status = "pending";
+    Userdata.active = false;
+    Userdata.deactivate = true;
+  }
+
+  const newUser = await User.create(Userdata);
 
   // const url = `${req.protocol}://${req.get('host')}/me`;
   const url = `${req.protocol}://${req.get("host")}/api/v1/users/verify-me/${

@@ -9,6 +9,7 @@ const AppError = require("../utils/appError");
 const { filterObj } = require("../utils/fn");
 const ProjectService = require("../services/ProjectService");
 const StripeService = require("../services/StripeService");
+const notification = require("../services/NotificationService");
 const moment = require("moment");
 const { CourierClient } = require("@trycourier/courier");
 const CMS = require("../models/cmsModel");
@@ -276,6 +277,55 @@ exports.getAllWorkers = catchAsync(async (req, res, next) => {
     status: "success",
     data: users,
     recordsLimit: await User.countDocuments({ role: "customer" }),
+  });
+});
+
+exports.updateFreelancerStatus = catchAsync(async (req, res, next) => {
+  const requiredFromRequest = ["freelancerId", "status"];
+
+  let dataInRequest = { ...req.query, ...req.body };
+
+  await ProjectService.checkRequiredData(
+    dataInRequest,
+    requiredFromRequest,
+    next
+  );
+
+  const { freelancerId, status } = {
+    ...req.query,
+    ...req.body,
+  };
+
+  let user = await User.findById(freelancerId);
+
+  if (user.role != "freelancer") {
+    return next(new AppError("User is not a freelancer.", 403));
+  }
+
+  let newUser = await User.findByIdAndUpdate(
+    freelancerId,
+    {
+      status,
+      active: status == "accepted" ? true : false,
+      deactivate: status != "accepted" ? true : false,
+    },
+    { new: true }
+  );
+
+  await notification.dispatch(
+    {
+      type: "user",
+      message: "your account has been " + status + " by admin.",
+      receiver: freelancerId,
+      title: "Your account status updated by admin.",
+      typeId: freelancerId,
+    },
+    req
+  );
+
+  res.status(200).json({
+    status: "success",
+    data: newUser,
   });
 });
 

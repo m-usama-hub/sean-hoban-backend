@@ -1129,7 +1129,7 @@ async function generateProjectDetails(doc, invoice) {
       } ${numeral(invoice.milestone.amount).format("0,0")}`,
       50
     )
-    .text(`status: ${invoice.project.status}`, 50)
+    .text(`status: ${invoice.project.projectStatus}`, 50)
     .moveDown();
 }
 

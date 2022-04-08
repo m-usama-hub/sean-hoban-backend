@@ -45,6 +45,8 @@ router.route("/contractors").get(adminController.getAllContractor);
 
 router.route("/get-email-status").get(adminController.getMessage);
 
+router.route("/update-freelancer-status").post(adminController.updateFreelancerStatus);
+
 //==============================================
 
 //CMS

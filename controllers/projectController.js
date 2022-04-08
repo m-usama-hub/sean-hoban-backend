@@ -563,22 +563,21 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
   const { milestoneId, proposalId, ispaid } = req.body;
 
   let milestone;
-  let proposal = await Proposal.findOne(
-    { _id: proposalId },
-    function (err, proposal) {
-      milestone = proposal.milestones.id(milestoneId);
-    }
-  ).populate("projectId");
+  let proposal = await Proposal.findById(proposalId, function (err, proposal) {
+    milestone = proposal.milestones.id(milestoneId);
+  }).populate("projectId");
+
+  console.log({ milestone });
 
   if (proposal.projectId.accecptedPorposalByFreelancer != proposalId) {
     return next(new AppError("Not a freelancer proposal", 403));
   }
 
-  if (milestone.isMilestonePaid == true) {
+  if (milestone?.isMilestonePaid == true) {
     return next(new AppError("Milestone already payed. ", 403));
   }
 
-  if (milestone.status != "completed") {
+  if (milestone?.status != "completed") {
     return next(
       new AppError(
         "Milestone is not completed yet, cannot update payment status. ",
@@ -600,19 +599,19 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
     { new: true }
   );
 
-  if (ispaid == "true") {
+  if (ispaid == true) {
     await Project.findByIdAndUpdate(proposal.projectId, {
       $inc: { amountPayedToFreelancer: milestone.amount },
     });
 
-    let updatedMilestone;
-    await Proposal.findOne({ _id: proposalId }, function (err, proposal) {
+    var updatedMilestone;
+    await Proposal.findById(proposalId, function (err, proposal) {
       updatedMilestone = proposal.milestones.id(milestoneId);
     });
 
     console.log({ updatedMilestone });
 
-    let payment = await Payment.create({
+    var postPayment = await Payment.create({
       amount: updatedMilestone.amount,
       projectId: proposal.projectId,
       proposalId: proposal._id,
@@ -622,6 +621,8 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
       userId: req.user._id,
       reciverId: proposal.sendTo,
     });
+
+    console.log({ postPayment });
   }
 
   // send email/dashboard notification to freelancer
@@ -630,9 +631,9 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
     {
       type: "milestone",
       message:
-        req.user.name + " change milestone payment to " + ispaid
-          ? "paid"
-          : "unpaid",
+        req.user.name +
+        " change milestone payment to " +
+        (ispaid ? "paid" : "unpaid"),
       receiver: proposal.sendTo,
       title: milestone.title,
       typeId: milestoneId,
@@ -659,7 +660,10 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
     next
   );
 
-  const { milestoneId, proposalId } = { ...req.query, ...req.body };
+  const { milestoneId, proposalId, widthDrawlDetail } = {
+    ...req.query,
+    ...req.body,
+  };
 
   let milestone;
   let pro = await Proposal.findOne(
@@ -669,7 +673,7 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
     }
   );
 
-  if (milestone.status != "completed") {
+  if (milestone?.status != "completed") {
     return next(
       new AppError(
         "Cannot create widthrawl request with " +
@@ -686,7 +690,7 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
 
   let pdfname = `${uuidv4()}.pdf`;
 
-  const _path = path.join(__dirname, "public", "pdfs", pdfname);
+  const _path = path.join(__dirname, "..", "public", "pdfs", pdfname);
 
   let UpdatedMilestone = await Proposal.findOneAndUpdate(
     {
@@ -706,9 +710,11 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
     .populate("projectId")
     .populate("sendTo");
 
-  let updatedMile = UpdatedMilestone.milestones.map((item) => {
+  let updatedMile;
+
+  UpdatedMilestone.milestones.map((item) => {
     if (item._id == milestoneId) {
-      return item;
+      updatedMile = item;
     }
   });
 
@@ -722,7 +728,7 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
     milestone: updatedMile,
   };
 
-  PdfGeneratingService.createInvoice(invoice, _path);
+  await PdfGeneratingService.createInvoice(invoice, _path);
 
   await notification.dispatchToAdmin(
     {
@@ -802,11 +808,15 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
     .populate("projectId")
     .populate("sendTo");
 
-  let updatedMile = UpdatedMilestone.milestones.map((item) => {
+  let updatedMile;
+
+  UpdatedMilestone.milestones.map((item) => {
     if (item._id == milestoneId) {
-      return item;
+      updatedMile = item;
     }
   });
+
+  console.log({ UpdatedMilestone: UpdatedMilestone.projectId });
 
   let invoice = {
     user: UpdatedMilestone.sendTo,
@@ -860,14 +870,14 @@ exports.CustomerPayToAdmin = catchAsync(async (req, res, next) => {
     }
   ).populate("projectId");
 
-  if (milestone.makeReleaseRequest != true) {
+  if (milestone?.makeReleaseRequest != true) {
     next(new AppError("Milestone release not requested by admin. ", 403));
   }
-  if (milestone.isMilestonePaid == true) {
+  if (milestone?.isMilestonePaid == true) {
     next(new AppError("Milestone already payed. ", 403));
   }
 
-  if (milestone.status != "completed") {
+  if (milestone?.status != "completed") {
     return next(
       new AppError(
         "Milestone is not completed yet, cannot update payment status. ",

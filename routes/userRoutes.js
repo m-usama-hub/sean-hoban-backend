@@ -95,7 +95,7 @@ router.route("/projectDetails").get(userController.getProjectDetails);
 //   .route('/video/watch')
 //   .post(RouteService.restrictTo('user'), userController.watchTime);
 
-router.use(RouteService.restrictTo("admin"));
+// router.use(RouteService.restrictTo("admin"));
 
 router
   .route("/")

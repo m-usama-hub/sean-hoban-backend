@@ -11,6 +11,97 @@ const { filterObj } = require("../utils/fn");
 const ProjectService = require("../services/ProjectService");
 const StripeService = require("../services/StripeService");
 
+const GetMilestonesRequestedForRelease = async (limit, skip, req) => {
+  let pros = Proposal.aggregate([
+    {
+      $match: {
+        status: "accepted",
+        sendTo: req.user._id,
+      },
+    },
+    {
+      $project: {
+        milestones: {
+          $filter: {
+            input: "$milestones",
+            as: "milestones",
+            cond: {
+              $eq: ["$$milestones.status", "completed"],
+            },
+          },
+        },
+        projectId: 1,
+        sendTo: 1,
+        title: 1,
+        createdAt: 1,
+      },
+    },
+    {
+      $match: {
+        "milestones.makeReleaseRequest": true,
+      },
+    },
+    { $unwind: "$projectId" },
+    {
+      $lookup: {
+        from: "projects",
+        localField: "projectId",
+        foreignField: "_id",
+        as: "project",
+      },
+    },
+    { $unwind: "$project" },
+    { $unwind: "$sendTo" },
+    {
+      $lookup: {
+        from: "users",
+        localField: "sendTo",
+        foreignField: "_id",
+        as: "customer",
+      },
+    },
+    { $unwind: "$customer" },
+    { $sort: { createdAt: -1 } },
+  ]);
+
+  if (limit != "*") {
+    pros.skip(skip).limit(limit);
+  }
+
+  let proposals = await pros;
+
+  //   return proposals;
+
+  let milestones = [];
+
+  proposals.forEach(function (proposal) {
+    proposal.milestones.forEach(function (milestone) {
+      milestones.push({
+        milestoneStatus: milestone.isMilestonePaid ? "Paid" : "Pending",
+        milestoneDetails: milestone,
+        requestedAt: milestone.releaseRequestedAt,
+        proposalDetail: {
+          proposalId: proposal._id,
+          proposalTitle: proposal.title,
+        },
+        projectDetail: {
+          projectId: proposal.project._id,
+          projectTitle: proposal.project.title,
+          projectAmount: proposal.project.amount,
+          projectCurrency: proposal.project.currency,
+          assignTo: {
+            _id: proposal.customer._id,
+            name: proposal.customer.name,
+            role: proposal.customer.role,
+          },
+        },
+      });
+    });
+  });
+
+  return milestones;
+};
+
 const myProjects = async (user, pageNum, pageLimit) => {
   const page = pageNum * 1 || 1;
   const limit = pageLimit * 1 || 400;
@@ -41,13 +132,13 @@ exports.dashboardData = catchAsync(async (req, res, next) => {
     sendTo: req.user._id,
   })
     .sort("-createdAt")
-    .populate("projectId");
+    .populate("projectId")
+    .skip(0)
+    .limit(4);
 
   let projects = await myProjects(req.user);
 
-  let payments = await Payment.find({ userId: req.user._id })
-    .sort("-createdAt")
-    .populate("projectId");
+  let payments = await GetMilestonesRequestedForRelease(2, 0, req);
 
   res.status(200).json({
     status: "success",
@@ -86,13 +177,13 @@ exports.payments = catchAsync(async (req, res, next) => {
   const page = req.query.page * 1 || 1;
   const limit = req.query.limit * 1 || 400;
   const skip = (page - 1) * limit;
-  let payments = await Payment.find({ reciverId: req.user._id })
+  let payments = await Payment.find({ userId: req.user._id })
     .sort("-createdAt")
     .populate("projectId")
     .skip(skip)
     .limit(limit);
 
-  let countDocs = await Payment.countDocuments({ reciverId: req.user._id });
+  let countDocs = await Payment.countDocuments({ userId: req.user._id });
 
   res.status(200).json({
     status: "success",
@@ -105,17 +196,13 @@ exports.invoice = catchAsync(async (req, res, next) => {
   const page = req.query.page * 1 || 1;
   const limit = req.query.limit * 1 || 400;
   const skip = (page - 1) * limit;
-  let payments = await Payment.find({ reciverId: req.user._id })
-    .sort("-createdAt")
-    .populate("projectId")
-    .skip(skip)
-    .limit(limit);
+  let payments = await GetMilestonesRequestedForRelease(limit, skip, req);
 
-  let countDocs = await Payment.countDocuments({ reciverId: req.user._id });
+  let countDocs = await GetMilestonesRequestedForRelease("*", 0, req);
 
   res.status(200).json({
     status: "success",
     data: payments,
-    recordsLimit: countDocs,
+    recordsLimit: countDocs.length,
   });
 });

@@ -21,7 +21,7 @@ exports.dispatchMany = async (payload, req) => {
     postNotifications.push({
       sender: req.user?._id,
       notificationType: data.type,
-      receiver: data.to,
+      receiver: data.receiver,
       message: data.message,
       title: data.title,
       link: data.typeId,

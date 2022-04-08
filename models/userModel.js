@@ -97,6 +97,11 @@ const userSchema = new mongoose.Schema(
       default: 0,
     },
 
+    status: {
+      type: String,
+      enum: ["pending", "accepted", "rejected", "blocked"],
+    },
+
     passwordChangedAt: Date,
     passwordResetToken: String,
     passwordResetExpires: Date,
