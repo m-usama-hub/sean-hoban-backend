@@ -6,135 +6,113 @@ const cmsSchema = new mongoose.Schema(
       type: {
         pageName: { type: String, default: "home" },
 
-        //looking for mew challange
-        heading_Craftman: String,
-        detail_description_Craftman: String,
-        cover_image_Craftman: String,
-
-        //right candidates
-        heading_Company: String,
-        detail_description_Company: String,
-        cover_image_Company: String,
-
-        //find the dream job
+        // Section 1: Delivered to The Highest Standards
         sec1Heading: String,
-        sec1Image: String,
         sec1Description: String,
+        sec1Image: String,
+        sec1CoverImage: String,
 
-        //for companies
+        // Section 2: Our Onboarding Process
         sec2Heading: String,
         sec2Description: String,
 
-        //for dc steel
+        // Section 3: Our Services
         sec3Heading: String,
-        sec3Image: String,
         sec3Description: String,
 
+        // Section 4: Video (Chilled Serenity)
         sec4Video: String,
 
-        //extra
-        cover_image: String,
-        display_image: String,
+        // Section 5: How To Order
+        sec5Heading: String,
+
+        // Section 6: Testimonial
+        sec6Heading: String,
+
+        // Section 7: Our Latest News
+        sec7Heading: String,
+
+        // Section 8: Contact Us
+        sec8Heading: String,
+        sec8Description: String,
       },
     },
-    company: {
+    services: {
       type: {
-        pageName: { type: String, default: "company" },
+        pageName: { type: String, default: "services" },
 
-        //temporary or permenent employee
-        heading: String,
-        detail_description: String,
-        cover_image: String,
-
-        //three diff options
-        heading1: String,
-        textDesc: String,
-
-        //our services
+        // Section 1: Our Services
         sec1Heading: String,
-        sec1Images: [String],
+        sec1CoverImage: String,
 
-        //find new employees
-        sec2Heading: String,
-        sec2coverImage: String,
-
-        //what people say
+        // Section 3: Greatest Asset Time
         sec3Heading: String,
-        sec3Video1: String,
-        sec3Name1: String,
-        sec3Company1: String,
-        sec3Video2: String,
-        sec3Name2: String,
-        sec3Company2: String,
+        sec3Description: String,
+
+        // Section 4: Quantities For
+        sec4Heading: String,
       },
     },
-    craftman: {
+    order: {
       type: {
-        pageName: { type: String, default: "craftsman" },
+        pageName: { type: String, default: "order" },
 
-        //new challenges
-        heading: String,
-        detail_description: String,
-        cover_image: String,
-
-        //skilled and qualified labor
+        // Section 1: How To Order
         sec1Heading: String,
-        sec1Text: String,
-        sec1Images: [String],
+        sec1coverImage: String,
 
-        //dream job
-        sec2Heading: String,
-        sec2coverImage: String,
-
-        //latest jobs
-        heading1: String,
-
-        //what people says
+        // Section 3: Greatest Asset Time
         sec3Heading: String,
-        sec3Video1: String,
-        sec3Name1: String,
-        sec3Company1: String,
-        sec3Video2: String,
-        sec3Name2: String,
-        sec3Company2: String,
-      },
-    },
-    all_jobs: {
-      type: {
-        pageName: { type: String, default: "all_jobs" },
-        heading: String,
-        cover_image: String,
+        sec3Description: String,
+        sec3Image: String,
       },
     },
     about_us: {
       type: {
         // About us
         pageName: { type: String, default: "about_us" },
-        heading: String,
-        cover_image: String,
 
-        // about jobster
+        // Section 1: About Us
         sec1Heading: String,
-        sec1Video: String,
-        sec1Description: String,
+        sec1coverImage: String,
 
-        //why choose us
+        // Section 2: Highest Standards
+        sec2Description1: String,
         sec2Heading: String,
-        sec2Text: String,
+        sec2Description2: String,
         sec2coverImage: String,
 
-        //companies worked with us
+        // Section 3: How It Works
         sec3Heading: String,
-        sec3Images: [String],
+        sec3Description: String,
+        sec3Video: String,
+
+        // Section 4: Meet Our Experts
+        sec4Heading: String,
+        sec4Description: String,
       },
     },
     contact_us: {
       type: {
         pageName: { type: String, default: "contact_us" },
 
-        //contact us
-        heading: String,
-        cover_image: String,
+        // Section 1: Contact Us
+        sec1Heading: String,
+        sec1CoverImage: String,
+
+        // Section 2: Get In Touch
+        sec2Heading: String,
+        sec2Description: String,
+      },
+    },
+    footer: {
+      type: {
+        pageName: { type: String, default: "footer" },
+        // Section 9: Footer
+        description: String,
+        email: String,
+        number1: String,
+        number2: String,
       },
     },
   },

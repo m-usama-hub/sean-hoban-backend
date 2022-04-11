@@ -13,6 +13,7 @@ const notification = require("../services/NotificationService");
 const moment = require("moment");
 const { CourierClient } = require("@trycourier/courier");
 const CMS = require("../models/cmsModel");
+const { deleteFile } = require("../utils/s3");
 
 const GetAssignedProjects = async (limit, skip) => {
   let pros = Project.find({ isAssigned: true })
@@ -366,6 +367,53 @@ exports.getMessage = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getDynamicPage = catchAsync(async (req, res, next) => {
+  let {
+    pages,
+    goals,
+    service,
+    aboutusItem,
+    faq,
+    all,
+    sources,
+    privacyPolicy,
+    termAndCondition,
+  } = req.query;
+
+  // let a = `[\"contactus\",\"home\"]`;
+  // let arr = JSON.parse(a);
+  if (all == 'true') {
+    const d = await CMS.find({});
+    const pagesDynamicArray = [
+      'home',
+      'services',
+      'order',
+      'about_us',
+      'contact_us',
+    ];
+    let newArray = [];
+    d.map((item, i) => {
+      pagesDynamicArray.map((pg) => {
+        if (item[pg]) {
+          item[pg]._id = item?._id;
+          newArray.push(item[pg]);
+        }
+      });
+    });
+
+    res.status(200).json({
+      status: 'success',
+      results: newArray.length,
+      data: newArray,
+    });
+  } else {
+    return res.status(200).json({
+      status: 'success',
+      data: [],
+    })
+  }
+});
+
 exports.getPage = catchAsync(async (req, res, next) => {
   let { page } = req.params;
   let doc = await CMS.findOne({ [page]: { $exists: true } });
@@ -388,10 +436,17 @@ exports.updatePage = catchAsync(async (req, res, next) => {
 
   req.body[pageName] = outter[pageName];
 
-  if (files?.display_image)
-    req.body[pageName].display_image = files.display_image[0].key;
+  const doc = await CMS.findById(_id);
 
-  if (files?.sec1Image) req.body[pageName].sec1Image = files.sec1Image[0].key;
+  if (files?.sec1Image) {
+    if (doc?.home?.sec1Image) await deleteFile(doc.home.sec1Image);
+    req.body[pageName].sec1Image = files.sec1Image[0].key;
+  }
+
+  if (files?.sec1CoverImage) {
+    if (doc?.home?.sec1CoverImage) await deleteFile(doc.home.sec1CoverImage);
+    req.body[pageName].sec1CoverImage = files.sec1CoverImage[0].key;
+  }
 
   if (files?.sec2Image) req.body[pageName].sec2Image = files.sec2Image[0].key;
 
@@ -424,13 +479,13 @@ exports.updatePage = catchAsync(async (req, res, next) => {
     req.body[pageName].images_list = images;
   }
 
-  let doc = await CMS.findByIdAndUpdate(_id, req.body, { new: true });
+  let result = await CMS.findByIdAndUpdate(_id, req.body, { new: true });
 
-  console.log({ doc });
+  console.log({ result });
 
   res.status(200).json({
     status: "success",
-    data: doc,
+    data: result,
   });
 });
 

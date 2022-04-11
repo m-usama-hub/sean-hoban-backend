@@ -19,6 +19,8 @@ const adminRouter = require("./routes/adminRoutes");
 const customerRouter = require("./routes/customerRoutes");
 const freelancerRouter = require("./routes/freelancerRoutes");
 const chatRouter = require("./routes/chatRoutes");
+const cmsRouter = require("./routes/cmsRoutes");
+const pageCrudRouter = require("./routes/pageCrudRoutes");
 const notificationsRouter = require("./routes/notificationRoutes");
 const PdfGeneratingService = require("./services/PdfGeneratingService");
 const { getFileStream, getPDFFileStream } = require("./utils/s3");
@@ -80,7 +82,10 @@ app.get("/", (req, res) => {
 app.get("/api/images/:key", async (req, res) => {
   try {
     const key = req.params.key;
-    res.set("Content-type", "image/gif");
+    const format = key.slice(-3);
+    // if (key.indexOf)
+    if (format == "mp4") res.set("Content-type", "video/mp4");
+    else res.set("Content-type", "image/gif");
 
     await getFileStream(key)
       .on("error", (e) => {
@@ -127,6 +132,8 @@ app.use("/api/v1/admin", adminRouter);
 app.use("/api/v1/customer", customerRouter);
 app.use("/api/v1/freelancer", freelancerRouter);
 app.use("/api/v1/chat", chatRouter);
+app.use("/api/v1/cms", cmsRouter);
+app.use("/api/v1/page", pageCrudRouter);
 app.use("/api/v1/notifications", notificationsRouter);
 
 app.all("*", (req, res, next) => {
