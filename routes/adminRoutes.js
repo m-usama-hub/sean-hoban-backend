@@ -45,11 +45,15 @@ router.route("/contractors").get(adminController.getAllContractor);
 
 router.route("/get-email-status").get(adminController.getMessage);
 
-router.route("/update-freelancer-status").post(adminController.updateFreelancerStatus);
+router
+  .route("/update-freelancer-status")
+  .post(adminController.updateFreelancerStatus);
 
 //==============================================
 
 //CMS
+
+router.route("/pages/all").get(adminController.getDynamicPage);
 
 router.route("/get-page/:page").get(adminController.getPage);
 
@@ -68,19 +72,19 @@ router
   .delete(cmsController.deleteservices);
 
 // Web Config Routes
-router
-  .route("/web/configs")
-  .get(cmsController.getconfig)
-  .post(cmsController.postconfigs)
-  .patch(cmsController.updateconfigs)
-  .delete(cmsController.deleteconfigs);
+// router
+//   .route("/web/configs")
+//   .get(cmsController.getconfig)
+//   .post(cmsController.postconfigs)
+//   .patch(cmsController.updateconfigs)
+//   .delete(cmsController.deleteconfigs);
 
 // Web FAQ Routes
-router
-  .route("/web/faq/:id?")
-  .get(cmsController.getfaq)
-  .post(cmsController.postfaq)
-  .patch(cmsController.updatefaq)
-  .delete(cmsController.deletefaq);
+// router
+//   .route("/web/faq/:id?")
+//   .get(cmsController.getfaq)
+//   .post(cmsController.postfaq)
+//   .patch(cmsController.updatefaq)
+//   .delete(cmsController.deletefaq);
 
 module.exports = router;

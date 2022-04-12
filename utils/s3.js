@@ -21,12 +21,13 @@ const s3 = new S3({
 const multerPdfFilter = (req, file, cb) => {
   if (
     file.mimetype.startsWith("image") ||
+    file.mimetype.startsWith("video") ||
     file.mimetype.startsWith("application/pdf")
   ) {
     cb(null, true);
   } else {
     cb(
-      new AppError("Not an image! Please upload only images/pdf.", 400),
+      new AppError("Not an image! Please upload only images/video//pdf.", 400),
       false
     );
   }
@@ -63,6 +64,26 @@ exports.uploadUserFiles = uploadFiles.fields([
   },
   {
     name: "photo",
+    maxCount: 1,
+  },
+  {
+    name: "image",
+    maxCount: 1,
+  },
+  {
+    name: "video",
+    maxCount: 1,
+  },
+  {
+    name: "coverImage",
+    maxCount: 1,
+  },
+  {
+    name: "sec1CoverImage",
+    maxCount: 1,
+  },
+  {
+    name: "sec2CoverImage",
     maxCount: 1,
   },
 ]);
