@@ -98,3 +98,20 @@ exports.deleteFile = (fileKey) => {
 
   return s3.deleteObject(deleteParams).promise();
 };
+
+// uploads a file to s3
+exports.uploadbase64File = (file) => {
+  // const fileStream = fs.createReadStream(file.path);
+
+  // const buf = Buffer.from(file, "base64");
+
+  const uploadParams = {
+    Bucket: fileBucket,
+    Body: file,
+    Key: `${uuidv4()}`,
+    ContentEncoding: "base64",
+    // Key: file.filename,
+  };
+
+  return s3.upload(uploadParams).promise();
+};

@@ -21,7 +21,11 @@ const freelancerRouter = require("./routes/freelancerRoutes");
 const chatRouter = require("./routes/chatRoutes");
 const notificationsRouter = require("./routes/notificationRoutes");
 const PdfGeneratingService = require("./services/PdfGeneratingService");
-const { getFileStream, getPDFFileStream } = require("./utils/s3");
+const {
+  getFileStream,
+  getPDFFileStream,
+  uploadbase64File,
+} = require("./utils/s3");
 
 const User = require("./models/userModel");
 const Chat = require("./models/chatModel");
@@ -180,6 +184,57 @@ io.on("connection", (socket) => {
     }
   });
 
+  socket.on(
+    "image",
+    // uploadUserPhoto,
+    async (msg, msgTo, from, roomId, role, imgType) => {
+      const receiverId = msgTo;
+      let receiverUser;
+      let base64Data;
+      let lastMessage;
+
+      console.log({ msg });
+
+      // base64Data = msg.message.src.replace(/^data:image\/gif;base64,/, "");
+
+      // if (imgType === "png") {
+      //   base64Data = msg.message.src.replace(/^data:image\/png;base64,/, "");
+      // } else if (imgType === "jpg" || imgType == "jpeg") {
+      //   base64Data = msg.message.src.replace(/^data:image\/jpeg;base64,/, "");
+      // } else if (imgType === "gif") {
+      //   base64Data = msg.message.src.replace(/^data:image\/gif;base64,/, "");
+      // } else if (imgType === "pdf") {
+      //   base64Data = msg.message.src.replace(/^data:image\/pdf;base64,/, "");
+      // }
+
+      // const __rs = await uploadbase64File(base64Data);
+      const __rs = await uploadbase64File(msg.message.src);
+
+      const urr = `https://${socket.handshake.headers.host}/api/images/${__rs.key}`;
+
+      msg.message.src = urr;
+      msg.message.imgType = imgType;
+
+      try {
+        lastMessage = await Chat.findOne({ roomId }).sort("-createdAt");
+        let sms = await Chat.create({
+          message: msg.message,
+          room: roomId,
+          to: msgTo,
+          from,
+          isReadMessage: 0,
+        });
+        //mail
+
+        receiverUser = User.findById(receiverId);
+
+        io.emit("msg", sms, roomId);
+      } catch (e) {
+        console.log("msg submit error", e);
+      }
+    }
+  );
+
   // mark-as-read
   socket.on("mark-as-read", async (roomId, role) => {
     console.log({ emit: "mark-as-read 📖📖📖" });
@@ -286,7 +341,7 @@ io.on("connection", (socket) => {
           });
       }
 
-      io.to(receiverUser.socketId).emit("msg", msg, roomId);
+      io.emit("msg", msg, roomId);
       // await Rooms.findByIdAndUpdate(roomId, {
       //   lastMessage: msg
       // });
