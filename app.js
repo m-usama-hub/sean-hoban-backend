@@ -33,6 +33,7 @@ const User = require("./models/userModel");
 const Chat = require("./models/chatModel");
 const Rooms = require("./models/roomModel");
 
+
 const app = require("express")();
 const http = require("http").Server(app);
 const io = require("socket.io")(http, {
@@ -40,6 +41,7 @@ const io = require("socket.io")(http, {
     origin: "*",
   },
 });
+
 
 // const app = express();
 
@@ -235,7 +237,7 @@ io.on("connection", (socket) => {
 
         receiverUser = User.findById(receiverId);
 
-        io.emit("msg", sms, roomId);
+        io.emit("msg", sms?.message, roomId);
       } catch (e) {
         console.log("msg submit error", e);
       }
@@ -291,9 +293,11 @@ io.on("connection", (socket) => {
 
     try {
       console.log(
-        "msg send soxket run =----------------------------------------------==="
+        "msg send soxket run =----------------------------------------------===",
+        { msg }
       );
       const receiverUser = await User.findById(receiverId);
+      console.log({ receiverUser });
       const newMessage = new Chat({
         room: roomId,
         to: receiverUser._id,

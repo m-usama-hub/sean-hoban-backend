@@ -19,6 +19,8 @@ module.exports = class Email {
       welcome: "C1PNPMV1XCMTW1HWWKJ8MZ51XEAE",
       verify: "HHQTQZAXG5MFW9P8A1J1X49AM824",
       passwordReset: "530VCQ6CHKM7AHNF1ERA24FJDJ66",
+      projectPosted: "43XN61NWVRMDY3GET0JHP08W04DX",
+      propsalPosted: "3CQ2PRVWQC4EEXJFVD421HF68KWK",
     };
 
     return templates[this.template];

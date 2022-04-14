@@ -27,6 +27,10 @@ router
   .route("/get-project-proposals")
   .get(projectController.getProjectProposals);
 
+router
+  .route("/update-project-status")
+  .post(projectController.updateProjectStatus);
+
 router.route("/myProjects").get(CustomerController.myProjects);
 router.route("/dashboardData").get(CustomerController.dashboardData);
 router.route("/newProposals").get(CustomerController.newProposals);

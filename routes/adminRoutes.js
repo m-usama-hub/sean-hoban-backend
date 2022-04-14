@@ -34,6 +34,7 @@ router
   .post(projectController.MakeMilestoneReleaseRequest);
 
 router.route("/dashboardData").get(adminController.dashboardData);
+router.route("/getGraphData").get(adminController.getGraphData);
 
 router.route("/payments").get(adminController.payments);
 router.route("/widthdrawlRequests").get(adminController.widthdrawlRequests);
@@ -42,6 +43,9 @@ router.route("/postedProjects").get(adminController.getPostedProjects);
 // router.route("/projectDetails").get(adminController.getProjectDetails);
 router.route("/workers").get(adminController.getAllWorkers);
 router.route("/contractors").get(adminController.getAllContractor);
+
+router.route("/get-latest-messages").get(adminController.getlatestMessage);
+
 
 router.route("/get-email-status").get(adminController.getMessage);
 

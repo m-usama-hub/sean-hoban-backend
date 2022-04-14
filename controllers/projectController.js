@@ -12,8 +12,11 @@ const ProjectService = require("../services/ProjectService");
 const StripeService = require("../services/StripeService");
 const notification = require("../services/NotificationService");
 const PdfGeneratingService = require("../services/PdfGeneratingService");
+const EmailService = require("../services/EmailSendingService");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
+const currencies = require("../currencies.json");
+const moment = require("moment");
 
 //CUSTOMER CREATE NEW PROJECT
 exports.createProject = catchAsync(async (req, res, next) => {
@@ -51,6 +54,19 @@ exports.createProject = catchAsync(async (req, res, next) => {
     },
     req
   );
+
+  await new EmailService(
+    await User.findOne({ role: "admin" }),
+    {
+      title: req.body.title,
+      description: req.body.description,
+      amount:
+        currencies[req.body.currency.toUpperCase()].symbol + req.body.amount,
+      username: req.user.name,
+      date: moment().format(),
+    },
+    "projectPosted"
+  ).Send();
 
   res.status(201).json({
     status: "success",
@@ -99,7 +115,7 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
 
   let postedPorposal = await Proposal.create(proposalDetails);
 
-  await Project.findByIdAndUpdate(
+  let project = await Project.findByIdAndUpdate(
     projectId,
     {
       $push: { porposalsForCustomer: postedPorposal._id },
@@ -134,6 +150,20 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
     req
   );
 
+  await new EmailService(
+    await User.findById(userId),
+    {
+      title: proposalDetails.title,
+      description: proposalDetails.description,
+      amount:
+        currencies[project.currency.toUpperCase()].symbol +
+        proposalDetails.amount,
+      username: req.user.name,
+      date: moment().format(),
+    },
+    "propsalPosted"
+  ).Send();
+
   res.status(201).json({
     status: "success",
     data: postedPorposal,
@@ -164,14 +194,16 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
 
   let project = await Project.findById(projectId);
 
-  if (project?.accecptedPorposalByCustomer == undefined) {
-    return next(
-      new AppError(
-        "Proposal cannot be sent to Freelancer because Proposal is not accepted by Customer.",
-        403
-      )
-    );
-  }
+  console.log({ project });
+
+  // if (project?.accecptedPorposalByCustomer == undefined) {
+  //   return next(
+  //     new AppError(
+  //       "Proposal cannot be sent to Freelancer because Proposal is not accepted by Customer.",
+  //       403
+  //     )
+  //   );
+  // }
 
   proposalDetails.milestones = proposalMilestones;
   proposalDetails.projectId = projectId;
@@ -220,6 +252,19 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
       },
       { new: true, upsert: true }
     );
+
+    // await new EmailService(
+    //   await User.findById(posted.sendTo),
+    //   {
+    //     title: posted.title,
+    //     description: posted.description,
+    //     amount:
+    //       currencies[project.currency.toUpperCase()].symbol + posted.amount,
+    //     username: req.user.name,
+    //     date: moment().format(),
+    //   },
+    //   "propsalPosted"
+    // ).Send();
   });
 
   console.log({ postedPorposal });
@@ -340,7 +385,7 @@ exports.CustomerActionOnProposal = catchAsync(async (req, res, next) => {
     await Project.findByIdAndUpdate(
       proposal.projectId,
       {
-        // amount: proposal.amount,
+        amount: proposal.amount,
         projectStatus: "inProgress",
         accecptedPorposalByCustomer: proposal._id,
         // $inc: { amountPayedToAdmin: proposal.milestones[0].amount },
@@ -496,13 +541,11 @@ exports.UpdateMilestoneStatus = catchAsync(async (req, res, next) => {
     // send email/dashboard notification to admin
   }
 
-  let milestone;
-  let proposal = await Proposal.findOne(
-    { _id: proposalId },
-    function (err, proposal) {
-      milestone = proposal.milestones.id(milestoneId);
-    }
-  );
+  let proposal = await Proposal.findById(proposalId);
+
+  let milestone = proposal.milestones.find((mile) => {
+    return mile._id == milestoneId;
+  });
 
   let updatedPro = await Proposal.findOneAndUpdate(
     {
@@ -562,10 +605,11 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
 
   const { milestoneId, proposalId, ispaid } = req.body;
 
-  let milestone;
-  let proposal = await Proposal.findById(proposalId, function (err, proposal) {
-    milestone = proposal.milestones.id(milestoneId);
-  }).populate("projectId");
+  var proposal = await Proposal.findById(proposalId).populate("projectId");
+
+  var milestone = proposal.milestones.find((mile) => {
+    return mile._id == milestoneId;
+  });
 
   console.log({ milestone });
 
@@ -573,7 +617,7 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
     return next(new AppError("Not a freelancer proposal", 403));
   }
 
-  if (milestone?.isMilestonePaid == true) {
+  if (milestone?.isMilestonePaid) {
     return next(new AppError("Milestone already payed. ", 403));
   }
 
@@ -599,23 +643,23 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
     { new: true }
   );
 
-  if (ispaid == true) {
+  if (ispaid) {
     await Project.findByIdAndUpdate(proposal.projectId, {
       $inc: { amountPayedToFreelancer: milestone.amount },
     });
 
-    var updatedMilestone;
-    await Proposal.findById(proposalId, function (err, proposal) {
-      updatedMilestone = proposal.milestones.id(milestoneId);
+    var upMile;
+    upMile = UpdateMilestone.milestones.find((mile) => {
+      return mile._id == milestoneId;
     });
 
-    console.log({ updatedMilestone });
+    console.log({ upMile });
 
     var postPayment = await Payment.create({
-      amount: updatedMilestone.amount,
+      amount: upMile.amount,
       projectId: proposal.projectId,
       proposalId: proposal._id,
-      paymentMilestone: updatedMilestone,
+      paymentMilestone: upMile,
       paymentMethod: "cash",
       isPaymentVerified: true,
       userId: req.user._id,
@@ -665,13 +709,11 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
     ...req.body,
   };
 
-  let milestone;
-  let pro = await Proposal.findOne(
-    { _id: proposalId },
-    function (err, proposal) {
-      milestone = proposal.milestones.id(milestoneId);
-    }
-  );
+  let pro = await Proposal.findById(proposalId);
+
+  let milestone = pro.milestones.find((mile) => {
+    return mile._id == milestoneId;
+  });
 
   if (milestone?.status != "completed") {
     return next(
@@ -684,7 +726,7 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
     );
   }
 
-  if (milestone.isMilestonePaid == true) {
+  if (milestone.isMilestonePaid) {
     return next(new AppError("Milestone already payed. ", 403));
   }
 
@@ -710,12 +752,8 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
     .populate("projectId")
     .populate("sendTo");
 
-  let updatedMile;
-
-  UpdatedMilestone.milestones.map((item) => {
-    if (item._id == milestoneId) {
-      updatedMile = item;
-    }
+  let updatedMile = UpdatedMilestone.milestones.find((item) => {
+    return item._id == milestoneId;
   });
 
   let invoice = {
@@ -761,13 +799,11 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
 
   const { milestoneId, proposalId } = { ...req.query, ...req.body };
 
-  let milestone;
-  let proposal = await Proposal.findOne(
-    { _id: proposalId },
-    function (err, proposal) {
-      milestone = proposal.milestones.id(milestoneId);
-    }
-  );
+  let proposal = await Proposal.findById(proposalId);
+
+  let milestone = proposal.milestones.find((mile) => {
+    return mile._id == milestoneId;
+  });
 
   // if (milestone.status != "completed") {
   //   return next(
@@ -782,9 +818,9 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
 
   console.log({ milestone });
 
-  // if (milestone?.isMilestonePaid == true) {
-  //   return next(new AppError("Milestone already payed. ", 403));
-  // }
+  if (milestone?.isMilestonePaid) {
+    return next(new AppError("Milestone already payed. ", 403));
+  }
 
   let pdfname = `${uuidv4()}.pdf`;
 
@@ -808,12 +844,8 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
     .populate("projectId")
     .populate("sendTo");
 
-  let updatedMile;
-
-  UpdatedMilestone.milestones.map((item) => {
-    if (item._id == milestoneId) {
-      updatedMile = item;
-    }
+  let updatedMile = UpdatedMilestone.milestones.find((item) => {
+    return item._id == milestoneId;
   });
 
   console.log({ UpdatedMilestone: UpdatedMilestone.projectId });
@@ -862,19 +894,21 @@ exports.CustomerPayToAdmin = catchAsync(async (req, res, next) => {
 
   const { milestoneId, proposalId, pmId } = req.query;
 
-  var milestone;
-  let proposal = await Proposal.findOne(
-    { _id: proposalId },
-    function (err, proposal) {
-      milestone = proposal.milestones.id(milestoneId);
-    }
-  ).populate("projectId");
+  let proposal = await Proposal.findById(proposalId).populate("projectId");
 
-  if (milestone?.makeReleaseRequest != true) {
-    next(new AppError("Milestone release not requested by admin. ", 403));
+  let milestone = proposal.milestones.find((mile) => {
+    return mile._id == milestoneId;
+  });
+
+  console.log({ milestone });
+
+  if (!milestone?.makeReleaseRequest) {
+    return next(
+      new AppError("Milestone release not requested by admin. ", 403)
+    );
   }
-  if (milestone?.isMilestonePaid == true) {
-    next(new AppError("Milestone already payed. ", 403));
+  if (milestone?.isMilestonePaid) {
+    return next(new AppError("Milestone already payed. ", 403));
   }
 
   if (milestone?.status != "completed") {
@@ -907,16 +941,15 @@ exports.CustomerPayToAdmin = catchAsync(async (req, res, next) => {
     { new: true }
   );
 
-  var UpdatedMilestone;
-  await Proposal.findOne({ _id: proposalId }, function (err, proposal) {
-    UpdatedMilestone = proposal.milestones.id(milestoneId);
+  let upMile = UpdateMilestone.milestones.find((mile) => {
+    return mile._id == milestoneId;
   });
 
   let payment = await Payment.create({
     amount: milestone.amount,
     projectId: proposal.projectId,
     proposalId: proposal._id,
-    paymentMilestone: UpdatedMilestone,
+    paymentMilestone: upMile,
     paymentMethod: "stripe",
     isPaymentVerified: await StripeService.ConfirmPaymentIntent(
       paymentIntentId,
@@ -927,7 +960,7 @@ exports.CustomerPayToAdmin = catchAsync(async (req, res, next) => {
   });
 
   let project = await Project.findByIdAndUpdate(proposal.projectId, {
-    $inc: { amountPayedToAdmin: UpdatedMilestone.amount },
+    $inc: { amountPayedToAdmin: upMile.amount },
   });
 
   // send email/dashboard notification to admin
@@ -960,5 +993,41 @@ exports.getAllProjects = catchAsync(async (req, res, next) => {
   res.status(201).json({
     status: "success",
     data: newproject,
+  });
+});
+
+exports.updateProjectStatus = catchAsync(async (req, res, next) => {
+  const requiredFromRequest = ["status", "projectId"];
+
+  let dataInRequest = { ...req.query, ...req.body };
+
+  await ProjectService.checkRequiredData(
+    dataInRequest,
+    requiredFromRequest,
+    next
+  );
+
+  const { status, projectId } = dataInRequest;
+
+  let updatedProject = await Project.findByIdAndUpdate(
+    projectId,
+    { projectStatus: status },
+    { new: true }
+  );
+
+  await notification.dispatchToAdmin(
+    {
+      type: "project",
+      message: "Project status Updated to " + status,
+      title: updatedProject.title,
+      typeId: updatedProject._id,
+      projectId: updatedProject._id,
+    },
+    req
+  );
+
+  res.status(200).json({
+    status: "success",
+    data: updatedProject,
   });
 });

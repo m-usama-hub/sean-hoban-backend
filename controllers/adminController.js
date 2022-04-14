@@ -13,6 +13,7 @@ const notification = require("../services/NotificationService");
 const moment = require("moment");
 const { CourierClient } = require("@trycourier/courier");
 const CMS = require("../models/cmsModel");
+const Chat = require("../models/chatModel");
 const { deleteFile } = require("../utils/s3");
 
 const GetAssignedProjects = async (limit, skip) => {
@@ -127,17 +128,38 @@ const GetMilestonesRequestedForWidthdrawl = async (limit, skip) => {
   return milestones;
 };
 
-const GetEarningsPerWeekDays = async () => {
+const GetEarningsPerWeekDays = async (pre, curr, currency) => {
+  // console.log({ pre, curr });
+
   return await Payment.aggregate([
     {
       $match: {
         createdAt: {
-          $gte: new Date(moment().add(-6, "days").format()),
-          $lte: new Date(moment().format()),
+          $gte: new Date(moment(pre).format()),
+          $lte: new Date(moment(curr).format()),
         },
         isPaymentVerified: true,
+        currency: currency,
       },
     },
+    // {
+    //   $lookup: {
+    //     from: Project.collection.name,
+    //     localField: "projectId",
+    //     foreignField: "_id",
+    //     let: { currency: "$currency" },
+    //     pipeline: [
+    //       {
+    //         $match: {
+    //           $expr: {
+    //             $eq: ["$currency", "$$currency"],
+    //           },
+    //         },
+    //       },
+    //     ],
+    //     as: "project",
+    //   },
+    // },
     {
       $group: {
         _id: { $dateToString: { format: "%Y-%m-%d", date: "$createdAt" } },
@@ -157,7 +179,6 @@ const GetWebsiteStats = async () => {
     {
       $group: {
         _id: "$currency",
-        // currency: { $first: "$currency" },
         amount: { $sum: "$amountPayedToAdmin" },
       },
     },
@@ -176,7 +197,7 @@ const GetWebsiteStats = async () => {
     Total: await Project.count(),
     Assigned: await Project.find({ isAssigned: true }).count(),
     "Open to work": await Project.find({ status: "underReview" }).count(),
-    "Awaiting Payments": payments,
+    // "Awaiting Payments": payments,
     Completed: await Project.find({ status: "completed" }).count(),
     Earnings,
   };
@@ -187,8 +208,40 @@ exports.dashboardData = catchAsync(async (req, res, next) => {
 
   data.assignedProjects = await GetAssignedProjects(4, 0);
   data.widthdrawlRequests = await GetMilestonesRequestedForWidthdrawl(2, 0);
-  data.GraphData = await GetEarningsPerWeekDays();
+  data.GraphData = await GetEarningsPerWeekDays(
+    new Date(moment().add(-6, "days").format()),
+    new Date(moment().format())
+  );
   data.WebsiteStats = await GetWebsiteStats();
+
+  console.log({ "loggin User": req.user });
+  data.msg = await Chat.find({
+    to: req.user._id,
+  })
+    .populate({
+      path: "room",
+      populate: {
+        path: "projectId",
+        model: "Project",
+      },
+    })
+    .populate("from")
+    .sort("-createdAt")
+    .skip(0)
+    .limit(5);
+
+  res.status(200).json({
+    status: "success",
+    data,
+  });
+});
+
+exports.getGraphData = catchAsync(async (req, res, next) => {
+  let { pre, curr, currency } = req.query;
+
+  let data = {};
+
+  data.GraphData = await GetEarningsPerWeekDays(pre, curr, currency);
 
   res.status(200).json({
     status: "success",
@@ -382,14 +435,14 @@ exports.getDynamicPage = catchAsync(async (req, res, next) => {
 
   // let a = `[\"contactus\",\"home\"]`;
   // let arr = JSON.parse(a);
-  if (all == 'true') {
+  if (all == "true") {
     const d = await CMS.find({});
     const pagesDynamicArray = [
-      'home',
-      'services',
-      'order',
-      'about_us',
-      'contact_us',
+      "home",
+      "services",
+      "order",
+      "about_us",
+      "contact_us",
     ];
     let newArray = [];
     d.map((item, i) => {
@@ -402,15 +455,15 @@ exports.getDynamicPage = catchAsync(async (req, res, next) => {
     });
 
     res.status(200).json({
-      status: 'success',
+      status: "success",
       results: newArray.length,
       data: newArray,
     });
   } else {
     return res.status(200).json({
-      status: 'success',
+      status: "success",
       data: [],
-    })
+    });
   }
 });
 
@@ -495,5 +548,26 @@ exports.getAllPages = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     data: doc,
+  });
+});
+
+exports.getlatestMessage = catchAsync(async (req, res, next) => {
+  let msg = await Chat.find({
+    to: req.user_id,
+  })
+    .populate({
+      path: "room",
+      populate: {
+        path: "projectId",
+        model: "Project",
+      },
+    })
+    .sort("-createdAt")
+    .skip(0)
+    .limit(5);
+
+  res.status(200).json({
+    status: "success",
+    data: msg,
   });
 });
