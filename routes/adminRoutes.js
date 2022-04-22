@@ -46,7 +46,6 @@ router.route("/contractors").get(adminController.getAllContractor);
 
 router.route("/get-latest-messages").get(adminController.getlatestMessage);
 
-
 router.route("/get-email-status").get(adminController.getMessage);
 
 router
@@ -57,9 +56,7 @@ router
 
 //CMS
 
-router.route("/pages/all").get(adminController.getDynamicPage);
-
-router.route("/get-page/:page").get(adminController.getPage);
+// router.route("/pages/all").get(adminController.getDynamicPage);
 
 router.post("/page/update", uploadUserFiles, adminController.updatePage);
 

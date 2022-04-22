@@ -102,19 +102,15 @@ const GetMilestonesRequestedForRelease = async (limit, skip, req) => {
   return milestones;
 };
 
-const myProjects = async (user, pageNum, pageLimit) => {
+const myProjects = async (user, pageNum, pageLimit, status) => {
   const page = pageNum * 1 || 1;
   const limit = pageLimit * 1 || 400;
   const skip = (page - 1) * limit;
-  let projects = await Project.find({
-    postedBy: user._id,
-  })
-    // .select({
-    //   porposalsForCustomer: 0,
-    //   porposalsForFreelancer: 0,
-    //   accecptedPorposalByCustomer: 0,
-    //   accecptedPorposalByFreelancer: 0,
-    // })
+  let query = { postedBy: user._id };
+
+  if (status && status != "all") query = { ...query, status };
+
+  let projects = await Project.find(query)
     .populate("porposalsForCustomer")
     .populate("accecptedPorposalByCustomer")
     .populate("postedBy")
@@ -168,7 +164,7 @@ exports.myProjects = catchAsync(async (req, res, next) => {
   });
   res.status(200).json({
     status: "success",
-    data: await myProjects(req.user, page, limit),
+    data: await myProjects(req.user, page, limit, req.query.status),
     recordsLimit: countDocs,
   });
 });

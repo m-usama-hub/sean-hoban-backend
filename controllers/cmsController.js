@@ -4,14 +4,32 @@ const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 // const SEO = require('../models/seoModel');
 const { deleteFile } = require("../utils/s3");
+const Page = require("../models/pageCrudModel");
 
 exports.getPage = catchAsync(async (req, res, next) => {
   let { page } = req.params;
+  let { crudsArry } = req.query;
   let doc = await Cms.findOne({ [page]: { $exists: true } });
+
+  let requiredData = await Page.find({ secName: { $in: crudsArry } });
+
+  let requiredArrays = [];
+  requiredData.forEach((arr) => {
+    if (requiredArrays[arr.secName]) {
+      requiredArrays[arr.secName].push(arr);
+    } else {
+      requiredArrays[arr.secName] = [arr];
+    }
+  });
+
+  let data = {
+    ...doc[page],
+    ...requiredArrays,
+  };
 
   res.status(200).json({
     status: "success",
-    data: doc[page],
+    data,
   });
 });
 
@@ -71,7 +89,10 @@ exports.updatePage = catchAsync(async (req, res, next) => {
     }
   }
 
-  let result = await Cms.findByIdAndUpdate(_id, req.body, { new: true, upsert: true });
+  let result = await Cms.findByIdAndUpdate(_id, req.body, {
+    new: true,
+    upsert: true,
+  });
 
   // console.log({ result });
 

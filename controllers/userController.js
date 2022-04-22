@@ -176,6 +176,27 @@ exports.getProjectDetails = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getMyAllProjects = catchAsync(async (req, res, next) => {
+  let role = req.user.role;
+
+  let projects = Project.find();
+
+  if (role == "customer") {
+    projects.find({ postedBy: req.user.id });
+  }
+
+  if (role == "freelancer") {
+    projects.find({ assignTo: req.user.id });
+  }
+
+  let data = await projects;
+
+  res.status(200).json({
+    status: "success",
+    data,
+  });
+});
+
 exports.getUser = factory.getOne(User);
 exports.getAllUsers = factory.getAll(User);
 

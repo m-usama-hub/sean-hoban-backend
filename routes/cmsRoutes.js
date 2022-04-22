@@ -49,6 +49,8 @@ router.route("/pages/all").get(getDynamicPage);
 
 router.get("/page/:page", getPage);
 
+// router.route("/get-page/:page").get(adminController.getPage);
+
 router.use(RouteService.protect);
 router.use(RouteService.restrictTo("admin", "super-admin"));
 

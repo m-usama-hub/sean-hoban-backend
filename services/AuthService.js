@@ -68,6 +68,14 @@ exports.RedirectBlockUser = (user, next) => {
     : user;
 };
 
+exports.RedirectPendingUser = (user, next) => {
+  return user.status == "pending"
+    ? next(
+        new AppError("Admin will Verify your account within 24 -72 hours", 401)
+      )
+    : user;
+};
+
 exports.UserIsVerfied = (user, next) => {
   if (!user.isVerified) {
     return next(new AppError("Please Verify your email first", 401));

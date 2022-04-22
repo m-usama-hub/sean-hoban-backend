@@ -176,6 +176,8 @@ exports.login = catchAsync(async (req, res, next) => {
 
   AuthService.RedirectBlockUser(user, next);
 
+  AuthService.RedirectPendingUser(user, next);
+
   if (!(await user.correctPassword(password, user.password))) {
     return next(new AppError("Incorrect email or password", 401));
   }

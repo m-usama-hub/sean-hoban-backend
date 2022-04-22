@@ -6,6 +6,7 @@ require("dotenv").config();
 const AppError = require("./appError");
 const path = require("path");
 const fs = require("fs");
+const FileData = require("../models/fileModel");
 
 const fileBucket = process.env.AWS_FILE_BUCKET_NAME;
 const region = process.env.AWS_BUCKET_REGION;
@@ -121,7 +122,7 @@ exports.deleteFile = (fileKey) => {
 };
 
 // uploads a file to s3
-exports.uploadbase64File = (file) => {
+exports.uploadbase64File = async (file, mimetype) => {
   // const fileStream = fs.createReadStream(file.path);
 
   // const buf = Buffer.from(file, "base64");
@@ -134,5 +135,13 @@ exports.uploadbase64File = (file) => {
     // Key: file.filename,
   };
 
-  return s3.upload(uploadParams).promise();
+  let Uploadedfile = await s3.upload(uploadParams).promise();
+
+  await FileData.create({
+    s3key: Uploadedfile.key,
+    file: Uploadedfile,
+    mimetype,
+  }).then((e) => console.log("file uploaded =" + e));
+
+  return Uploadedfile;
 };

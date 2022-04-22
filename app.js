@@ -27,12 +27,13 @@ const {
   getFileStream,
   getPDFFileStream,
   uploadbase64File,
+  uploadServerFile,
 } = require("./utils/s3");
 
 const User = require("./models/userModel");
 const Chat = require("./models/chatModel");
 const Rooms = require("./models/roomModel");
-
+const FileData = require("./models/fileModel");
 
 const app = require("express")();
 const http = require("http").Server(app);
@@ -41,7 +42,6 @@ const io = require("socket.io")(http, {
     origin: "*",
   },
 });
-
 
 // const app = express();
 
@@ -106,7 +106,6 @@ app.get("/api/images/:key", async (req, res) => {
     });
   }
 });
-
 // fetching PDF from AWS
 app.get(
   "/api/pdf/:key",
@@ -118,6 +117,38 @@ app.get(
 
       // Content-type: application/pdf
       res.header("Content-type", "application/pdf");
+      await getFileStream(key)
+        .on("error", (e) => {
+          // return res.status(404).json({
+          //   message: 'Image not Found.',
+          // });
+        })
+        .pipe(res);
+    } catch (e) {
+      return res.status(404).json({
+        message: "Pdf not found",
+      });
+    }
+  }
+);
+
+// fetching Anyfile from AWS
+app.get(
+  "/file/:key",
+  // protect,
+  // restrictTo('mechanic', 'super-admin', 'admin'),
+  async (req, res, next) => {
+    try {
+      const key = req.params.key;
+      let getfile = await FileData.findOne({ s3key: key });
+
+      if (!getfile) {
+        return res.status(404).json({
+          message: "file not found",
+        });
+      }
+
+      res.header("Content-type", getfile.mimetype);
       await getFileStream(key)
         .on("error", (e) => {
           // return res.status(404).json({
@@ -217,9 +248,9 @@ io.on("connection", (socket) => {
       // }
 
       // const __rs = await uploadbase64File(base64Data);
-      const __rs = await uploadbase64File(msg.message.src);
+      const __rs = await uploadbase64File(msg.message.src, imgType);
 
-      const urr = `https://${socket.handshake.headers.host}/api/images/${__rs.key}`;
+      const urr = `https://${socket.handshake.headers.host}/file/${__rs.key}`;
 
       msg.message.src = urr;
       msg.message.imgType = imgType;

@@ -74,7 +74,8 @@ const projectSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-    isActive: { // This status is used for signup-with-project api
+    isActive: {
+      // This status is used for signup-with-project api
       type: Boolean,
       default: true,
     },

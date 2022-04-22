@@ -5,6 +5,7 @@ const projectController = require("../controllers/projectController");
 const RouteService = require("../services/RouteService");
 const StripeService = require("../services/StripeService");
 const catchAsync = require("../utils/catchAsync");
+const adminController = require("../controllers/adminController");
 const {
   getPaymentMethods,
   AttachedPaymentMethod,
@@ -50,6 +51,8 @@ router.post(
   userController.log_violation_attempts_or_ban
 );
 
+//CMS
+
 // Protect all routes after this middleware
 router.use(RouteService.protect);
 router.post("/logout", authController.logout);
@@ -80,6 +83,13 @@ router
   .post(RouteService.restrictTo("customer"), deattachPaymentMethod);
 
 router.route("/projectDetails").get(userController.getProjectDetails);
+
+router
+  .route("/get-my-all-projects")
+  .get(
+    RouteService.restrictTo("customer", "freelancer"),
+    userController.getMyAllProjects
+  );
 
 // router.route('/product/all').get(productList);
 
