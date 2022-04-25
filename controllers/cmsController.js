@@ -5,6 +5,7 @@ const AppError = require("../utils/appError");
 // const SEO = require('../models/seoModel');
 const { deleteFile } = require("../utils/s3");
 const Page = require("../models/pageCrudModel");
+const Contact = require("../models/contactModel");
 
 exports.getPage = catchAsync(async (req, res, next) => {
   let { page } = req.params;
@@ -301,6 +302,28 @@ exports.postPageSeoData = catchAsync(async (req, res, next) => {
   } else {
     data = await SEO.create(req.body);
   }
+
+  // SEND RESPONSE
+  res.status(200).json({
+    status: "success",
+    data,
+  });
+});
+
+exports.getContacts = catchAsync(async (req, res, next) => {
+  const data = await Contact.find({});
+
+  // SEND RESPONSE
+  res.status(200).json({
+    status: "success",
+    data,
+  });
+});
+exports.deleteContacts = catchAsync(async (req, res, next) => {
+  let { id } = req.query;
+
+  await Contact.findByIdAndRemove(id);
+  const data = await Contact.find({});
 
   // SEND RESPONSE
   res.status(200).json({

@@ -80,12 +80,10 @@ router
 //   .patch(cmsController.updateconfigs)
 //   .delete(cmsController.deleteconfigs);
 
-// Web FAQ Routes
-// router
-//   .route("/web/faq/:id?")
-//   .get(cmsController.getfaq)
-//   .post(cmsController.postfaq)
-//   .patch(cmsController.updatefaq)
-//   .delete(cmsController.deletefaq);
+// Web contacts Routes
+router
+  .route("/contact-us/:id?")
+  .get(cmsController.getContacts)
+  .delete(cmsController.deleteContacts);
 
 module.exports = router;

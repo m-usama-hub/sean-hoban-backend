@@ -87,6 +87,14 @@ exports.uploadUserFiles = uploadFiles.fields([
     name: "sec2CoverImage",
     maxCount: 1,
   },
+  {
+    name: "sec3Video",
+    maxCount: 1,
+  },
+  {
+    name: "sec4Video",
+    maxCount: 1,
+  },
 ]);
 
 exports.uploadServerFile = (filePath) => {

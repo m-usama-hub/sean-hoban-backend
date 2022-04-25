@@ -1,6 +1,7 @@
 const multer = require("multer");
 const User = require("../models/userModel");
 const Project = require("../models/projectModel");
+const Contact = require("../models/contactModel");
 const catchAsync = require("../utils/catchAsync");
 const factory = require("../controllers/handlerFactory");
 const AppError = require("../utils/appError");
@@ -194,6 +195,19 @@ exports.getMyAllProjects = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     data,
+  });
+});
+
+exports.contactus = catchAsync(async (req, res, next) => {
+  await Contact.create({
+    name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
+    message: req.body.message,
+  });
+
+  res.status(200).json({
+    status: "success",
   });
 });
 

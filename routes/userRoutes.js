@@ -51,6 +51,8 @@ router.post(
   userController.log_violation_attempts_or_ban
 );
 
+router.post("/contactus", userController.contactus);
+
 //CMS
 
 // Protect all routes after this middleware

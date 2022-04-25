@@ -22,6 +22,7 @@ const cmsSchema = new mongoose.Schema(
 
         // Section 4: Video (Chilled Serenity)
         sec4Video: String,
+        sec4Link: String,
 
         // Section 5: How To Order
         sec5Heading: String,
@@ -85,7 +86,7 @@ const cmsSchema = new mongoose.Schema(
         // Section 3: How It Works
         sec3Heading: String,
         sec3Description: String,
-        sec3Video: String,
+        sec3Link: String,
 
         // Section 4: Meet Our Experts
         sec4Heading: String,
