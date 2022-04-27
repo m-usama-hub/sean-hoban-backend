@@ -12,16 +12,27 @@ exports.getPage = catchAsync(async (req, res, next) => {
   let { crudsArry } = req.query;
   let doc = await Cms.findOne({ [page]: { $exists: true } });
 
-  let requiredData = await Page.find({ secName: { $in: crudsArry } });
+  let requiredData = await Page.find({ secName: { $in: crudsArry ?? [] } });
 
   let requiredArrays = [];
-  requiredData.forEach((arr) => {
-    if (requiredArrays[arr.secName]) {
-      requiredArrays[arr.secName].push(arr);
-    } else {
-      requiredArrays[arr.secName] = [arr];
-    }
-  });
+  if (crudsArry?.length > 0) {
+    requiredData.forEach((arr) => {
+      if (requiredArrays[arr.secName]) {
+        requiredArrays[arr.secName].push(arr);
+      } else {
+        requiredArrays[arr.secName] = [arr];
+      }
+    });
+  }
+
+  let contactDetails;
+
+  if (page == "footer") {
+    contactDetails = await Cms.findOne({
+      contact_us: { $exists: true },
+    });
+    requiredArrays["contactDetails"] = { ...contactDetails.contact_us };
+  }
 
   let data = {
     ...doc[page],
@@ -89,6 +100,8 @@ exports.updatePage = catchAsync(async (req, res, next) => {
       req.body[pageName].sec3Video = files.video[0].key;
     }
   }
+
+  console.log({ contactBody: req.body });
 
   let result = await Cms.findByIdAndUpdate(_id, req.body, {
     new: true,

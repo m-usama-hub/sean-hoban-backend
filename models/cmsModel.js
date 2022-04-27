@@ -118,10 +118,7 @@ const cmsSchema = new mongoose.Schema(
         pageName: { type: String, default: "footer" },
         // Section 9: Footer
         description: String,
-        email: String,
-        number1: String,
-        number2: String,
-        number3: String,
+        copyright: String,
       },
     },
   },
