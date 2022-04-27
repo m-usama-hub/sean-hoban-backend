@@ -104,6 +104,13 @@ const cmsSchema = new mongoose.Schema(
         // Section 2: Get In Touch
         sec2Heading: String,
         sec2Description: String,
+        email: String,
+        mobileNo: String,
+        phoneNo: String,
+        facebook: String,
+        instagram: String,
+        linkedIn: String,
+        whatsapp: String,
       },
     },
     footer: {

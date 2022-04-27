@@ -108,7 +108,7 @@ const myProjects = async (user, pageNum, pageLimit, status) => {
   const skip = (page - 1) * limit;
   let query = { postedBy: user._id };
 
-  if (status && status != "all") query = { ...query, status };
+  if (status && status != "all") query = { ...query, projectStatus: status };
 
   let projects = await Project.find(query)
     .populate("porposalsForCustomer")
