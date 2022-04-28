@@ -77,7 +77,7 @@ const userSchema = new mongoose.Schema(
     },
     photo: {
       type: String,
-      default: undefined,
+      default: "default.png",
     },
     contactNo: {
       type: Number,

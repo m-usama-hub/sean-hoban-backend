@@ -52,6 +52,7 @@
     "mustache": "^4.2.0",
     "node-arp": "^1.0.6",
     "node-schedule": "^2.0.0",
+    "node-url-shortener": "^2.0.1",
     "nodemailer": "^6.6.5",
     "nodemon": "^2.0.15",
     "numeral": "^2.0.6",

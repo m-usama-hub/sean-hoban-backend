@@ -16,6 +16,7 @@ const notification = require("../services/NotificationService");
 const EmailService = require("../services/EmailSendingService");
 const ProjectService = require("../services/ProjectService");
 const { CourierClient } = require("@trycourier/courier");
+var shortUrl = require("node-url-shortener");
 
 exports.signup = catchAsync(async (req, res, next) => {
   let { email, role, deviceId, name, password, passwordConfirm, contactNo } =
@@ -46,7 +47,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create(Userdata);
 
   // const url = `${req.protocol}://${req.get('host')}/me`;
-  const url = `${req.protocol}://${req.get("host")}/api/v1/users/verify-me/${
+  const link = `${req.protocol}://${req.get("host")}/api/v1/users/verify-me/${
     newUser.id
   }`;
 
@@ -60,15 +61,17 @@ exports.signup = catchAsync(async (req, res, next) => {
     req
   );
 
-  await new EmailService(
-    newUser,
-    {
-      username: name,
-      url: url,
-      appname: process.env.APP_NAME,
-    },
-    "verify"
-  ).Send();
+  shortUrl.short(link, async function (err, url) {
+    await new EmailService(
+      newUser,
+      {
+        username: name,
+        url: url,
+        appname: process.env.APP_NAME,
+      },
+      "verify"
+    ).Send();
+  });
 
   // await new Email(newUser, url)
   //   .sendEmailVerificationEmail()
@@ -116,7 +119,7 @@ exports.signupWithProject = catchAsync(async (req, res, next) => {
   });
 
   // const url = `${req.protocol}://${req.get('host')}/me`;
-  const url = `${req.protocol}://${req.get("host")}/api/v1/users/verify-me/${
+  const link = `${req.protocol}://${req.get("host")}/api/v1/users/verify-me/${
     newUser.id
   }`;
 
@@ -130,15 +133,17 @@ exports.signupWithProject = catchAsync(async (req, res, next) => {
     req
   );
 
-  await new EmailService(
-    newUser,
-    {
-      username: name,
-      url: url,
-      appname: process.env.APP_NAME,
-    },
-    "verify"
-  ).Send();
+  shortUrl.short(link, async function (err, url) {
+    await new EmailService(
+      newUser,
+      {
+        username: name,
+        url: url,
+        appname: process.env.APP_NAME,
+      },
+      "verify"
+    ).Send();
+  });
 
   postProject.postedBy = newUser._id;
 
@@ -296,14 +301,16 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 
     // await new Email(user, resetURL).sendPasswordReset();
 
-    await new EmailService(
-      user,
-      {
-        username: user.name,
-        url: resetURL,
-      },
-      "passwordReset"
-    ).Send();
+    shortUrl.short(resetURL, async function (err, url) {
+      await new EmailService(
+        user,
+        {
+          username: user.name,
+          url: url,
+        },
+        "passwordReset"
+      ).Send();
+    });
 
     res.status(200).json({
       status: "success",

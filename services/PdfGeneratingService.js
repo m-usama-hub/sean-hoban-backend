@@ -19,8 +19,10 @@ exports.createInvoice = async (invoice, filePath) => {
   doc.pipe(fs.createWriteStream(filePath));
   doc.end();
 
-  setTimeout(async () => {
-    await uploadServerFile(filePath);
+  await setTimeout(async () => {
+    let uploaded = await uploadServerFile(filePath);
+
+    console.log({ uploaded });
   }, 3000);
 };
 
