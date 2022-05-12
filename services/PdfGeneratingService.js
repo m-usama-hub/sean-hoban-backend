@@ -15,15 +15,28 @@ exports.createInvoice = async (invoice, filePath) => {
   generateCustomerInformation(doc, invoice);
   //   generateInvoiceTable(doc, invoice);
   //   generateFooter(doc);
-
-  doc.pipe(fs.createWriteStream(filePath));
+  const contentFile = fs.createWriteStream(filePath);
+  doc.pipe(contentFile);
   doc.end();
 
-  await setTimeout(async () => {
-    let uploaded = await uploadServerFile(filePath);
+  new Promise((resolve) => {
+    return setTimeout(async () => {
+      const uploaded = await uploadServerFile(filePath, contentFile);
 
-    console.log({ uploaded });
-  }, 3000);
+      console.log({ a: 99 });
+      return resolve(uploaded);
+    }, 3000);
+  })
+    .then((rs) => {
+      console.log({ rs }, "successfully done :)");
+    })
+    .catch((er) => console.log(er, "fail :("));
+
+  // await setTimeout(async () => {
+  //   let uploaded = await uploadServerFile(filePath);
+
+  //   console.log({ uploaded });
+  // }, 3000);
 };
 
 async function generateHeader(doc) {

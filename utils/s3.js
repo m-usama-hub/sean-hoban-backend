@@ -97,13 +97,14 @@ exports.uploadUserFiles = uploadFiles.fields([
   },
 ]);
 
-exports.uploadServerFile = (filePath) => {
-  const fileContent = fs.readFileSync(filePath);
+exports.uploadServerFile = (filePath, contentFile) => {
+  // const fileContent = fs.readFileSync(filePath);
 
   const params = {
     Bucket: fileBucket,
     Key: path.basename(filePath),
-    Body: fileContent,
+    Body: contentFile,
+    ContentType: "application/pdf",
   };
 
   return s3.upload(params).promise();
