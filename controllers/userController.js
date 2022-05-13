@@ -216,16 +216,28 @@ exports.contactus = catchAsync(async (req, res, next) => {
 
 exports.createFile = catchAsync(async (req, res, next) => {
   let pdfname = `testing.pdf`;
+  // install pip
+  // return new Promise((resolve, reject) => {
+  //   const _path = path.join(__dirname, "..", "public", "pdfs", pdfname);
 
-  const _path = path.join(__dirname, "..", "public", "pdfs", pdfname);
+  //   let testdoc = new PDFDocument({ margin: 50 });
 
-  let testdoc = new PDFDocument({ margin: 50 });
+  //   testdoc.text(`Demo pdf for testing`, 50);
+  //   const contentFile = fs.createWriteStream(_path);
+  //   testdoc.pipe(contentFile);
+  //   testdoc.end();
+  //   testdoc.on("finish", function () {
+  //     testdoc.close(() => {
+  //       resolve(contentFile);
+  //     });
+  //   });
+  //   testdoc.on("error", function (err) {
+  //     fs.unlink(_path);
+  //     reject(err);
+  //   });
+  // });
 
-  testdoc.text(`Demo pdf for testing`, 50);
-
-  const contentFile = fs.createWriteStream(_path);
-  testdoc.pipe(contentFile);
-  testdoc.end();
+  // contentFile.on("finish", function () {});
 
   res.status(200).json({
     status: "success",

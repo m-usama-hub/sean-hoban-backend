@@ -15,7 +15,7 @@ exports.createInvoice = async (invoice, filePath) => {
   generateCustomerInformation(doc, invoice);
   //   generateInvoiceTable(doc, invoice);
   //   generateFooter(doc);
-  const contentFile = fs.createWriteStream(filePath);
+  const contentFile = await fs.createWriteStream(filePath);
   doc.pipe(contentFile);
   doc.end();
 
