@@ -113,6 +113,13 @@ const cmsSchema = new mongoose.Schema(
         whatsapp: String,
       },
     },
+    terms_and_condition: {
+      type: {
+        pageName: { type: String, default: "terms_and_condition" },
+        description1: String,
+        description2: String,
+      },
+    },
     footer: {
       type: {
         pageName: { type: String, default: "footer" },
