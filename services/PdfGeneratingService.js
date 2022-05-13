@@ -19,24 +19,22 @@ exports.createInvoice = async (invoice, filePath) => {
   doc.pipe(contentFile);
   doc.end();
 
-  new Promise((resolve) => {
-    return setTimeout(async () => {
-      const uploaded = await uploadServerFile(filePath, contentFile);
+  // new Promise((resolve) => {
+  //   return setTimeout(async () => {
+  //     const uploaded = await uploadServerFile(filePath, contentFile);
 
-      console.log({ a: 99 });
-      return resolve(uploaded);
-    }, 3000);
-  })
-    .then((rs) => {
-      console.log({ rs }, "successfully done :)");
-    })
-    .catch((er) => console.log(er, "fail :("));
+  //     console.log({ a: 99 });
+  //     return resolve(uploaded);
+  //   }, 3000);
+  // })
+  //   .then((rs) => {
+  //     console.log({ rs }, "successfully done :)");
+  //   })
+  //   .catch((er) => console.log(er, "fail :("));
 
-  // await setTimeout(async () => {
-  //   let uploaded = await uploadServerFile(filePath);
-
-  //   console.log({ uploaded });
-  // }, 3000);
+  await setTimeout(async () => {
+    let uploaded = await uploadServerFile(filePath);
+  }, 3000);
 };
 
 async function generateHeader(doc) {

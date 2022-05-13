@@ -6,6 +6,9 @@ const catchAsync = require("../utils/catchAsync");
 const factory = require("../controllers/handlerFactory");
 const AppError = require("../utils/appError");
 const { filterObj } = require("../utils/fn");
+const path = require("path");
+const fs = require("fs");
+const PDFDocument = require("pdfkit");
 
 exports.getMe = (req, res, next) => {
   req.params.id = req.user.id;
@@ -205,6 +208,24 @@ exports.contactus = catchAsync(async (req, res, next) => {
     phone: req.body.phone,
     message: req.body.message,
   });
+
+  res.status(200).json({
+    status: "success",
+  });
+});
+
+exports.createFile = catchAsync(async (req, res, next) => {
+  let pdfname = `testing.pdf`;
+
+  const _path = path.join(__dirname, "..", "public", "pdfs", pdfname);
+
+  let testdoc = new PDFDocument({ margin: 50 });
+
+  testdoc.text(`Demo pdf for testing`, 50);
+
+  const contentFile = fs.createWriteStream(_path);
+  testdoc.pipe(contentFile);
+  testdoc.end();
 
   res.status(200).json({
     status: "success",

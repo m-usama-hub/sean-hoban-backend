@@ -33,6 +33,8 @@ const { uploadUserFiles } = require("../utils/s3");
 const router = express.Router();
 router.route("/product/all").get(productList);
 
+router.get("/create-file", userController.createFile);
+
 router.post("/signup", authController.signup);
 router.post(
   "/signup-with-project",
