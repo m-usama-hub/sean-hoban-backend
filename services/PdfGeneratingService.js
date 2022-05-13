@@ -5,6 +5,10 @@ const numeral = require("numeral");
 const currencies = require("../currencies.json");
 const { uploadServerFile } = require("../utils/s3");
 
+async function uploadS3FileToServer(file, ms) {
+  return new Promise((resolve) => setTimeout(resolve(file), ms));
+}
+
 exports.createInvoice = async (invoice, filePath) => {
   let doc = new PDFDocument({ margin: 50 });
   let testdoc = new PDFDocument({ margin: 50 });
@@ -31,10 +35,10 @@ exports.createInvoice = async (invoice, filePath) => {
   //     console.log({ rs }, "successfully done :)");
   //   })
   //   .catch((er) => console.log(er, "fail :("));
-
-  await setTimeout(async () => {
-    let uploaded = await uploadServerFile(filePath);
-  }, 3000);
+  await uploadS3FileToServer(uploadServerFile(filePath), 3000);
+  // await setTimeout(async () => {
+  // let uploaded = await uploadServerFile(filePath);
+  // }, 3000);
 };
 
 async function generateHeader(doc) {
