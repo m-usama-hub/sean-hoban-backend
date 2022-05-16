@@ -194,8 +194,6 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
 
   let project = await Project.findById(projectId);
 
-  console.log({ project });
-
   // if (project?.accecptedPorposalByCustomer == undefined) {
   //   return next(
   //     new AppError(
@@ -266,8 +264,6 @@ exports.submitPurposalToFreelancer = catchAsync(async (req, res, next) => {
     //   "propsalPosted"
     // ).Send();
   });
-
-  console.log({ postedPorposal });
 
   await Project.findByIdAndUpdate(
     projectId,
@@ -611,8 +607,6 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
     return mile._id == milestoneId;
   });
 
-  console.log({ milestone });
-
   if (proposal.projectId.accecptedPorposalByFreelancer != proposalId) {
     return next(new AppError("Not a freelancer proposal", 403));
   }
@@ -653,8 +647,6 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
       return mile._id == milestoneId;
     });
 
-    console.log({ upMile });
-
     var postPayment = await Payment.create({
       amount: upMile.amount,
       projectId: proposal.projectId,
@@ -665,8 +657,6 @@ exports.updateMilestonePaymentStatus = catchAsync(async (req, res, next) => {
       userId: req.user._id,
       reciverId: proposal.sendTo,
     });
-
-    console.log({ postPayment });
   }
 
   // send email/dashboard notification to freelancer
@@ -779,8 +769,6 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
     req
   );
 
-  console.log();
-
   res.status(200).json({
     status: "success",
     data: UpdatedMilestone,
@@ -818,8 +806,6 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
   //   );
   // }
 
-  console.log({ milestone });
-
   if (milestone?.isMilestonePaid) {
     return next(new AppError("Milestone already payed. ", 403));
   }
@@ -849,8 +835,6 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
   let updatedMile = UpdatedMilestone.milestones.find((item) => {
     return item._id == milestoneId;
   });
-
-  console.log({ UpdatedMilestone: UpdatedMilestone.projectId });
 
   let invoice = {
     user: UpdatedMilestone.sendTo,
@@ -901,8 +885,6 @@ exports.CustomerPayToAdmin = catchAsync(async (req, res, next) => {
   let milestone = proposal.milestones.find((mile) => {
     return mile._id == milestoneId;
   });
-
-  console.log({ milestone });
 
   if (!milestone?.makeReleaseRequest) {
     return next(

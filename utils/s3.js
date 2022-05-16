@@ -97,13 +97,13 @@ exports.uploadUserFiles = uploadFiles.fields([
   },
 ]);
 
-exports.uploadServerFile = (filePath, contentFile) => {
-  // const fileContent = fs.readFileSync(filePath);
+exports.uploadServerFile = (filePath) => {
+  const fileContent = fs.createReadStream(filePath);
 
   const params = {
     Bucket: fileBucket,
     Key: path.basename(filePath),
-    Body: contentFile,
+    Body: fileContent,
     ContentType: "application/pdf",
   };
 

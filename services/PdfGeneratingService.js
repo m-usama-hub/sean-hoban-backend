@@ -1,13 +1,12 @@
 const PDFDocument = require("pdfkit");
 const fs = require("fs");
-const path = require("path");
 const numeral = require("numeral");
 const currencies = require("../currencies.json");
 const { uploadServerFile } = require("../utils/s3");
 
 exports.createInvoice = async (invoice, filePath) => {
   let doc = new PDFDocument({ margin: 50 });
-  let testdoc = new PDFDocument({ margin: 50 });
+  new PDFDocument({ margin: 50 });
 
   generateHeader(doc);
   generateProjectDetails(doc, invoice);
@@ -19,21 +18,9 @@ exports.createInvoice = async (invoice, filePath) => {
   doc.pipe(contentFile);
   doc.end();
 
-  // new Promise((resolve) => {
-  //   return setTimeout(async () => {
-  //     const uploaded = await uploadServerFile(filePath, contentFile);
-
-  //     console.log({ a: 99 });
-  //     return resolve(uploaded);
-  //   }, 3000);
-  // })
-  //   .then((rs) => {
-  //     console.log({ rs }, "successfully done :)");
-  //   })
-  //   .catch((er) => console.log(er, "fail :("));
-
   await setTimeout(async () => {
-    let uploaded = await uploadServerFile(filePath);
+    await uploadServerFile(filePath);
+    fs.unlinkSync(filePath);
   }, 3000);
 };
 
