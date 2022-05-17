@@ -49,7 +49,9 @@ module.exports = class PdfService {
       .create(document, options)
       .then((res) => {
         uploadServerFile(this._path);
-        fs.unlinkSync(this._path);
+        setTimeout(() => {
+          fs.unlinkSync(this._path);
+        }, 2000);
       })
       .catch((error) => {
         console.error(error);
