@@ -10,18 +10,24 @@ exports.createInvoice = async (invoice, filePath) => {
 
   generateHeader(doc);
   generateProjectDetails(doc, invoice);
-  generateMilestoneDetails(doc, invoice);
+  let mileArray = invoice.milestone;
+  if (Array.isArray(mileArray)) {
+    generateInvoiceTable(doc, invoice);
+  } else {
+    generateMilestoneDetails(doc, invoice);
+  }
   generateCustomerInformation(doc, invoice);
+
   //   generateInvoiceTable(doc, invoice);
   //   generateFooter(doc);
   const contentFile = await fs.createWriteStream(filePath);
   doc.pipe(contentFile);
   doc.end();
 
-  await setTimeout(async () => {
-    await uploadServerFile(filePath);
-    fs.unlinkSync(filePath);
-  }, 3000);
+  // await setTimeout(async () => {
+  // await uploadServerFile(filePath);
+  // fs.unlinkSync(filePath);
+  // }, 3000);
 };
 
 async function generateHeader(doc) {
@@ -54,7 +60,7 @@ async function generateProjectDetails(doc, invoice) {
     .text(
       `Amount: ${
         currencies[invoice.project.currency.toUpperCase()].symbol
-      } ${numeral(invoice.milestone.amount).format("0,0")}`,
+      } ${numeral(invoice.project.amount).format("0,0")}`,
       50
     )
     .text(`status: ${invoice.project.projectStatus}`, 50)
@@ -62,23 +68,45 @@ async function generateProjectDetails(doc, invoice) {
 }
 
 async function generateMilestoneDetails(doc, invoice) {
-  doc
-    .text(`Milestione Tilte: ${invoice.milestone.title}`, 50)
-    .text(`Milestone Description: ${invoice.milestone.description}`, 50)
-    .text(
-      `Amount to Pay:${
-        currencies[invoice.project.currency.toUpperCase()].symbol
-      } ${numeral(invoice.milestone.amount).format("0,0")}`,
-      50
-    )
-    .text(`status: ${invoice.milestone.status}`, 50)
-    .moveDown();
+  let mileArray = invoice.milestone;
+  if (Array.isArray(mileArray)) {
+    invoice.milestone.forEach((element) => {
+      doc
+        .text(`Milestione Tilte: ${element.title}`, 50)
+        .text(
+          `Amount:${
+            currencies[invoice.project.currency.toUpperCase()].symbol
+          } ${numeral(element.amount).format("0,0")}`,
+          50
+        )
+        .text(`status: ${element.status}`, 50)
+        .moveDown();
+    });
+  } else {
+    doc
+      .text(`Milestione Tilte: ${invoice.milestone.title}`, 50)
+      .text(`Milestone Description: ${invoice.milestone.description}`, 50)
+      .text(
+        `Amount to Pay:${
+          currencies[invoice.project.currency.toUpperCase()].symbol
+        } ${numeral(invoice.milestone.amount).format("0,0")}`,
+        50
+      )
+      .text(`status: ${invoice.milestone.status}`, 50)
+      .moveDown();
+  }
 }
 
 async function generateCustomerInformation(doc, invoice) {
-  console.log(
-    "=================================In generateCustomerInformation"
-  );
+  // let amount;
+  // let mileArray = invoice.milestone;
+
+  // if (Array.isArray(mileArray)) {
+  //   amount = invoice.milestone.reduce((acc, curr) => curr.amount + acc, 0);
+  // } else {
+  //   amount = invoice.milestone.amount;
+  // }
+
   doc
     .text(`To: ${invoice.user.name}`, 50)
     .text(`Email: ${invoice.user.email}`, 50)
@@ -86,10 +114,10 @@ async function generateCustomerInformation(doc, invoice) {
     .text(`Invoice By: ${invoice.from?.name}`, 50)
     .text(`Invoice By email: ${invoice.from?.email}`, 50)
     .text(`Invoice Date: ${new Date()}`, 50)
-    .text(
-      `_________________________________________________________________________________________`,
-      50
-    )
+    // .text(
+    //   `_________________________________________________________________________________________`,
+    //   50
+    // )
     .text(`Total Amount: `, 50)
     .text(
       currencies[invoice.project.currency.toUpperCase()].symbol +
@@ -104,26 +132,44 @@ async function generateTableRow(doc, y, c1, c2, c3, c4, c5) {
   doc
     .fontSize(10)
     .text(c1, 50, y)
-    .text(c2, 150, y)
-    .text(c3, 280, y, { width: 90, align: "right" })
-    .text(c4, 370, y, { width: 90, align: "right" })
-    .text(c5, 0, y, { align: "right" });
+    .text(c2, 150, y, { width: 90, align: "center" })
+    .text(c3, 250, y, { width: 90, align: "center" })
+    .text(c4, 350, y, { width: 90, align: "center" });
+  // .text(c5, 0, y, { align: "right" });
 }
 
 async function generateInvoiceTable(doc, invoice) {
   let i,
-    invoiceTableTop = 330;
+    invoiceTableTop = 150;
 
-  for (i = 0; i < invoice.items.length; i++) {
-    const item = invoice.items[i];
-    const position = invoiceTableTop + (i + 1) * 30;
+  let mileArray = invoice.milestone;
+
+  doc.text("Milestones Beakdown:", 50, invoiceTableTop + 20);
+  // doc.text("-------", 50, invoiceTableTop + 20);
+
+  for (i = 0; i < mileArray.length; i++) {
+    if (i == 0) {
+      generateTableRow(
+        doc,
+        invoiceTableTop + (i + 1.5) * 20,
+        "TITLE",
+        "AMOUNT",
+        "WORKING STATUS",
+        "PAYMENT STATUS"
+      );
+    }
+
+    const item = mileArray[i];
+    const position = invoiceTableTop + (i + 1.5) * 30;
     generateTableRow(
       doc,
       position,
       item.title,
-      item.description,
+      currencies[invoice.project.currency.toUpperCase()].symbol +
+        " " +
+        numeral(item.amount).format("0,0"),
       item.status,
-      numeral(item.amount).format("0,0")
+      item.isMilestonePaid == true ? "Paid" : "Payment Pending"
     );
   }
 }

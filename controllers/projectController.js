@@ -17,6 +17,7 @@ const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const currencies = require("../currencies.json");
 const moment = require("moment");
+const PdfService = require("../services/PdfService");
 
 //CUSTOMER CREATE NEW PROJECT
 exports.createProject = catchAsync(async (req, res, next) => {
@@ -94,7 +95,7 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
 
   const { projectId, userId } = req.query;
 
-  const { proposalDetails, proposalMilestones } = req.body;
+  const { proposalDetails, proposalMilestones, terms } = req.body;
 
   proposalDetails.projectId = projectId;
   proposalDetails.sendTo = userId;
@@ -121,6 +122,7 @@ exports.submitPurposalToCustomer = catchAsync(async (req, res, next) => {
       $push: { porposalsForCustomer: postedPorposal._id },
       reviewdByAdmin: true,
       projectStatus: "underReview",
+      privacyPolicyForCustomer: terms,
     },
     { new: true }
   );
@@ -747,16 +749,33 @@ exports.MakeMilestoneWidthdrawlRequest = catchAsync(async (req, res, next) => {
   });
 
   let invoice = {
-    user: UpdatedMilestone.sendTo,
+    user: {
+      name: UpdatedMilestone.sendTo.name,
+      email: UpdatedMilestone.sendTo.email,
+    },
     from: {
       name: req.user.name,
       email: req.user.email,
     },
-    project: UpdatedMilestone.projectId,
-    milestone: updatedMile,
+    currency:
+      currencies[UpdatedMilestone.projectId.currency.toUpperCase()].symbol,
+    project: {
+      title: UpdatedMilestone.projectId.title,
+      description: UpdatedMilestone.projectId.description,
+      currency: UpdatedMilestone.projectId.currency,
+      amount: UpdatedMilestone.projectId.amount,
+      projectStatus: UpdatedMilestone.projectId.projectStatus,
+    },
+    milestone: {
+      isMilestonePaid: updatedMile.isMilestonePaid,
+      status: updatedMile.status,
+      title: updatedMile.title,
+      amount: updatedMile.amount,
+    },
   };
 
-  await PdfGeneratingService.createInvoice(invoice, _path);
+  // await PdfGeneratingService.createInvoice(invoice, _path);
+  await new PdfService(invoice, "MilestoneInvoice.html", _path).Generate();
 
   await notification.dispatchToAdmin(
     {
@@ -837,16 +856,34 @@ exports.MakeMilestoneReleaseRequest = catchAsync(async (req, res, next) => {
   });
 
   let invoice = {
-    user: UpdatedMilestone.sendTo,
+    user: {
+      name: UpdatedMilestone.sendTo.name,
+      email: UpdatedMilestone.sendTo.email,
+    },
     from: {
       name: req.user.name,
       email: req.user.email,
     },
-    project: UpdatedMilestone.projectId,
-    milestone: updatedMile,
+    currency:
+      currencies[UpdatedMilestone.projectId.currency.toUpperCase()].symbol,
+    project: {
+      title: UpdatedMilestone.projectId.title,
+      description: UpdatedMilestone.projectId.description,
+      currency: UpdatedMilestone.projectId.currency,
+      amount: UpdatedMilestone.projectId.amount,
+      projectStatus: UpdatedMilestone.projectId.projectStatus,
+    },
+    milestone: {
+      isMilestonePaid: updatedMile.isMilestonePaid,
+      status: updatedMile.status,
+      title: updatedMile.title,
+      amount: updatedMile.amount,
+    },
+    terms: UpdatedMilestone.projectId.privacyPolicyForCustomer,
   };
 
-  await PdfGeneratingService.createInvoice(invoice, _path);
+  // await PdfGeneratingService.createInvoice(invoice, _path);
+  await new PdfService(invoice, "MilestoneInvoice.html", _path).Generate();
 
   await notification.dispatch(
     {
@@ -905,11 +942,15 @@ exports.CustomerPayToAdmin = catchAsync(async (req, res, next) => {
   }
 
   let paymentIntentId = await StripeService.MakePaymentIntent(
-    milestone.amount,
+    milestone.amount * 100,
     pmId,
     proposal.projectId.currency,
     req.user.cus
   );
+
+  let pdfname = `${uuidv4()}.pdf`;
+
+  const _path = path.join(__dirname, "..", "public", "pdfs", pdfname);
 
   let UpdateMilestone = await Proposal.findOneAndUpdate(
     {
@@ -919,15 +960,46 @@ exports.CustomerPayToAdmin = catchAsync(async (req, res, next) => {
     {
       $set: {
         "milestones.$.isMilestonePaid": true,
-        "milestones.$.releaseRequestedAt": Date.now(),
+        "milestones.$.invoice": pdfname,
       },
     },
     { new: true }
-  );
+  )
+    .populate("projectId")
+    .populate("sendTo");
 
   let upMile = UpdateMilestone.milestones.find((mile) => {
     return mile._id == milestoneId;
   });
+
+  let invoice = {
+    user: {
+      name: UpdateMilestone.sendTo.name,
+      email: UpdateMilestone.sendTo.email,
+    },
+    from: {
+      name: req.user.name,
+      email: req.user.email,
+    },
+    currency:
+      currencies[UpdateMilestone.projectId.currency.toUpperCase()].symbol,
+    project: {
+      title: UpdateMilestone.projectId.title,
+      description: UpdateMilestone.projectId.description,
+      currency: UpdateMilestone.projectId.currency,
+      amount: UpdateMilestone.projectId.amount,
+      projectStatus: UpdateMilestone.projectId.projectStatus,
+    },
+    milestone: {
+      isMilestonePaid: upMile.isMilestonePaid,
+      status: upMile.status,
+      title: upMile.title,
+      amount: upMile.amount,
+    },
+    terms: UpdateMilestone.projectId.privacyPolicyForCustomer,
+  };
+
+  await new PdfService(invoice, "MilestoneInvoice.html", _path).Generate();
 
   let payment = await Payment.create({
     amount: milestone.amount,
@@ -997,7 +1069,67 @@ exports.updateProjectStatus = catchAsync(async (req, res, next) => {
     projectId,
     { projectStatus: status },
     { new: true }
-  );
+  ).populate({
+    path: "accecptedPorposalByCustomer",
+    populate: {
+      path: "sendTo",
+    },
+  });
+
+  if (status == "completed") {
+    let pdfname = `${uuidv4()}.pdf`;
+
+    const _path = path.join(__dirname, "..", "public", "pdfs", pdfname);
+
+    var project = updatedProject;
+    var milestone = [];
+    var user = project.accecptedPorposalByCustomer.sendTo;
+
+    console.log({ proposalId: project.accecptedPorposalByCustomer._id });
+
+    project.accecptedPorposalByCustomer.milestones.map((mile) => {
+      return milestone.push({
+        isMilestonePaid: mile.isMilestonePaid,
+        status: mile.status,
+        title: mile.title,
+        amount: mile.amount,
+      });
+    });
+
+    let invoice = {
+      user: {
+        name: user.name,
+        email: user.email,
+      },
+      from: {
+        name: req.user.name,
+        email: req.user.email,
+      },
+      currency: currencies[project.currency.toUpperCase()].symbol,
+      project: {
+        title: project.title,
+        description: project.description,
+        currency: project.currency,
+        amount: project.amount,
+        projectStatus: project.projectStatus,
+      },
+      milestone,
+      total: milestone.reduce(
+        (acc, curr) => (curr.isMilestonePaid == true ? curr.amount + acc : acc),
+        0
+      ),
+    };
+
+    await new PdfService(invoice, "ProjectInvoice.html", _path).Generate();
+
+    await Proposal.findByIdAndUpdate(
+      updatedProject.accecptedPorposalByCustomer._id,
+      {
+        invoice: pdfname,
+      },
+      { new: true }
+    );
+  }
 
   await notification.dispatchToAdmin(
     {

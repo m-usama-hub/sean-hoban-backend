@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <h2>Project Milestone Invoice:</h2>
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>
+            <h3>Invoice to:</h3>
+            <p><strong>Name:</strong> {{ user.name }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+
+            <h3>Invoice by:</h3>
+            <p><strong>Name:</strong> {{ from.name }}</p>
+            <p><strong>Email:</strong> {{ from.email }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Project Detail:</h3>
+
+            <p><strong>Title:</strong> {{ project.title }}</p>
+            <p><strong>Amount:</strong> {{ currency }}{{ project.amount }}</p>
+            <p><strong>Status:</strong> {{ project.projectStatus }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Milestone Details:</h3>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Status</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{milestone.title}}</td>
+          <td>{{milestone.status}}</td>
+          <td>{{milestone.isMilestonePaid}}</td>
+          <td>{{currency}}{{milestone.amount}}</td>
+        </tr>
+        <tr>
+          <td colspan="3"><strong>Total Amount</strong></td>
+          <td>{{currency}}{{milestone.amount}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+    <div align="center">
+      <strong>{{ date }}</strong>
+    </div>
+
+    <div align="center">
+      <h2><strong>Terms and Conditons</strong></h2>
+    </div>
+    <div>{{terms}}</div>
+  </body>
+</html>

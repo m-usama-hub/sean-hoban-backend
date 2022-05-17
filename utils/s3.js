@@ -116,7 +116,7 @@ exports.getFileStream = (fileKey) => {
     Bucket: fileBucket,
   };
 
-  console.log({ fileKey });
+  // console.log({ fileKey });
 
   return s3.getObject(downloadParams).createReadStream();
 };

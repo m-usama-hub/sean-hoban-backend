@@ -81,6 +81,9 @@ const ProposalSchema = new mongoose.Schema(
       ref: "User",
       required: [true, "reciver userId is required"],
     },
+    invoice: {
+      type: String,
+    },
     milestones: [ProjectMilestonesSchema],
   },
   {

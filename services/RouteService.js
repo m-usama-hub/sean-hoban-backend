@@ -8,7 +8,7 @@ exports.restrictTo = (...roles) => {
   return (req, res, next) => {
     // roles ['admin', 'lead-guide']. role='user'
 
-    console.log({ "LoggedIn User": req.user.role });
+    // console.log({ "LoggedIn User": req.user.role });
 
     if (!roles.includes(req.user.role)) {
       return next(
@@ -39,7 +39,7 @@ exports.protect = catchAsync(async (req, res, next) => {
       new AppError("You are not logged in! Please log in to get access.", 401)
     );
   }
-  console.log("after decode");
+  // console.log("after decode");
 
   // 2) Verification token
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);

@@ -120,6 +120,20 @@ const cmsSchema = new mongoose.Schema(
         description2: String,
       },
     },
+    privacy_policy: {
+      type: {
+        pageName: { type: String, default: "privacy_policy" },
+        description1: String,
+        description2: String,
+      },
+    },
+    privacy_policy_2: {
+      type: {
+        pageName: { type: String, default: "privacy_policy_2" },
+        description1: String,
+        description2: String,
+      },
+    },
     footer: {
       type: {
         pageName: { type: String, default: "footer" },

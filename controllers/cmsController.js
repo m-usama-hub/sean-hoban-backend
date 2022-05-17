@@ -141,6 +141,8 @@ exports.getDynamicPage = catchAsync(async (req, res, next) => {
       "contact_us",
       "terms_and_condition",
       "footer",
+      "privacy_policy",
+      "privacy_policy_2",
     ];
     let newArray = [];
     d.map((item, i) => {
