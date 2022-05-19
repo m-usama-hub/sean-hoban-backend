@@ -86,6 +86,7 @@ const cmsSchema = new mongoose.Schema(
         // Section 3: How It Works
         sec3Heading: String,
         sec3Description: String,
+        sec3Video: String,
         sec3Link: String,
 
         // Section 4: Meet Our Experts

@@ -1,9 +1,10 @@
 const Cms = require("../models/cmsModel");
+const { v4: uuidv4 } = require("uuid");
 // const webservice = require('../models/webServiceModel');
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 // const SEO = require('../models/seoModel');
-const { deleteFile } = require("../utils/s3");
+const { getUploadingSignedURL, deleteFile } = require("../utils/s3");
 const Page = require("../models/pageCrudModel");
 const Contact = require("../models/contactModel");
 
@@ -46,8 +47,9 @@ exports.getPage = catchAsync(async (req, res, next) => {
 });
 
 exports.updatePage = catchAsync(async (req, res, next) => {
-  let { _id, pageName } = req.body;
   const { files } = req;
+  let { _id, pageName, isVideo } = req.body;
+  let url;
 
   if (!_id || !pageName) return next(new AppError("args are missing.", 400));
 
@@ -58,6 +60,17 @@ exports.updatePage = catchAsync(async (req, res, next) => {
   req.body[pageName] = outter[pageName];
 
   const doc = await Cms.findById(_id);
+
+  if (["true", true].includes(isVideo)) {
+    const key = `${uuidv4()}-video.mp4`;
+    url = await getUploadingSignedURL(key, 15004);
+    const videoEntity = pageName == "home" ? "sec4Video" : "sec3Video";
+    req.body[pageName][videoEntity] = `${process.env.AWS_BUCKET_LINK}${key}`;
+    if (doc?.[pageName][videoEntity]) {
+      const delKey = doc?.[pageName][videoEntity]?.split("com/")[1];
+      await deleteFile(delKey);
+    }
+  }
 
   if (files?.image) {
     if (pageName == "home") {
@@ -101,8 +114,6 @@ exports.updatePage = catchAsync(async (req, res, next) => {
     }
   }
 
-  console.log({ contactBody: req.body });
-
   let result = await Cms.findByIdAndUpdate(_id, req.body, {
     new: true,
     upsert: true,
@@ -113,6 +124,7 @@ exports.updatePage = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     data: result,
+    url,
   });
 });
 
