@@ -17,6 +17,7 @@ const s3 = new S3({
   region,
   accessKeyId,
   secretAccessKey,
+  signatureVersion: "v4",
 });
 
 const multerPdfFilter = (req, file, cb) => {
@@ -108,6 +109,19 @@ exports.uploadServerFile = (filePath) => {
   };
 
   return s3.upload(params).promise();
+};
+
+exports.getUploadingSignedURL = async (Key, Expires = 15004) => {
+  try {
+    const url = await s3.getSignedUrlPromise("putObject", {
+      Bucket: fileBucket,
+      Key: Key,
+      Expires,
+    });
+    return url;
+  } catch (error) {
+    return error;
+  }
 };
 
 exports.getFileStream = (fileKey) => {
